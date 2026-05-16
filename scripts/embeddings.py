@@ -1,11 +1,13 @@
-# Lightweight wrapper that re-exports the project's top-level embeddings module.
-# Keeps the original embeddings.py implementation but provides a module under scripts.
-import embeddings as core_embeddings
+"""Wrapper to expose the project's core embeddings implementation from `scripts.core_embeddings`.
+This keeps external imports using `from scripts import embeddings` working while
+the heavy implementation lives in `scripts/core_embeddings.py`.
+"""
+from . import core_embeddings as core
 
-ensure_chunk_embeddings = core_embeddings.ensure_chunk_embeddings
-get_sentence_embeddings = core_embeddings.get_sentence_embeddings
-get_embeddings_batch = core_embeddings.get_embeddings_batch
-build_faiss_index = core_embeddings.build_faiss_index
-search_faiss_index = core_embeddings.search_faiss_index
-find_similar_chunks = core_embeddings.find_similar_chunks
-aggregate_chunk_hits = core_embeddings.aggregate_chunk_hits
+ensure_chunk_embeddings = core.ensure_chunk_embeddings
+get_sentence_embeddings = core.get_sentence_embeddings
+get_embeddings_batch = core.get_embeddings_batch
+build_faiss_index = core.build_faiss_index
+search_faiss_index = core.search_faiss_index
+find_similar_chunks = core.find_similar_chunks
+aggregate_chunk_hits = core.aggregate_chunk_hits

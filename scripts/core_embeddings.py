@@ -175,6 +175,7 @@ def get_embeddings_batch(texts: List[str], model_name: str = "all-MiniLM-L6-v2",
 
 
 
+
 def save_chunk_index(chunk_embeddings: np.ndarray, chunk_metadata: List[Dict], embeddings_file: str, metadata_file: str):
     np.save(embeddings_file, chunk_embeddings)
     with open(metadata_file, 'w', encoding='utf-8') as f:
