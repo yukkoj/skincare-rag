@@ -1,0 +1,3 @@
+sentence-transformers
+numpy
+faiss-cpu  # optional: faiss-gpu if you have CUDA
