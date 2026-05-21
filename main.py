@@ -1,7 +1,7 @@
 """
 Main entry point for Reddit scraper
 """
-import scraper
+from scripts import scraper
 
 def main():
     """Run the scraper"""
