@@ -1,0 +1,29 @@
+{
+  "product_id": "product5",
+  "total_reviews": 22,
+  "avg_reddit_score": 134.8,
+  "top_phrases": [
+    {
+      "phrase": "water",
+      "count": 41
+    },
+    {
+      "phrase": "hydro",
+      "count": 38
+    },
+    {
+      "phrase": "boost",
+      "count": 35
+    },
+    {
+      "phrase": "neutrogena",
+      "count": 32
+    },
+    {
+      "phrase": "skin",
+      "count": 32
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward the Neutrogena Hydro Boost Water Gel is positive, with users frequently praising its lightweight, non-greasy texture that leaves skin feeling plump, hydrated, and refreshed. While it is widely considered a \"holy grail\" for oily and combination skin, some users report dissatisfaction regarding its inclusion of fragrance, its lack of cruelty-free status, and the rapid rate at which the product is consumed.",
+  "generated_at": "2026-05-22T22:55:57.078156Z"
+}

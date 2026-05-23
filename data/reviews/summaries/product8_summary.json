@@ -1,0 +1,29 @@
+{
+  "product_id": "product8",
+  "total_reviews": 19,
+  "avg_reddit_score": 7.7,
+  "top_phrases": [
+    {
+      "phrase": "moisturizer",
+      "count": 55
+    },
+    {
+      "phrase": "skin",
+      "count": 54
+    },
+    {
+      "phrase": "sunscreen",
+      "count": 54
+    },
+    {
+      "phrase": "cetaphil",
+      "count": 38
+    },
+    {
+      "phrase": "facial",
+      "count": 32
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward the Cetaphil Daily Facial Moisturizer SPF 15 is mixed, as users value the convenience of a combined moisturizer and sunscreen for daily routines. However, the product receives significant criticism for its thick consistency, uneven application, and low SPF level. Additionally, some users expressed frustration with the product's performance on oily skin and are actively seeking alternatives with better texture and higher sun protection.",
+  "generated_at": "2026-05-22T23:04:07.638644Z"
+}

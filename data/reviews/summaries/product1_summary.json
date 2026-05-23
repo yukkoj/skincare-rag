@@ -1,0 +1,29 @@
+{
+  "product_id": "product1",
+  "total_reviews": 24,
+  "avg_reddit_score": 68.0,
+  "top_phrases": [
+    {
+      "phrase": "cerave",
+      "count": 64
+    },
+    {
+      "phrase": "moisturizing",
+      "count": 59
+    },
+    {
+      "phrase": "lotion",
+      "count": 47
+    },
+    {
+      "phrase": "daily",
+      "count": 46
+    },
+    {
+      "phrase": "skin",
+      "count": 32
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward CeraVe Daily Moisturizing Lotion is mixed, with many users praising its effectiveness at hydrating dehydrated skin and supporting a healthy moisture barrier. However, while some consider it a holy grail, others report that it causes clogged pores and acne breakouts, leading them to seek lighter, non-comedogenic alternatives.",
+  "generated_at": "2026-05-22T22:55:43.266114Z"
+}

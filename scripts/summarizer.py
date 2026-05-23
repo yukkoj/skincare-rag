@@ -1,92 +1,59 @@
 """
 Review summarizer
-Reads reviews and creates summaries
+Reads reviews and creates summaries with rate-limit handling
 """
 import json
+import time
 from pathlib import Path
 from collections import Counter
 import google.generativeai as genai
 import config
 
-
 genai.configure(api_key=config.GOOGLE_API_KEY)
-model = genai.GenerativeModel("gemini-1.5-flash")
+# Using your project's high-RPM choice: 15 RPM limit
+model = genai.GenerativeModel("gemini-3.1-flash-lite")
 
-
-def load_product_reviews(product_id):
-    """Load reviews for a specific product"""
-    review_file = config.REVIEWS_DIR / f"product_{product_id}.json"
-    
-    if not review_file.exists():
+def load_product_reviews(filepath):
+    """Load reviews for a specific product file"""
+    if not filepath.exists():
         return None
-    
-    with open(review_file, 'r', encoding='utf-8') as f:
+    with open(filepath, 'r', encoding='utf-8') as f:
         return json.load(f)
-
 
 def extract_key_phrases(reviews, top_n=10):
     """Extract most common phrases from reviews"""
     words = []
     for review in reviews:
-        text = review['text'].lower()
+        # Use both title and text since our scraper grabs both
+        text = (review.get('title', '') + " " + review.get('text', '')).lower()
         # Remove common words
         words.extend([w for w in text.split() 
-                     if len(w) > 3 and w not in ['this', 'that', 'with', 'from']])
+                     if len(w) > 3 and w not in ['this', 'that', 'with', 'from', 'have', 'just', 'like']])
     
     return Counter(words).most_common(top_n)
 
+def generate_llm_summary(product_name, reviews, top_phrases):
+    """Use Gemini to generate natural language summary from raw reviews"""
+    
+    # Grab the top 5 most upvoted reviews to feed to the LLM
+    top_reviews = sorted(reviews, key=lambda x: x.get('score', 0), reverse=True)[:5]
+    review_texts = "\n".join([f"- {r.get('title', '')}: {r.get('text', '')}" for r in top_reviews])
 
-def calculate_analytics(data, reviews):
-    """Calculate analytics from reviews"""
-    avg_score = sum(r['score'] for r in reviews) / len(reviews) if reviews else 0
-    top_phrases = extract_key_phrases(reviews)
-    
-    # Get sample reviews by sentiment
-    positive_samples = [r['text'] for r in reviews if r['sentiment'] == 'positive'][:3]
-    negative_samples = [r['text'] for r in reviews if r['sentiment'] == 'negative'][:3]
-    
-    analytics = {
-        'product_id': data['product_id'],
-        'product_name': data['product_name'],
-        'brand': data['brand'],
-        'total_reviews': data['total_reviews'],
-        'sentiment_summary': data['summary'],
-        'avg_reddit_score': round(avg_score, 1),
-        'top_phrases': [{'phrase': phrase, 'count': count} 
-                       for phrase, count in top_phrases[:5]],  # Top 5 only
-        'sample_positive': positive_samples,
-        'sample_negative': negative_samples,
-        'subreddit_distribution': dict(Counter(r['subreddit'] for r in reviews))
-    }
-    
-    return analytics
-
-
-def generate_llm_summary(analytics):
-    """Use Gemini to generate natural language summary from analytics"""
-    
-    # Format the prompt
     prompt = f"""You are a skincare product review analyst. 
-                Based on the following analytics from Reddit reviews, write a concise 
-                2-3 sentence summary that captures the overall sentiment and key themes.
+Based on the following Reddit reviews, write a concise 
+2-3 sentence summary that captures the overall sentiment and key themes.
 
-Product: {analytics['product_name']} by {analytics['brand']}
-Total Reviews: {analytics['total_reviews']}
-Sentiment Distribution: {analytics['sentiment_summary']['positive_count']} positive, {analytics['sentiment_summary']
-                        ['negative_count']} negative, {analytics['sentiment_summary']['neutral_count']} neutral
-Average Reddit Score: {analytics['avg_reddit_score']}
-Top Mentioned Words: {', '.join([p['phrase'] for p in analytics['top_phrases']])}
+Product: {product_name}
+Total Reviews Analyzed: {len(reviews)}
+Top Mentioned Words: {', '.join([phrase for phrase, count in top_phrases])}
 
-Sample Positive Reviews:
-{chr(10).join('- ' + review for review in analytics['sample_positive']) if analytics['sample_positive'] else 'None'}
-
-Sample Negative Reviews:
-{chr(10).join('- ' + review for review in analytics['sample_negative']) if analytics['sample_negative'] else 'None'}
+Sample Reviews:
+{review_texts}
 
 Write a summary that:
-1. Starts with overall sentiment
+1. Starts with overall sentiment (positive, negative, or mixed)
 2. Mentions key benefits users love
-3. Notes any common complaints
+3. Notes any common complaints or skin reactions
 4. Is concise and specific to this product
 
 Summary:"""
@@ -98,67 +65,91 @@ Summary:"""
         print(f"  ⚠ LLM generation failed: {e}")
         return None
 
-
-def summarize_product_reviews(product_id):
+def summarize_product_reviews(filepath):
     """Create summary with analytics and LLM-generated text"""
-    data = load_product_reviews(product_id)
+    reviews = load_product_reviews(filepath)
     
-    if not data:
-        print(f"No reviews found for product {product_id}")
+    if not reviews: # If it's an empty list or file doesn't exist
         return None
+        
+    # Get product name from the filename (e.g. "product1")
+    product_id = filepath.stem
     
-    reviews = data['reviews']
+    # Calculate basic stats from our scraper output
+    avg_score = sum(r.get('score', 0) for r in reviews) / len(reviews)
+    top_phrases = extract_key_phrases(reviews)[:5]
     
-    # Calculate analytics
-    analytics = calculate_analytics(data, reviews)
+    # Generate LLM summary
+    llm_summary = generate_llm_summary(product_id, reviews, top_phrases)
     
-    # Generate LLM summary from analytics
-    llm_summary = generate_llm_summary(analytics)
-    
-    # Combine analytics and LLM summary
+    # Create the final summary object
     full_summary = {
-        **analytics,  # Include all analytics
-        'llm_summary': llm_summary,  # Add natural language summary
-        'generated_at': data['last_updated']
+        'product_id': product_id,
+        'total_reviews': len(reviews),
+        'avg_reddit_score': round(avg_score, 1),
+        'top_phrases': [{'phrase': phrase, 'count': count} for phrase, count in top_phrases],
+        'llm_summary': llm_summary,
+        'generated_at': reviews[0].get('scraped_at', '') if reviews else ''
     }
     
     return full_summary
 
-
 def save_summary(product_id, summary):
     """Save summary to file"""
-    summaries_dir = config.REVIEWS_DIR / "summaries"
+    # Ensure config.REVIEWS_DIR is a Path object
+    reviews_dir = Path(config.REVIEWS_DIR)
+    summaries_dir = reviews_dir / "summaries"
     summaries_dir.mkdir(exist_ok=True)
     
-    summary_file = summaries_dir / f"product_{product_id}_summary.json"
+    summary_file = summaries_dir / f"{product_id}_summary.json"
     
     with open(summary_file, 'w', encoding='utf-8') as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
     
     return summary_file
 
-
-def summarize_all_products():
+def summarize_all_products(skip_existing=True):
     """Generate summaries for all products with reviews"""
-    review_files = list(config.REVIEWS_DIR.glob("product_*.json"))
+    reviews_dir = Path(config.REVIEWS_DIR)
+    summaries_dir = reviews_dir / "summaries"
     
-    print(f"\nGenerating LLM summaries for {len(review_files)} products...\n")
+    # Look for files matching the scraper's format (product1.json, etc.)
+    review_files = list(reviews_dir.glob("product*.json"))
+    total_files = len(review_files)
     
-    for review_file in review_files:
-        # Extract product ID from filename
-        product_id = review_file.stem.replace('product_', '')
+    if total_files == 0:
+        print("No review files found to summarize!")
+        return
         
-        print(f"Processing product {product_id}...")
+    print(f"\nGenerating LLM summaries for {total_files} products...\n")
+    
+    for idx, review_file in enumerate(review_files):
+        # Determine what the summary filename would be
+        product_id = review_file.stem
+        expected_summary_file = summaries_dir / f"{product_id}_summary.json"
         
-        summary = summarize_product_reviews(product_id)
-        if summary:
+        # --- NEW: Skip existing check ---
+        if skip_existing and expected_summary_file.exists():
+            print(f"[{idx + 1}/{total_files}] ⏭️ Skipping {review_file.name} (Summary already exists)")
+            continue
+            
+        print(f"[{idx + 1}/{total_files}] Processing {review_file.name}...")
+        
+        summary = summarize_product_reviews(review_file)
+        
+        if summary and summary.get('llm_summary'):
             save_summary(product_id, summary)
-            print(f"✓ Summarized: {summary['product_name']}")
-            if summary['llm_summary']:
-                print(f"  📝 {summary['llm_summary']}\n")
+            print(f"✓ Summarized: {summary['product_id']}")
+            print(f"  📝 {summary['llm_summary']}\n")
+        else:
+            print(f"  ⚠ Skipped or failed to generate summary.")
+        
+        # --- Rate-limiting logic ---
+        if idx < total_files - 1:
+            print("⏳ Pacing requests to respect 15 RPM free tier limit (sleeping 4s)...")
+            time.sleep(4)
     
     print(f"\n✓ All summaries generated!\n")
-
 
 if __name__ == "__main__":
     summarize_all_products()

@@ -1,0 +1,29 @@
+{
+  "product_id": "product10",
+  "total_reviews": 5,
+  "avg_reddit_score": 1.6,
+  "top_phrases": [
+    {
+      "phrase": "face",
+      "count": 13
+    },
+    {
+      "phrase": "skin",
+      "count": 10
+    },
+    {
+      "phrase": "routine",
+      "count": 9
+    },
+    {
+      "phrase": "ordinary",
+      "count": 9
+    },
+    {
+      "phrase": "some",
+      "count": 7
+    }
+  ],
+  "llm_summary": "Summary: Users express mixed sentiment regarding e.l.f. skincare products, frequently highlighting the brand's affordability and the popularity of the \"Holy Hydration!\" face cream as a staple in diverse routines. However, some users report that this specific moisturizer lacks sufficient hydration or causes sensitivity due to its fragrance, leading to inconsistent experiences across different skin types.",
+  "generated_at": "2026-05-22T23:04:14.815500Z"
+}

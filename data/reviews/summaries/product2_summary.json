@@ -1,0 +1,29 @@
+{
+  "product_id": "product2",
+  "total_reviews": 21,
+  "avg_reddit_score": 80.3,
+  "top_phrases": [
+    {
+      "phrase": "moisturizer",
+      "count": 50
+    },
+    {
+      "phrase": "skin",
+      "count": 47
+    },
+    {
+      "phrase": "facial",
+      "count": 36
+    },
+    {
+      "phrase": "vanicream",
+      "count": 34
+    },
+    {
+      "phrase": "daily",
+      "count": 33
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward the Vanicream Daily Facial Moisturizer is largely positive, with many users praising its cosmetically elegant finish, inclusion of ceramides, and non-irritating formula for sensitive skin. However, reactions are mixed, as some users with acne-prone or combination skin report that the product can cause clogged pores or excessive oiliness. Ultimately, it is highly valued by those seeking a reliable, fragrance-free option, though it may not be suitable for every specific skin profile.",
+  "generated_at": "2026-05-22T22:55:46.788890Z"
+}

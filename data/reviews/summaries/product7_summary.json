@@ -1,0 +1,29 @@
+{
+  "product_id": "product7",
+  "total_reviews": 19,
+  "avg_reddit_score": 372.2,
+  "top_phrases": [
+    {
+      "phrase": "cerave",
+      "count": 31
+    },
+    {
+      "phrase": "moisturizing",
+      "count": 25
+    },
+    {
+      "phrase": "cream",
+      "count": 23
+    },
+    {
+      "phrase": "skin",
+      "count": 23
+    },
+    {
+      "phrase": "using",
+      "count": 14
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward CeraVe Moisturizing Cream is mixed, as users frequently cite it as a reliable, essential staple for repairing the skin barrier and soothing dryness. While many praise its effectiveness in calming skin alongside treatments like Tretinoin, some users report negative experiences with recent formula changes or find the product unsuitable for their specific skin texture.",
+  "generated_at": "2026-05-22T23:04:04.016913Z"
+}

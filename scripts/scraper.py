@@ -1,166 +1,134 @@
-"""
-Reddit review scraper
-Handles loading products, scraping reviews, and saving results
-"""
+import os
 import json
+import requests
 import time
 from datetime import datetime
+import re
 import config
 
-# ==================== DATA LOADING ====================
-
-def load_products():
-    """Load products from JSON file"""
-    if not config.PRODUCTS_FILE.exists():
-        raise FileNotFoundError(f"Products file not found: {config.PRODUCTS_FILE}")
-    
-    with open(config.PRODUCTS_FILE, 'r', encoding='utf-8') as f:
-        return json.load(f)
-
-# ==================== SENTIMENT ANALYSIS ====================
-
-def classify_sentiment(text):
-    """Simple sentiment classification"""
-    if not text:
-        return 'neutral'
-    
-    text_lower = text.lower()
-    
-    pos_count = sum(1 for word in config.POSITIVE_WORDS if word in text_lower)
-    neg_count = sum(1 for word in config.NEGATIVE_WORDS if word in text_lower)
-    
-    if pos_count > neg_count:
-        return 'positive'
-    elif neg_count > pos_count:
-        return 'negative'
-    return 'neutral'
-
-# ==================== REVIEW SCRAPING ====================
-
-def create_sample_reviews(product_name, brand):
+def scrape_reddit_without_api(product_name, target_subreddits="SUBREDDITS", max_retries=3):
     """
-    Create sample reviews
-    (Replace this with real Reddit scraping later)
+    Searches Reddit using the public .json endpoint.
     """
-    sample_reviews = [
-        {
-            'text': f"I've been using {product_name} for months and it's amazing! Highly recommend.",
-            'subreddit': 'SkincareAddiction',
-            'score': 150,
-            'sentiment': 'positive'
-        },
-        {
-            'text': f"{brand} makes quality products. The {product_name} is gentle and effective.",
-            'subreddit': '30PlusSkinCare',
-            'score': 85,
-            'sentiment': 'positive'
-        },
-        {
-            'text': f"Unfortunately the {product_name} broke me out. YMMV though!",
-            'subreddit': 'SkincareAddiction',
-            'score': 23,
-            'sentiment': 'negative'
-        }
-    ]
-    
-    # Add metadata
     reviews = []
-    for i, review in enumerate(sample_reviews[:config.MAX_REVIEWS_PER_PRODUCT], 1):
-        review['review_id'] = f"r_{hash(product_name)}_{i}"
-        review['url'] = f"https://reddit.com/r/{review['subreddit']}/sample_{i}"
-        review['created_utc'] = int(time.time()) - (i * 86400)
-        review['scraped_at'] = datetime.utcnow().isoformat() + 'Z'
-        reviews.append(review)
+    url = f"https://www.reddit.com/r/{target_subreddits}/search.json"
     
-    return reviews
-
-# ==================== SAVING REVIEWS ====================
-
-def save_reviews(product_id, product_name, brand, reviews):
-    """Save reviews to individual JSON file"""
-    review_file = config.REVIEWS_DIR / f"product_{product_id}.json"
-    
-    # Calculate summary
-    positive = sum(1 for r in reviews if r['sentiment'] == 'positive')
-    negative = sum(1 for r in reviews if r['sentiment'] == 'negative')
-    neutral = len(reviews) - positive - negative
-    
-    review_data = {
-        'product_id': product_id,
-        'product_name': product_name,
-        'brand': brand,
-        'last_updated': datetime.utcnow().isoformat() + 'Z',
-        'total_reviews': len(reviews),
-        'summary': {
-            'positive_count': positive,
-            'negative_count': negative,
-            'neutral_count': neutral
-        },
-        'reviews': reviews
+    # Use a descriptive User-Agent as per Reddit's API rules
+    headers = {
+        "User-Agent": "python:my_product_scraper:v1.0 (by /u/YourRedditUsername)"
     }
     
-    with open(review_file, 'w', encoding='utf-8') as f:
-        json.dump(review_data, f, indent=2, ensure_ascii=False)
-    
-    return review_file
+    params = {
+        "q": f'"{product_name}"',
+        "restrict_sr": "1" if target_subreddits != "all" else "0",
+        "sort": "relevance",
+        "limit": 25  # Increased limit 
+    }
 
-# ==================== MAIN SCRAPING FUNCTION ====================
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(url, headers=headers, params=params, timeout=10)
+            
+            if response.status_code == 429:
+                print(f"  ⚠ Rate limited (Attempt {attempt + 1}/{max_retries}). Sleeping...")
+                time.sleep(10)
+                continue  # Try the request again
+                
+            if response.status_code != 200:
+                print(f"  ⚠ HTTP Error: {response.status_code}")
+                return []
 
-def scrape_all_products(max_products=None, skip_existing=True):
-    """
-    Scrape reviews for all products
+            data = response.json()
+            posts = data.get('data', {}).get('children', [])
+            
+            for post in posts:
+                post_data = post['data']
+                title = post_data.get('title', '').lower()
+                body = post_data.get('selftext', '').lower()
+                
+                # Check BOTH title and body
+                if product_name.lower() in title or product_name.lower() in body:
+                    reviews.append({
+                        'review_id': f"reddit_json_{post_data['id']}",
+                        'title': post_data.get('title', ''),
+                        'text': post_data.get('selftext', ''),
+                        'score': post_data.get('score', 0),
+                        'url': f"https://reddit.com{post_data.get('permalink', '')}",
+                        'scraped_at': datetime.utcnow().isoformat() + 'Z'
+                    })
+
+            return reviews # Success, return the data
+
+        except requests.exceptions.RequestException as e:
+            print(f"  ❌ Request failed: {e}")
+            time.sleep(5) # Brief pause before retry on network error
+
+    print("  ❌ Max retries reached.")
+    return []
+
+
+def scrape_all_products(max_products=None, skip_existing=True, target_subreddits="SUBREDDITS", max_retries=3):
+    stats = {"scraped": 0, "skipped": 0, "errors": 0}
     
-    Args:
-        max_products: Limit number of products (for testing)
-        skip_existing: Skip products that already have reviews
+    target_subs_string = "+".join(config.SUBREDDITS)
     
-    Returns:
-        dict: Statistics about scraping
-    """
-    products = load_products()
+    save_dir = os.path.join("data", "reviews")
+    os.makedirs(save_dir, exist_ok=True)
     
+    try:
+        with open(os.path.join("data", "products", "products.json"), 'r', encoding='utf-16') as f:
+            products = json.load(f)
+    except FileNotFoundError:
+        print("❌ Error: data/products/products.json not found.")
+        return stats
+        
     if max_products:
         products = products[:max_products]
-    
-    print(f"\n{'='*60}")
-    print(f"Starting Reddit review scraping for {len(products)} products")
-    print(f"{'='*60}\n")
-    
-    stats = {'scraped': 0, 'skipped': 0, 'errors': 0}
-    
-    for i, product in enumerate(products, 1):
-        product_id = product['Product_ID']
-        product_name = product['Product_Name']
-        brand = product['Brand']
         
-        # Check if reviews exist
-        review_file = config.REVIEWS_DIR / f"product_{product_id}.json"
-        if skip_existing and review_file.exists():
-            print(f"[{i}/{len(products)}] Skipping {product_name} (already scraped)")
-            stats['skipped'] += 1
-            continue
-        
-        print(f"[{i}/{len(products)}] Scraping: {product_name} ({brand})")
-        
+    for i, product in enumerate(products, start=1):
         try:
-            # Get reviews
-            reviews = create_sample_reviews(product_name, brand)
-            
-            # Save results
-            if reviews:
-                save_reviews(product_id, product_name, brand, reviews)
-                print(f"  ✓ Saved {len(reviews)} reviews")
-                stats['scraped'] += 1
+            if isinstance(product, str):
+                current_product_name = product
+            elif isinstance(product, dict):
+                current_product_name = product.get('Product_Name') or product.get('name') or product.get('product_name')
             else:
-                print(f"  ⚠ No reviews found")
-            
-            # Sleep between products
-            if i < len(products):
-                time.sleep(config.SLEEP_BETWEEN_PRODUCTS)
-        
-        except Exception as e:
-            print(f"  ❌ Error: {e}")
-            stats['errors'] += 1
-    
-    return stats
+                continue
+                
+            if not current_product_name:
+                continue
 
+            # --- NEW: Set the filename using the loop counter ---
+            filepath = os.path.join(save_dir, f"product{i}.json")
+
+            if skip_existing and os.path.exists(filepath):
+                print(f"⏭️ Skipping: {current_product_name} (product{i}.json already exists)")
+                stats['skipped'] += 1
+                continue
+
+            print(f"Scraping: {current_product_name} (Saving as product{i}.json)...")
+
+            reviews = scrape_reddit_without_api(
+                product_name=current_product_name,  
+                target_subreddits=target_subs_string,
+                max_retries=max_retries
+            )
+            
+            if reviews:
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    json.dump(reviews, f, indent=4)
+                print(f"  ✓ Saved {len(reviews)} reviews to {filepath}")
+            else:
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    json.dump([], f)
+                print(f"  ⚠ No reviews found, saved empty file to prevent re-scraping.")
+
+            stats['scraped'] += 1
+            
+            print(f"  Sleeping for {config.SLEEP_BETWEEN_PRODUCTS} seconds...")
+            time.sleep(config.SLEEP_BETWEEN_PRODUCTS)
+            
+        except Exception as e:
+            print(f"  ❌ Error processing {product}: {e}")
+            stats['errors'] += 1
+
+    return stats

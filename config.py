@@ -10,9 +10,13 @@ DATA_DIR = BASE_DIR / "data"
 PRODUCTS_DIR = DATA_DIR / "products"
 PRODUCTS_FILE = PRODUCTS_DIR / "products.json"
 REVIEWS_DIR = DATA_DIR / "reviews"
-SUMMARIES_DIR = DATA_DIR / "summaries"
-EMBEDDINGS_FILE = DATA_DIR / "chunk_embeddings.npy"
-METADATA_FILE = DATA_DIR / "chunk_metadata.json"
+SUMMARIES_DIR = REVIEWS_DIR / "summaries"
+
+EMBED_DIR = DATA_DIR / "embeddings"
+
+INDEX_PATH = EMBED_DIR / "faiss.index"
+CHUNKS_PATH = EMBED_DIR / "chunks.pkl"
+
 CACHE_DIR = DATA_DIR / "cache"
 OUTPUTS_DIR = BASE_DIR / "outputs"
 RESULTS_FILE = OUTPUTS_DIR / "search_results.json"
