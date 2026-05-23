@@ -1,0 +1,29 @@
+{
+  "product_id": "product53",
+  "total_reviews": 2,
+  "avg_reddit_score": 2.0,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 10
+    },
+    {
+      "phrase": "routine",
+      "count": 8
+    },
+    {
+      "phrase": "really",
+      "count": 8
+    },
+    {
+      "phrase": "i've",
+      "count": 8
+    },
+    {
+      "phrase": "products",
+      "count": 7
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment from users is mixed, as they view skincare routines as essential for addressing concerns like acne, wrinkles, and texture but feel overwhelmed by the vast array of available products. Users actively seek guidance on product layering and finding effective, non-irritating solutions for sensitive or combination skin. Common frustrations include negative reactions to specific formulations, such as products feeling too heavy or causing skin sensitivity, leading to a trial-and-error approach to product selection.",
+  "generated_at": "2026-05-23T04:54:00.216309Z"
+}

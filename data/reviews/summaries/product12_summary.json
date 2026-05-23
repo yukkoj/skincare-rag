@@ -1,0 +1,29 @@
+{
+  "product_id": "product12",
+  "total_reviews": 7,
+  "avg_reddit_score": 1.1,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 15
+    },
+    {
+      "phrase": "cerave",
+      "count": 12
+    },
+    {
+      "phrase": "moisturizing",
+      "count": 11
+    },
+    {
+      "phrase": "control",
+      "count": 11
+    },
+    {
+      "phrase": "which",
+      "count": 10
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment regarding the CeraVe Oil Control Moisturizing Gel-Cream is mixed, as users are initially drawn to its well-regarded formulation of ceramides, niacinamide, and hyaluronic acid. While many appreciate its lightweight, ingredient-conscious profile for oily and acne-prone skin, several users report significant irritation and a burning sensation upon application. These negative reactions often occur when the product is used on compromised skin barriers or in climates where the user's skin is unexpectedly dry.",
+  "generated_at": "2026-05-23T04:51:36.571141Z"
+}

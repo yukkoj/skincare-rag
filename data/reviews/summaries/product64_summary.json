@@ -1,0 +1,29 @@
+{
+  "product_id": "product64",
+  "total_reviews": 12,
+  "avg_reddit_score": 9.9,
+  "top_phrases": [
+    {
+      "phrase": "retinol",
+      "count": 25
+    },
+    {
+      "phrase": "cream",
+      "count": 24
+    },
+    {
+      "phrase": "skin",
+      "count": 19
+    },
+    {
+      "phrase": "night",
+      "count": 18
+    },
+    {
+      "phrase": "deep",
+      "count": 15
+    }
+  ],
+  "llm_summary": "The sentiment toward the RoC Retinol Correxion Deep Wrinkle Night Cream is mixed, as users frequently integrate it into their routines for its promising anti-aging benefits and efficacy in treating fine lines. While many value it as a accessible staple for wrinkle prevention, some users report significant irritation, including burning sensations and dryness, particularly when applied to the sensitive skin around the eyes. Consequently, reviewers emphasize the importance of cautious, gradual application to avoid damaging the skin barrier.",
+  "generated_at": "2026-05-23T04:54:38.347149Z"
+}

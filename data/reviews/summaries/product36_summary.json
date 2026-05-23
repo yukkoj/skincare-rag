@@ -1,0 +1,29 @@
+{
+  "product_id": "product36",
+  "total_reviews": 23,
+  "avg_reddit_score": 54.2,
+  "top_phrases": [
+    {
+      "phrase": "innisfree",
+      "count": 89
+    },
+    {
+      "phrase": "it's",
+      "count": 76
+    },
+    {
+      "phrase": "skin",
+      "count": 64
+    },
+    {
+      "phrase": "cream",
+      "count": 63
+    },
+    {
+      "phrase": "green",
+      "count": 58
+    }
+  ],
+  "llm_summary": "Summary: Product36—specifically the Innisfree Green Tea Seed Cream—receives overwhelmingly positive sentiment as a long-standing \"holy grail\" moisturizer. Users praise its ideal texture, effective hydration for dry-combination skin, and its ability to provide a soothing, refreshing experience. The primary complaints are minimal, focusing on the product's lack of a noticeable green tea scent and occasional stock availability issues.",
+  "generated_at": "2026-05-23T04:53:01.411358Z"
+}

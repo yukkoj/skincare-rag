@@ -1,0 +1,29 @@
+{
+  "product_id": "product23",
+  "total_reviews": 9,
+  "avg_reddit_score": 8.0,
+  "top_phrases": [
+    {
+      "phrase": "cream",
+      "count": 34
+    },
+    {
+      "phrase": "skin",
+      "count": 30
+    },
+    {
+      "phrase": "polypeptide",
+      "count": 14
+    },
+    {
+      "phrase": "resurrection",
+      "count": 11
+    },
+    {
+      "phrase": "cocokind",
+      "count": 11
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward the Cocokind Resurrection Polypeptide Cream is mixed, with users frequently praising its hydrating, dewy finish and effective peptide-rich formula as an affordable alternative to high-end moisturizers. However, while some appreciate its texture, others report it lacks sufficient longevity for very dry skin or can cause breakouts and irritation for those with sensitive, acne-prone complexions.",
+  "generated_at": "2026-05-23T04:52:14.928806Z"
+}

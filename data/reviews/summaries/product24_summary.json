@@ -1,0 +1,29 @@
+{
+  "product_id": "product24",
+  "total_reviews": 7,
+  "avg_reddit_score": 10.1,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 21
+    },
+    {
+      "phrase": "list",
+      "count": 21
+    },
+    {
+      "phrase": "inkey",
+      "count": 20
+    },
+    {
+      "phrase": "cream",
+      "count": 19
+    },
+    {
+      "phrase": "tower",
+      "count": 18
+    }
+  ],
+  "llm_summary": "The overall sentiment toward the Tower 28 SOS Recovery Cream is highly positive, with users frequently citing it as a \"holy grail\" product for soothing irritation and reducing redness. While many rely on it for its calming properties and suitability for sensitive or acne-prone skin, a small minority of users reported that the cream caused clogged pores or breakouts. Ultimately, it remains a popular, affordable staple for those seeking a non-irritating moisturizer that effectively supports the skin barrier.",
+  "generated_at": "2026-05-23T04:52:18.440095Z"
+}

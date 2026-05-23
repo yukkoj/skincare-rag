@@ -1,0 +1,29 @@
+{
+  "product_id": "product52",
+  "total_reviews": 6,
+  "avg_reddit_score": 2.5,
+  "top_phrases": [
+    {
+      "phrase": "glow",
+      "count": 18
+    },
+    {
+      "phrase": "skin",
+      "count": 16
+    },
+    {
+      "phrase": "cream",
+      "count": 14
+    },
+    {
+      "phrase": "recipe",
+      "count": 12
+    },
+    {
+      "phrase": "*or*",
+      "count": 10
+    }
+  ],
+  "llm_summary": "Summary: User sentiment toward the Glow Recipe Plum Plump Hyaluronic Cream is generally positive, with many users seeking it out specifically to achieve a dewy, healthy-looking glow. While it is frequently praised for its hydrating properties, some users with sensitive or acne-prone skin are carefully balancing its use alongside other potent actives to avoid potential irritation or dryness.",
+  "generated_at": "2026-05-23T04:53:56.898813Z"
+}

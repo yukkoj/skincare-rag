@@ -1,0 +1,29 @@
+{
+  "product_id": "product28",
+  "total_reviews": 15,
+  "avg_reddit_score": 4.5,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 56
+    },
+    {
+      "phrase": "cream",
+      "count": 34
+    },
+    {
+      "phrase": "cleanser",
+      "count": 33
+    },
+    {
+      "phrase": "water",
+      "count": 26
+    },
+    {
+      "phrase": "moisturizer",
+      "count": 23
+    }
+  ],
+  "llm_summary": "Summary: User sentiment toward the Tatcha Water Cream is mixed, as many praise its lightweight, non-tacky finish that provides effective, comfortable hydration. However, some users find the formula insufficiently moisturizing for drier skin types, while others report concerns regarding its comedogenic potential or price-point, leading them to seek more affordable alternatives.",
+  "generated_at": "2026-05-23T04:52:32.962127Z"
+}

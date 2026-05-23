@@ -1,0 +1,29 @@
+{
+  "product_id": "product60",
+  "total_reviews": 5,
+  "avg_reddit_score": 2.4,
+  "top_phrases": [
+    {
+      "phrase": "face",
+      "count": 12
+    },
+    {
+      "phrase": "cream",
+      "count": 9
+    },
+    {
+      "phrase": "used",
+      "count": 8
+    },
+    {
+      "phrase": "eucerin",
+      "count": 8
+    },
+    {
+      "phrase": "skin",
+      "count": 8
+    }
+  ],
+  "llm_summary": "Summary: Sentiment toward Eucerin Q10 Anti-Wrinkle Face Cream is generally mixed, with users frequently incorporating it into their routines as a reliable staple for hydration and anti-wrinkle maintenance. While many appreciate its accessibility and performance, some users express confusion regarding its classification as an occlusive and seek clarity on where it best fits within their layering order. There are no significant reports of negative skin reactions, though some consumers struggle with determining if it provides enough moisture to replace or supplement other products in their regimens.",
+  "generated_at": "2026-05-23T04:54:24.811694Z"
+}

@@ -1,0 +1,29 @@
+{
+  "product_id": "product50",
+  "total_reviews": 3,
+  "avg_reddit_score": 9.3,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 30
+    },
+    {
+      "phrase": "choice",
+      "count": 26
+    },
+    {
+      "phrase": "\\-paula's",
+      "count": 17
+    },
+    {
+      "phrase": "resist",
+      "count": 12
+    },
+    {
+      "phrase": "paula's",
+      "count": 9
+    }
+  ],
+  "llm_summary": "Summary: Users express a generally positive sentiment toward Paula's Choice products, frequently praising their effectiveness in managing acne, pore appearance, and anti-aging concerns. While customers appreciate the brand's targeted, high-performance solutions, some note that complex regimens or improper usage can lead to over-exfoliation, dryness, and skin sensitivity.",
+  "generated_at": "2026-05-23T04:53:49.953071Z"
+}

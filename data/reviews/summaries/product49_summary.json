@@ -1,0 +1,29 @@
+{
+  "product_id": "product49",
+  "total_reviews": 15,
+  "avg_reddit_score": 3.5,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 45
+    },
+    {
+      "phrase": "moisturizer",
+      "count": 30
+    },
+    {
+      "phrase": "inkey",
+      "count": 24
+    },
+    {
+      "phrase": "list",
+      "count": 23
+    },
+    {
+      "phrase": "peptide",
+      "count": 19
+    }
+  ],
+  "llm_summary": "Summary: The Inkey List Peptide Moisturizer receives a mixed reception, with users appreciating its affordable, simple formula that leaves skin feeling soft and bouncy. However, several reviewers report that the product can be heavy or pore-clogging, noting that it occasionally triggers breakouts or fails to resolve issues for those with highly sensitive, acne-prone skin.",
+  "generated_at": "2026-05-23T04:53:46.686084Z"
+}

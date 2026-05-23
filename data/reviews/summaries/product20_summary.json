@@ -1,0 +1,29 @@
+{
+  "product_id": "product20",
+  "total_reviews": 25,
+  "avg_reddit_score": 94.9,
+  "top_phrases": [
+    {
+      "phrase": "cerave",
+      "count": 48
+    },
+    {
+      "phrase": "healing",
+      "count": 45
+    },
+    {
+      "phrase": "ointment",
+      "count": 34
+    },
+    {
+      "phrase": "skin",
+      "count": 24
+    },
+    {
+      "phrase": "[product",
+      "count": 16
+    }
+  ],
+  "llm_summary": "Overall, sentiment toward the CeraVe Healing Ointment is highly positive, with users frequently praising it as an elite, cost-effective solution for \"slugging\" and locking in deep hydration. Fans specifically highlight its superior formula containing ceramides and hyaluronic acid, which provides long-lasting protection without causing irritation, even around sensitive eye areas. While most experiences are excellent, some users report limited efficacy when attempting to treat persistent conditions like cracked mouth corners, noting that even this occlusive product may not be a universal cure-all.",
+  "generated_at": "2026-05-23T04:52:04.638257Z"
+}

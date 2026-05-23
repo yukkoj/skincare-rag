@@ -1,0 +1,29 @@
+{
+  "product_id": "product59",
+  "total_reviews": 11,
+  "avg_reddit_score": 11.6,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 30
+    },
+    {
+      "phrase": "moisturizer",
+      "count": 22
+    },
+    {
+      "phrase": "naturium",
+      "count": 20
+    },
+    {
+      "phrase": "also",
+      "count": 16
+    },
+    {
+      "phrase": "multi-peptide",
+      "count": 15
+    }
+  ],
+  "llm_summary": "Summary: The sentiment toward the Naturium Multi-Peptide Moisturizer is mixed, with users divided between its lightweight, fast-absorbing texture and its potential to cause adverse reactions. While some appreciate its appealing ingredient list and hydrating properties, others report that it triggered breakouts or caused stinging sensations on sensitive skin. Consequently, individual experiences vary significantly, making it a polarizing choice for those with reactive or acne-prone skin.",
+  "generated_at": "2026-05-23T04:54:21.483308Z"
+}

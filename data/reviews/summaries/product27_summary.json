@@ -1,0 +1,29 @@
+{
+  "product_id": "product27",
+  "total_reviews": 20,
+  "avg_reddit_score": 50.0,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 89
+    },
+    {
+      "phrase": "cream",
+      "count": 47
+    },
+    {
+      "phrase": "tatcha",
+      "count": 32
+    },
+    {
+      "phrase": "serum",
+      "count": 27
+    },
+    {
+      "phrase": "dewy",
+      "count": 27
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward Tatcha’s The Dewy Skin Cream is overwhelmingly positive, with users frequently praising its ability to provide deep hydration and a coveted \"glass skin\" glow. While it is highly favored for repairing skin barriers and improving radiance, some users note its high price point as a potential drawback. It is widely considered a staple, particularly for those struggling with dryness or dullness, and is consistently highlighted as a top-performing moisturizer across various skincare routines.",
+  "generated_at": "2026-05-23T04:52:29.336645Z"
+}

@@ -1,0 +1,29 @@
+{
+  "product_id": "product33",
+  "total_reviews": 23,
+  "avg_reddit_score": 99.9,
+  "top_phrases": [
+    {
+      "phrase": "cream",
+      "count": 163
+    },
+    {
+      "phrase": "skin",
+      "count": 80
+    },
+    {
+      "phrase": "cosrx",
+      "count": 53
+    },
+    {
+      "phrase": "hyaluronic",
+      "count": 49
+    },
+    {
+      "phrase": "acid",
+      "count": 49
+    }
+  ],
+  "llm_summary": "Summary: Users express a highly positive sentiment toward the COSRX Hyaluronic Acid Intensive Cream, frequently praising its deep hydration and soothing properties. While it is particularly celebrated by those with dry, dehydrated, or eczema-prone skin, some users note it may be too rich or occlusive for those preferring a matte finish. Overall, it is widely regarded as an effective, reliable moisturizer for restoring a healthy moisture barrier.",
+  "generated_at": "2026-05-23T04:52:50.426451Z"
+}

@@ -1,0 +1,29 @@
+{
+  "product_id": "product11",
+  "total_reviews": 7,
+  "avg_reddit_score": 1278.4,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 38
+    },
+    {
+      "phrase": "*pros:*",
+      "count": 36
+    },
+    {
+      "phrase": "*cons:*",
+      "count": 34
+    },
+    {
+      "phrase": "cream",
+      "count": 27
+    },
+    {
+      "phrase": "*bottom",
+      "count": 25
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward the La Roche-Posay Cicaplast Baume B5+ is positive, with users frequently praising its exceptional ability to soothe, heal, and repair compromised skin barriers. However, some users report that the thick formula can cause pilling when layered over other products and may clog pores, making it less suitable for those prone to acne or milia.",
+  "generated_at": "2026-05-23T04:51:33.086972Z"
+}

@@ -1,0 +1,29 @@
+{
+  "product_id": "product19",
+  "total_reviews": 19,
+  "avg_reddit_score": 24.9,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 63
+    },
+    {
+      "phrase": "cream",
+      "count": 49
+    },
+    {
+      "phrase": "aestura",
+      "count": 35
+    },
+    {
+      "phrase": "been",
+      "count": 26
+    },
+    {
+      "phrase": "atobarrier365",
+      "count": 25
+    }
+  ],
+  "llm_summary": "The Aestura Atobarrier365 Cream is generally highly regarded as a positive, \"holy grail\" staple for repairing damaged skin barriers and providing deep hydration for dry, sensitive skin types. While users praise its effective, ceramide-rich formula for soothing irritation and preventing dryness, some report mixed experiences regarding recent formula changes involving niacinamide. Additionally, a few users have noted that the texture can occasionally feel slightly greasy, despite its lightweight appearance.",
+  "generated_at": "2026-05-23T04:52:00.904207Z"
+}

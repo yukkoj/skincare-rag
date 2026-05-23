@@ -1,0 +1,29 @@
+{
+  "product_id": "product44",
+  "total_reviews": 20,
+  "avg_reddit_score": 29.4,
+  "top_phrases": [
+    {
+      "phrase": "free.",
+      "count": 84
+    },
+    {
+      "phrase": "essential",
+      "count": 71
+    },
+    {
+      "phrase": "skin",
+      "count": 66
+    },
+    {
+      "phrase": "it's",
+      "count": 64
+    },
+    {
+      "phrase": "fragrance,",
+      "count": 63
+    }
+  ],
+  "llm_summary": "Summary: Reviews for product44 are generally mixed, as users value the \"free-from\" approach—specifically the absence of fragrance, alcohol, and essential oils—which makes many items suitable for sensitive or acne-prone skin. While users appreciate the lightweight, hydrating properties of several toners and creams, common complaints center on ineffective results for specific concerns like cystic acne or hyperpigmentation and frequent dissatisfaction with high price points. Additionally, some users reported issues with product textures, such as greasiness or sticky residue, noting that certain formulations were too heavy or failed to absorb properly for combination skin types.",
+  "generated_at": "2026-05-23T04:53:28.709981Z"
+}

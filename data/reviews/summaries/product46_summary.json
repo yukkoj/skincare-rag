@@ -1,0 +1,29 @@
+{
+  "product_id": "product46",
+  "total_reviews": 12,
+  "avg_reddit_score": 46.8,
+  "top_phrases": [
+    {
+      "phrase": "ultra",
+      "count": 21
+    },
+    {
+      "phrase": "facial",
+      "count": 21
+    },
+    {
+      "phrase": "kiehl's",
+      "count": 20
+    },
+    {
+      "phrase": "cream",
+      "count": 20
+    },
+    {
+      "phrase": "moisturizer",
+      "count": 9
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward Kiehl's Ultra Facial Cream is mixed, as users frequently praise its lightweight, non-greasy texture and highly effective hydrating properties for sensitive skin. However, many customers express frustration over the product's high price point and report significant issues with pilling, while others are actively seeking alternatives due to brand ethical concerns.",
+  "generated_at": "2026-05-23T04:53:35.943603Z"
+}

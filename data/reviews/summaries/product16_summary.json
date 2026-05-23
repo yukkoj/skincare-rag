@@ -1,0 +1,29 @@
+{
+  "product_id": "product16",
+  "total_reviews": 22,
+  "avg_reddit_score": 2.3,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 52
+    },
+    {
+      "phrase": "clinique",
+      "count": 48
+    },
+    {
+      "phrase": "hydrating",
+      "count": 41
+    },
+    {
+      "phrase": "different",
+      "count": 37
+    },
+    {
+      "phrase": "dramatically",
+      "count": 31
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward the Clinique Dramatically Different Hydrating Jelly is mixed, as users frequently praise its ideal lightweight, non-sticky texture and compatibility with sensitive or acne-prone skin. However, many report that the formula lacks sufficient long-term hydration, leading some to seek more effective alternatives or to layer it with other products to combat chronic dehydration. Additionally, some users express concerns regarding the product's long ingredient list and its potential to cause redness or irritation.",
+  "generated_at": "2026-05-23T04:51:50.865940Z"
+}

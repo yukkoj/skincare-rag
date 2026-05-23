@@ -1,0 +1,29 @@
+{
+  "product_id": "product25",
+  "total_reviews": 22,
+  "avg_reddit_score": 11.8,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 80
+    },
+    {
+      "phrase": "cream",
+      "count": 44
+    },
+    {
+      "phrase": "people",
+      "count": 42
+    },
+    {
+      "phrase": "moisture",
+      "count": 31
+    },
+    {
+      "phrase": "also",
+      "count": 31
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment regarding the Youth to the People Adaptogen Deep Moisture Cream is highly positive, with users praising its lightweight, non-greasy texture and its ability to provide deep hydration to a variety of skin types. While most reviewers find it effectively soothing and non-clogging, some users noted that the high price point makes it an expensive investment. A few individuals with specific skin needs mentioned that it can feel slightly too heavy or insufficient depending on their unique moisture requirements.",
+  "generated_at": "2026-05-23T04:52:21.960817Z"
+}

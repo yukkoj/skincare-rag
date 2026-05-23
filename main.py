@@ -12,7 +12,7 @@ def main():
     print("SKINCARE SEARCH PIPELINE")
     print("="*60 + "\n")
     
-    """  
+ 
     # ==================== STEP 1: SCRAPE REVIEWS ====================
     print("="*60)
     print("STEP 1: Scraping Reddit Reviews")
@@ -20,7 +20,7 @@ def main():
     
     try:
         scrape_stats = scraper.scrape_all_products(
-            max_products=10,  # Change to 5 for testing
+            max_products=None,  # Change to 5 for testing
             skip_existing=True,  # Skip products that already have reviews
         )
         
@@ -49,7 +49,7 @@ def main():
     except Exception as e:
         print(f"\n❌ Summarization error: {e}")
         print("Continuing to embeddings...\n")
-    """
+
     # ==================== STEP 3: CREATE EMBEDDINGS ====================
     print("="*60)
     print("STEP 3: Creating Embeddings & Search Index")

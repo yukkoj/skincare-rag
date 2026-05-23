@@ -1,0 +1,29 @@
+{
+  "product_id": "product35",
+  "total_reviews": 24,
+  "avg_reddit_score": 202.0,
+  "top_phrases": [
+    {
+      "phrase": "dynasty",
+      "count": 35
+    },
+    {
+      "phrase": "beauty",
+      "count": 30
+    },
+    {
+      "phrase": "joseon",
+      "count": 30
+    },
+    {
+      "phrase": "cream",
+      "count": 30
+    },
+    {
+      "phrase": "skin",
+      "count": 13
+    }
+  ],
+  "llm_summary": "The overall sentiment toward the Beauty of Joseon Dynasty Cream is overwhelmingly positive, with many users identifying it as a \"holy grail\" product for their routines. Fans consistently praise its ability to deeply moisturize and soothe sensitive skin, making it a reliable staple alongside active treatments like tretinoin. Users report virtually no adverse reactions, noting that its gentle, hydrating formula effectively supports skin barrier recovery without causing irritation.",
+  "generated_at": "2026-05-23T04:52:57.724105Z"
+}

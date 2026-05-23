@@ -1,0 +1,29 @@
+{
+  "product_id": "product48",
+  "total_reviews": 20,
+  "avg_reddit_score": 115.9,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 97
+    },
+    {
+      "phrase": "free.",
+      "count": 84
+    },
+    {
+      "phrase": "it's",
+      "count": 73
+    },
+    {
+      "phrase": "essential",
+      "count": 73
+    },
+    {
+      "phrase": "fragrance,",
+      "count": 63
+    }
+  ],
+  "llm_summary": "The overall sentiment toward *The Ordinary Natural Moisturizing Factors + HA* is highly positive, with users frequently identifying it as an essential, budget-friendly \"holy grail\" moisturizer. Fans love its simple, effective formula that provides reliable hydration without the use of irritating fragrances or essential oils. While it is widely praised as a staple, some users with specific skin concerns or severe barrier damage note that it is a basic product and may not be sufficient on its own to resolve complex skin issues.",
+  "generated_at": "2026-05-23T04:53:43.199156Z"
+}

@@ -1,0 +1,29 @@
+{
+  "product_id": "product72",
+  "total_reviews": 1,
+  "avg_reddit_score": 0.0,
+  "top_phrases": [
+    {
+      "phrase": "origins",
+      "count": 4
+    },
+    {
+      "phrase": "moisturizer",
+      "count": 3
+    },
+    {
+      "phrase": "retinol",
+      "count": 3
+    },
+    {
+      "phrase": "routine",
+      "count": 3
+    },
+    {
+      "phrase": "would",
+      "count": 3
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment regarding the Origins moisturizer is negative due to a recent formula change. While the user previously relied on the product for their routine, the new formulation is now cited as the direct cause of breakouts and whiteheads on their cheeks.",
+  "generated_at": "2026-05-23T04:55:04.522487Z"
+}

@@ -1,0 +1,29 @@
+{
+  "product_id": "product29",
+  "total_reviews": 3,
+  "avg_reddit_score": 1.3,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 13
+    },
+    {
+      "phrase": "tatcha",
+      "count": 10
+    },
+    {
+      "phrase": "cream",
+      "count": 10
+    },
+    {
+      "phrase": "acid",
+      "count": 9
+    },
+    {
+      "phrase": "different",
+      "count": 8
+    }
+  ],
+  "llm_summary": "Summary: Sentiment toward Tatcha’s The Silk Cream is mixed, as users value its exceptional ability to provide deep, long-lasting hydration for dry skin. However, some users experience irritation or a burning sensation upon application, leading many to seek more affordable alternatives. Others find that while it remains a staple in their rotation, it can be difficult to justify the high price point compared to other options.",
+  "generated_at": "2026-05-23T04:52:36.207415Z"
+}

@@ -1,0 +1,29 @@
+{
+  "product_id": "product39",
+  "total_reviews": 1,
+  "avg_reddit_score": 6.0,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 21
+    },
+    {
+      "phrase": "anti-aging",
+      "count": 9
+    },
+    {
+      "phrase": "transformative",
+      "count": 7
+    },
+    {
+      "phrase": "other",
+      "count": 7
+    },
+    {
+      "phrase": "texture",
+      "count": 7
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward these luxury moisturizers is overwhelmingly positive, with users consistently praising their transformative effects on skin texture, hydration, and anti-aging. Reviewers highlight visible improvements in firmness, radiance, and fine lines, viewing these products as effective, albeit indulgent, investments in skin health. No specific complaints or adverse skin reactions were noted in the analyzed reviews.",
+  "generated_at": "2026-05-23T04:53:11.377799Z"
+}

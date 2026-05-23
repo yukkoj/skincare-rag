@@ -1,0 +1,29 @@
+{
+  "product_id": "product26",
+  "total_reviews": 20,
+  "avg_reddit_score": 59.4,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 64
+    },
+    {
+      "phrase": "cream",
+      "count": 60
+    },
+    {
+      "phrase": "drunk",
+      "count": 32
+    },
+    {
+      "phrase": "elephant",
+      "count": 31
+    },
+    {
+      "phrase": "moisturizer",
+      "count": 29
+    }
+  ],
+  "llm_summary": "The overall sentiment toward the Drunk Elephant Protini Polypeptide Cream is mixed, with users frequently praising its lightweight, smooth texture while expressing concern over its high price point. Many appreciate its performance as a non-irritating moisturizer, particularly for those with sensitive or damaged skin barriers, though some users report it may be ineffective or potentially pore-clogging depending on individual skin sensitivities. Consequently, the product is often viewed as a high-quality but expensive staple, leading many consumers to actively seek more affordable alternatives that offer a similar finish.",
+  "generated_at": "2026-05-23T04:52:25.648761Z"
+}

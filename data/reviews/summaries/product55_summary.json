@@ -1,0 +1,29 @@
+{
+  "product_id": "product55",
+  "total_reviews": 22,
+  "avg_reddit_score": 12.2,
+  "top_phrases": [
+    {
+      "phrase": "skin",
+      "count": 78
+    },
+    {
+      "phrase": "cream",
+      "count": 63
+    },
+    {
+      "phrase": "moisturizing",
+      "count": 41
+    },
+    {
+      "phrase": "belif",
+      "count": 36
+    },
+    {
+      "phrase": "bomb",
+      "count": 35
+    }
+  ],
+  "llm_summary": "Summary: The overall sentiment toward Belif The True Cream Moisturizing Bomb is highly positive, with users frequently praising its ability to leave skin feeling soft, supple, and deeply hydrated. While reviewers appreciate its quick absorption and gentle, soothing formula, some note that it may not be moisturizing enough for severely dry skin during winter months. Additionally, users with oily or combination skin generally find it effective, though a few point out that the price point is relatively high.",
+  "generated_at": "2026-05-23T04:54:07.534331Z"
+}
