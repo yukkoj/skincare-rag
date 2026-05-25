@@ -1,176 +1,562 @@
 [
   {
-    "timestamp": "2026-05-24T23:45:23.536627",
-    "query": "nourishing cream for aged skin for daytime without fregrance",
-    "results": [
-      [
-        39,
-        0.8247567415237427
-      ],
-      [
-        64,
-        0.8493151664733887
-      ],
-      [
-        13,
-        0.8636544942855835
-      ],
-      [
-        30,
-        0.873178243637085
-      ],
-      [
-        25,
-        0.9011098146438599
-      ],
-      [
-        55,
-        0.9123721122741699
-      ],
-      [
-        33,
-        0.9322965741157532
-      ],
-      [
-        65,
-        0.9324167966842651
-      ],
-      [
-        24,
-        0.9591325521469116
-      ],
-      [
-        8,
-        0.9614061713218689
-      ],
-      [
-        50,
-        0.9682282209396362
-      ],
-      [
-        47,
-        0.9721640348434448
-      ],
-      [
-        60,
-        0.9825109839439392
-      ],
-      [
-        53,
-        0.9879513382911682
-      ],
-      [
-        45,
-        0.9908190965652466
-      ],
-      [
-        71,
-        0.9939586520195007
-      ],
-      [
-        66,
-        0.9941571354866028
-      ],
-      [
-        10,
-        0.9996449947357178
-      ],
-      [
-        69,
-        1.0022895336151123
-      ],
-      [
-        2,
-        1.0024957656860352
-      ]
+    "timestamp": "2026-05-25T00:11:18.270892",
+    "query": "luxurious rich cream for aged skin",
+    "top_products": [
+      {
+        "product_id": 30,
+        "name": "Tatcha Ageless Enriching Renewal Cream",
+        "distance": 0.7355
+      },
+      {
+        "product_id": 39,
+        "name": "SK-II R.N.A. Power Radical New Age Cream",
+        "distance": 0.7583
+      },
+      {
+        "product_id": 25,
+        "name": "Youth To The People Adaptogen Deep Moisture Cream",
+        "distance": 0.7889
+      },
+      {
+        "product_id": 29,
+        "name": "Tatcha The Silk Cream",
+        "distance": 0.836
+      },
+      {
+        "product_id": 33,
+        "name": "COSRX Hyaluronic Acid Intensive Cream",
+        "distance": 0.8465
+      },
+      {
+        "product_id": 56,
+        "name": "IT Cosmetics Confidence in a Cream",
+        "distance": 0.8565
+      },
+      {
+        "product_id": 13,
+        "name": "Olay Regenerist Micro-Sculpting Cream",
+        "distance": 0.877
+      },
+      {
+        "product_id": 55,
+        "name": "Belif The True Cream Moisturizing Bomb",
+        "distance": 0.8791
+      },
+      {
+        "product_id": 45,
+        "name": "First Aid Beauty Ultra Repair Cream",
+        "distance": 0.8818
+      },
+      {
+        "product_id": 27,
+        "name": "Tatcha The Dewy Skin Cream",
+        "distance": 0.8863
+      },
+      {
+        "product_id": 65,
+        "name": "Garnier SkinActive Moisture Rescue Refreshing Gel-Cream",
+        "distance": 0.8926
+      },
+      {
+        "product_id": 64,
+        "name": "RoC Retinol Correxion Deep Wrinkle Night Cream",
+        "distance": 0.8982
+      },
+      {
+        "product_id": 41,
+        "name": "La Mer The Moisturizing Soft Cream",
+        "distance": 0.9027
+      },
+      {
+        "product_id": 10,
+        "name": "e.l.f. Holy Hydration! Face Cream",
+        "distance": 0.9067
+      },
+      {
+        "product_id": 69,
+        "name": "Shiseido Benefiance Wrinkle Smoothing Cream",
+        "distance": 0.9069
+      },
+      {
+        "product_id": 24,
+        "name": "Tower 28 SOS Recovery Cream",
+        "distance": 0.9128
+      },
+      {
+        "product_id": 66,
+        "name": "L'Oreal Paris Revitalift Triple Power Anti-Aging Moisturizer",
+        "distance": 0.9165
+      },
+      {
+        "product_id": 47,
+        "name": "Kiehl's Ultra Facial Oil-Free Gel Cream",
+        "distance": 0.9376
+      },
+      {
+        "product_id": 60,
+        "name": "Eucerin Q10 Anti-Wrinkle Face Cream",
+        "distance": 0.9398
+      },
+      {
+        "product_id": 23,
+        "name": "Cocokind Resurrection Polypeptide Cream",
+        "distance": 0.9413
+      }
     ],
-    "ai_response": "Hello! Looking for a fragrance-free, nourishing cream for aged skin to use during the daytime is a fantastic way to care for your skin. I've analyzed a selection of products and found three excellent options that truly stand out for your needs:\n\nHere are our top three recommendations, chosen for their nourishing qualities, suitability for aged skin, and fragrance-free formulas:\n\n*   **Paula's Choice RESIST Anti-Aging Clear Skin Hydrator** - $37.00\n    This lightweight hydrator is specifically designed for aging skin and is completely fragrance-free, making it an ideal daytime choice. It's packed with beneficial ingredients like Niacinamide, Ceramides, and Antioxidants, which are known to improve skin tone, strengthen the skin barrier, and protect against environmental damage. Users consistently praise its effectiveness in managing anti-aging concerns, confirming it offers the nourishment mature skin needs without feeling heavy.\n\n*   **Eucerin Q10 Anti-Wrinkle Face Cream** - $17.00\n    An excellent and affordable option, this anti-wrinkle cream is fragrance-free and formulated specifically for dry, aging skin. Its key ingredients, Coenzyme Q10, Vitamin E, and Beta-Carotene, are powerful antioxidants that work together to help reduce the appearance of wrinkles and maintain overall skin health. Customers consider it a reliable staple for providing hydration and supporting anti-wrinkle maintenance, fitting perfectly into a nourishing daytime routine for aged skin.\n\n*   **First Aid Beauty Ultra Repair Cream** - $36.00\n    While not explicitly labeled \"anti-aging,\" this rich, fragrance-free cream is a powerhouse for nourishing aged and sensitive skin types, which often benefit from intense hydration. With hero ingredients such as Colloidal Oatmeal, Shea Butter, Ceramides, and Allantoin, it provides deep, non-irritating hydration and significantly strengthens the skin barrier. Users frequently describe it as a \"holy grail\" for soothing dry, dehydrated, and compromised skin, ensuring your skin feels deeply nourished and comfortable throughout the day.\n\nWe hope these recommendations help you discover the perfect nourishing cream for your daytime routine! Feel free to explore these options further to find your ideal match."
+    "ai_response": "Hello! You're looking for a luxurious rich cream specifically formulated for aged skin, and I can certainly help you find some excellent options.\n\nHere are our top three recommendations that perfectly match your needs:\n\n1.  **SK-II R.N.A. Power Radical New Age Cream** - Price USD: 195\n    This cream is an excellent match, known for its \"luxe cream\" texture and its direct focus as an \"Anti-Aging Moisturizer\" for \"Aging\" skin. Users consistently praise its \"transformative effects on skin texture, hydration, and anti-aging,\" noting \"visible improvements in firmness, radiance, and fine lines.\" Key ingredients like Pitera™ and InfinitPower Technology work to combat signs of aging, making it a luxurious and effective choice for mature skin.\n\n2.  **La Mer The Moisturizing Soft Cream** - Price USD: 385\n    For the ultimate luxurious experience, La Mer's Soft Cream delivers. It falls under the \"Luxury Moisturizer\" category with a \"Soft cream\" texture that is both rich and indulgent. While its customer consensus is general across various products, it highlights \"hydrating and plumping effects\" found in their 'Holy Grail' items, which this cream embodies. Its iconic Miracle Broth™ and marine actives are renowned for deeply hydrating and rejuvenating the skin, providing a truly opulent anti-aging treatment.\n\n3.  **Shiseido Benefiance Wrinkle Smoothing Cream** - Price USD: 98\n    This Shiseido cream is an ideal contender for its \"rich, luxurious texture\" and \"potential for long-term anti-aging benefits,\" as highlighted by customer consensus. Categorized as an \"Anti-Aging Moisturizer\" specifically for \"Aging\" skin, it features advanced ingredients like ReNeura Technology+™ and KOMBU-Bounce Complex designed to visibly smooth wrinkles and improve skin's resilience. It offers a luxurious feel combined with powerful anti-aging performance.\n\nWe hope this helps you discover the perfect cream to pamper your skin! Feel free to explore these luxurious options further."
   },
   {
-    "timestamp": "2026-05-24T23:47:45.878767",
-    "query": "luxurious anti-aging/ aged skin fragrance-free ",
-    "results": [
-      [
-        39,
-        0.757047712802887
-      ],
-      [
-        50,
-        0.8101027011871338
-      ],
-      [
-        66,
-        0.8591037392616272
-      ],
-      [
-        9,
-        0.8709094524383545
-      ],
-      [
-        43,
-        0.8778667449951172
-      ],
-      [
-        58,
-        0.887636661529541
-      ],
-      [
-        69,
-        0.890099048614502
-      ],
-      [
-        30,
-        0.8903354406356812
-      ],
-      [
-        2,
-        0.8991669416427612
-      ],
-      [
-        29,
-        0.9270462393760681
-      ],
-      [
-        64,
-        0.9398292303085327
-      ],
-      [
-        10,
-        0.9415103197097778
-      ],
-      [
-        56,
-        0.9430973529815674
-      ],
-      [
-        65,
-        0.9583251476287842
-      ],
-      [
-        5,
-        0.9610432386398315
-      ],
-      [
-        75,
-        0.9679166078567505
-      ],
-      [
-        60,
-        0.9690213203430176
-      ],
-      [
-        25,
-        0.9766625165939331
-      ],
-      [
-        55,
-        0.9897947907447815
-      ],
-      [
-        13,
-        0.9953315854072571
+    "timestamp": "2026-05-25 00:18:33",
+    "query": "luxurious fragrance-free rich cream for nighttime and anti-aging",
+    "metrics": {
+      "unique_products_found": 20,
+      "top_matches": [
+        {
+          "product_id": 64,
+          "name": "RoC Retinol Correxion Deep Wrinkle Night Cream",
+          "distance": 0.6981
+        },
+        {
+          "product_id": 39,
+          "name": "SK-II R.N.A. Power Radical New Age Cream",
+          "distance": 0.7524
+        },
+        {
+          "product_id": 55,
+          "name": "Belif The True Cream Moisturizing Bomb",
+          "distance": 0.837
+        },
+        {
+          "product_id": 33,
+          "name": "COSRX Hyaluronic Acid Intensive Cream",
+          "distance": 0.8554
+        },
+        {
+          "product_id": 66,
+          "name": "L'Oreal Paris Revitalift Triple Power Anti-Aging Moisturizer",
+          "distance": 0.8667
+        },
+        {
+          "product_id": 29,
+          "name": "Tatcha The Silk Cream",
+          "distance": 0.8717
+        },
+        {
+          "product_id": 30,
+          "name": "Tatcha Ageless Enriching Renewal Cream",
+          "distance": 0.8771
+        },
+        {
+          "product_id": 2,
+          "name": "Vanicream Daily Facial Moisturizer",
+          "distance": 0.88
+        },
+        {
+          "product_id": 69,
+          "name": "Shiseido Benefiance Wrinkle Smoothing Cream",
+          "distance": 0.8814
+        },
+        {
+          "product_id": 25,
+          "name": "Youth To The People Adaptogen Deep Moisture Cream",
+          "distance": 0.8837
+        },
+        {
+          "product_id": 56,
+          "name": "IT Cosmetics Confidence in a Cream",
+          "distance": 0.884
+        },
+        {
+          "product_id": 43,
+          "name": "Estee Lauder Revitalizing Supreme+ Youth Power Creme",
+          "distance": 0.89
+        },
+        {
+          "product_id": 50,
+          "name": "Paula's Choice RESIST Anti-Aging Clear Skin Hydrator",
+          "distance": 0.9132
+        },
+        {
+          "product_id": 65,
+          "name": "Garnier SkinActive Moisture Rescue Refreshing Gel-Cream",
+          "distance": 0.9226
+        },
+        {
+          "product_id": 10,
+          "name": "e.l.f. Holy Hydration! Face Cream",
+          "distance": 0.9247
+        },
+        {
+          "product_id": 61,
+          "name": "Derma E Hydrating Day Cream",
+          "distance": 0.9281
+        },
+        {
+          "product_id": 42,
+          "name": "Estee Lauder Advanced Night Repair Intensive Recovery Ampoules",
+          "distance": 0.9292
+        },
+        {
+          "product_id": 58,
+          "name": "Dieux Instant Angel Moisturizer",
+          "distance": 0.935
+        },
+        {
+          "product_id": 71,
+          "name": "Fresh Black Tea Age-Delay Cream",
+          "distance": 0.9396
+        },
+        {
+          "product_id": 54,
+          "name": "Belif The True Cream Aqua Bomb",
+          "distance": 0.9406
+        }
       ]
+    },
+    "response_body": "Hello! I understand you're looking for a luxurious, fragrance-free, rich cream for nighttime and anti-aging.\n\nAfter reviewing the available products, it appears there isn't a single option that perfectly matches all your criteria, particularly the combination of \"fragrance-free\" with \"luxurious,\" \"rich cream,\" and \"explicitly anti-aging\" benefits. However, I've identified three excellent fragrance-free creams that come closest to your needs, each with slightly different strengths:\n\n1.  **COSRX Hyaluronic Acid Intensive Cream - $24**\n    This cream is an excellent match for your desire for a **fragrance-free rich cream**. Users consistently praise its \"deep hydration\" and some even note it can be \"too rich or occlusive,\" which aligns perfectly with a \"rich cream\" texture suitable for nighttime. While not explicitly marketed as an anti-aging cream, its key ingredient, **Hyaluronic Acid**, is highly effective at plumping the skin and reducing the appearance of fine lines and wrinkles through intense hydration, thereby supporting anti-aging goals. What it's missing: It is a more budget-friendly option and not considered a \"luxurious\" product in terms of brand perception or price.\n\n2.  **Paula's Choice RESIST Anti-Aging Clear Skin Hydrator - $37**\n    If **fragrance-free** and **anti-aging** are your top priorities, this product is a strong contender. Its name explicitly states \"Anti-Aging,\" and it contains potent ingredients like **Niacinamide, Ceramides, and Antioxidants**, all known for their benefits in combating signs of aging. It's also suitable for nighttime use. What it's missing: This product is described as a \"lightweight lotion,\" which doesn't fit your preference for a \"rich cream\" texture, nor is it categorized as a \"luxurious\" item.\n\n3.  **Dieux Instant Angel Moisturizer - $45**\n    This option offers a **fragrance-free** formula with a focus on deep, lasting hydration that contributes to a \"healthy glow,\" which can certainly enhance a youthful appearance. Ingredients like **Squalane** provide excellent moisturizing benefits. Its modern brand and slightly higher price point compared to the other fragrance-free options might appeal more to the \"luxurious\" aspect, even if it's not high-end. What it's missing: The texture is a \"gel-cream,\" which is generally lighter than a \"rich cream,\" and it's not explicitly marketed for its direct anti-aging properties.\n\nI hope these recommendations help you find a suitable addition to your nighttime skincare routine! Feel free to explore these options further to see which best fits your preferences."
+  },
+  {
+    "timestamp": "2026-05-25 00:26:24",
+    "query": "fragrance free rich cream for aged skin or anti-aging ingreadients like retinol.",
+    "results_summary": [
+      {
+        "product_id": 64,
+        "name": "RoC Retinol Correxion Deep Wrinkle Night Cream",
+        "distance": 0.656
+      },
+      {
+        "product_id": 39,
+        "name": "SK-II R.N.A. Power Radical New Age Cream",
+        "distance": 0.8065
+      },
+      {
+        "product_id": 66,
+        "name": "L'Oreal Paris Revitalift Triple Power Anti-Aging Moisturizer",
+        "distance": 0.8528
+      },
+      {
+        "product_id": 69,
+        "name": "Shiseido Benefiance Wrinkle Smoothing Cream",
+        "distance": 0.8577
+      },
+      {
+        "product_id": 30,
+        "name": "Tatcha Ageless Enriching Renewal Cream",
+        "distance": 0.8596
+      },
+      {
+        "product_id": 45,
+        "name": "First Aid Beauty Ultra Repair Cream",
+        "distance": 0.8937
+      },
+      {
+        "product_id": 13,
+        "name": "Olay Regenerist Micro-Sculpting Cream",
+        "distance": 0.9129
+      },
+      {
+        "product_id": 29,
+        "name": "Tatcha The Silk Cream",
+        "distance": 0.9414
+      },
+      {
+        "product_id": 60,
+        "name": "Eucerin Q10 Anti-Wrinkle Face Cream",
+        "distance": 0.9443
+      },
+      {
+        "product_id": 50,
+        "name": "Paula's Choice RESIST Anti-Aging Clear Skin Hydrator",
+        "distance": 0.9523
+      },
+      {
+        "product_id": 7,
+        "name": "CeraVe Moisturizing Cream",
+        "distance": 0.9549
+      },
+      {
+        "product_id": 71,
+        "name": "Fresh Black Tea Age-Delay Cream",
+        "distance": 0.9557
+      },
+      {
+        "product_id": 43,
+        "name": "Estee Lauder Revitalizing Supreme+ Youth Power Creme",
+        "distance": 0.9625
+      },
+      {
+        "product_id": 25,
+        "name": "Youth To The People Adaptogen Deep Moisture Cream",
+        "distance": 0.963
+      },
+      {
+        "product_id": 56,
+        "name": "IT Cosmetics Confidence in a Cream",
+        "distance": 0.976
+      },
+      {
+        "product_id": 9,
+        "name": "Aveeno Daily Moisturizing Lotion",
+        "distance": 0.9776
+      },
+      {
+        "product_id": 55,
+        "name": "Belif The True Cream Moisturizing Bomb",
+        "distance": 0.9797
+      },
+      {
+        "product_id": 47,
+        "name": "Kiehl's Ultra Facial Oil-Free Gel Cream",
+        "distance": 0.9852
+      },
+      {
+        "product_id": 65,
+        "name": "Garnier SkinActive Moisture Rescue Refreshing Gel-Cream",
+        "distance": 0.9874
+      },
+      {
+        "product_id": 10,
+        "name": "e.l.f. Holy Hydration! Face Cream",
+        "distance": 0.9899
+      }
     ],
-    "ai_response": "We understand you're looking for luxurious, anti-aging, fragrance-free skincare options for aged skin, and we've found two excellent choices for you.\n\nHere are our top recommendations that best align with your needs:\n\n1.  **Paula's Choice RESIST Anti-Aging Clear Skin Hydrator** - $37.00\n    This lightweight lotion is an excellent choice for aging skin, especially if you have oily or acne-prone concerns, as it is completely **fragrance-free**. It's packed with key ingredients like **Niacinamide**, **Ceramides**, and **Antioxidants** which are crucial for combating signs of aging. Users consistently praise Paula's Choice for its \"targeted, high-performance solutions\" and \"effectiveness in managing anti-aging concerns,\" offering a luxurious experience through its proven efficacy.\n\n2.  **Eucerin Q10 Anti-Wrinkle Face Cream** - $17.00\n    A reliable and effective anti-aging option, this cream is **fragrance-free** and specifically formulated for dry and aging skin. Its powerful ingredients include **Coenzyme Q10**, **Vitamin E**, and **Beta-Carotene**, which work together to reduce the appearance of wrinkles. Customers consider it a \"reliable staple for hydration and anti-wrinkle maintenance,\" making it a strong contender for its straightforward, effective approach to aged skin without unnecessary additives.\n\nWe hope these suggestions help you discover the perfect luxurious, anti-aging, and fragrance-free product for your skin!"
+    "ai_response_paragraphs": [
+      "Hello! I'd be happy to help you find a fragrance-free rich cream for aged skin with anti-aging ingredients like retinol.",
+      "While we found several excellent fragrance-free rich creams ideal for aged skin, it's important to note that none of the available options directly combine a rich, fragrance-free texture with retinol. However, we have identified products that offer potent anti-aging ingredients or deep hydration and barrier support, making them excellent choices for addressing the needs of aged skin.",
+      "Here are our top 3 recommendations that best match your preferences:",
+      "1.  **Eucerin Q10 Anti-Wrinkle Face Cream - $17**\n    This cream is an excellent choice for aged skin, as it is completely fragrance-free and has a classic cream texture, ideal for 'Dry' and 'Aging' skin types. While it doesn't contain retinol, it features Coenzyme Q10 and Vitamin E, which are powerful antioxidants known for their anti-aging and skin-protective benefits. Users often consider it a \"reliable staple for hydration and anti-wrinkle maintenance,\" appreciating its performance and accessibility in their routines.",
+      "2.  **CeraVe Moisturizing Cream - $19**\n    For a truly rich and fragrance-free experience, the CeraVe Moisturizing Cream is a fantastic option. Its rich cream texture is ideal for 'Dry' to 'Very Dry' skin, providing intense hydration crucial for aged skin. While it doesn't contain retinol, it's packed with essential Ceramides and Hyaluronic Acid, which are vital for repairing the skin barrier and retaining moisture. Users frequently praise its effectiveness in \"calming skin alongside treatments like Tretinoin,\" making it a perfect base if you choose to incorporate a separate retinol serum into your routine.",
+      "3.  **First Aid Beauty Ultra Repair Cream - $36**\n    This \"Rich cream\" is a go-to for many, and it's completely fragrance-free, making it perfect for sensitive or aged skin. Its formula, featuring Colloidal Oatmeal, Shea Butter, Ceramides, and Allantoin, is designed to deeply hydrate, soothe, and strengthen a compromised skin barrier. While it doesn't feature explicit anti-aging actives like retinol, maintaining a healthy, hydrated skin barrier is fundamental for reducing the appearance of aging and allowing other anti-aging treatments (like a separate retinol product) to work more effectively without irritation. It's widely considered a \"holy grail\" for those needing reliable, non-irritating moisture.",
+      "We encourage you to explore these options further to find the perfect cream for your skincare routine!"
+    ]
+  },
+  {
+    "timestamp": "2026-05-25 00:37:18",
+    "query": "nourishing cream for aged skin, fragrance free",
+    "results_summary": [
+      {
+        "product_id": 39,
+        "name": "SK-II R.N.A. Power Radical New Age Cream",
+        "distance": 0.6785
+      },
+      {
+        "product_id": 30,
+        "name": "Tatcha Ageless Enriching Renewal Cream",
+        "distance": 0.7487
+      },
+      {
+        "product_id": 50,
+        "name": "Paula's Choice RESIST Anti-Aging Clear Skin Hydrator",
+        "distance": 0.8069
+      },
+      {
+        "product_id": 13,
+        "name": "Olay Regenerist Micro-Sculpting Cream",
+        "distance": 0.8256
+      },
+      {
+        "product_id": 71,
+        "name": "Fresh Black Tea Age-Delay Cream",
+        "distance": 0.8382
+      },
+      {
+        "product_id": 29,
+        "name": "Tatcha The Silk Cream",
+        "distance": 0.8396
+      },
+      {
+        "product_id": 25,
+        "name": "Youth To The People Adaptogen Deep Moisture Cream",
+        "distance": 0.8477
+      },
+      {
+        "product_id": 66,
+        "name": "L'Oreal Paris Revitalift Triple Power Anti-Aging Moisturizer",
+        "distance": 0.8483
+      },
+      {
+        "product_id": 2,
+        "name": "Vanicream Daily Facial Moisturizer",
+        "distance": 0.8636
+      },
+      {
+        "product_id": 64,
+        "name": "RoC Retinol Correxion Deep Wrinkle Night Cream",
+        "distance": 0.8674
+      },
+      {
+        "product_id": 55,
+        "name": "Belif The True Cream Moisturizing Bomb",
+        "distance": 0.8712
+      },
+      {
+        "product_id": 65,
+        "name": "Garnier SkinActive Moisture Rescue Refreshing Gel-Cream",
+        "distance": 0.8817
+      },
+      {
+        "product_id": 69,
+        "name": "Shiseido Benefiance Wrinkle Smoothing Cream",
+        "distance": 0.8843
+      },
+      {
+        "product_id": 56,
+        "name": "IT Cosmetics Confidence in a Cream",
+        "distance": 0.8897
+      },
+      {
+        "product_id": 9,
+        "name": "Aveeno Daily Moisturizing Lotion",
+        "distance": 0.8905
+      },
+      {
+        "product_id": 60,
+        "name": "Eucerin Q10 Anti-Wrinkle Face Cream",
+        "distance": 0.8942
+      },
+      {
+        "product_id": 24,
+        "name": "Tower 28 SOS Recovery Cream",
+        "distance": 0.896
+      },
+      {
+        "product_id": 58,
+        "name": "Dieux Instant Angel Moisturizer",
+        "distance": 0.9104
+      },
+      {
+        "product_id": 59,
+        "name": "Naturium Multi-Peptide Moisturizer",
+        "distance": 0.913
+      },
+      {
+        "product_id": 45,
+        "name": "First Aid Beauty Ultra Repair Cream",
+        "distance": 0.9157
+      }
+    ],
+    "ai_response_paragraphs": [
+      "Hello! I'd be happy to help you find a nourishing, fragrance-free cream for aged skin.",
+      "Here are our top three recommendations that best match your needs:",
+      "**Eucerin Q10 Anti-Wrinkle Face Cream - USD 17**\nThis cream is an excellent choice as it directly addresses your needs for aged skin. It is explicitly designed as an \"Anti-Aging Moisturizer\" with a rich \"Cream\" texture, making it highly nourishing. Importantly, it is completely \"Fragrance Free.\" Its key ingredients, Coenzyme Q10, Vitamin E, and Beta-Carotene, are powerful antioxidants known to help reduce the appearance of wrinkles and fine lines. Customers frequently use it as a reliable staple for hydration and anti-wrinkle maintenance, without significant reports of negative skin reactions, highlighting its suitability for sensitive, aging skin.",
+      "**First Aid Beauty Ultra Repair Cream - USD 36**\nFor deep nourishment, the First Aid Beauty Ultra Repair Cream is a standout. It boasts a \"Rich cream\" texture and is certified \"Fragrance Free,\" making it ideal for sensitive and dry skin types often associated with aging. While not explicitly named \"anti-aging,\" its formulation with Colloidal Oatmeal, Shea Butter, and Ceramides is incredibly nourishing, deeply hydrating, and works to soothe and repair compromised skin barriers. Users consistently praise it as a \"holy grail\" product for calming dry, dehydrated skin, making it a perfect match for aged skin needing intensive moisture and comfort.",
+      "**Naturium Multi-Peptide Moisturizer - USD 20**\nThe Naturium Multi-Peptide Moisturizer is a \"Cream\" that is also \"Fragrance Free\" and specifically targets \"Aging\" skin. It's formulated with a powerful blend of 6 types of Peptides, Ceramides, Vitamin E, and Niacinamide, all fantastic ingredients for nourishing aged skin, improving elasticity, and addressing signs of aging. While customer consensus is mixed with some reporting sensitivity, many appreciate its hydrating properties and the robust anti-aging ingredient list that supports overall skin health.",
+      "I hope these recommendations help you discover a wonderful new cream for your skincare routine!"
+    ]
+  },
+  {
+    "timestamp": "2026-05-25 00:42:39",
+    "query": "cream with shea butter and aloe vera and beeswax",
+    "results_summary": [
+      {
+        "product_id": 55,
+        "name": "Belif The True Cream Moisturizing Bomb",
+        "distance": 0.8428
+      },
+      {
+        "product_id": 51,
+        "name": "Versed Dew Point Moisturizing Gel-Cream",
+        "distance": 0.8709
+      },
+      {
+        "product_id": 45,
+        "name": "First Aid Beauty Ultra Repair Cream",
+        "distance": 0.9087
+      },
+      {
+        "product_id": 29,
+        "name": "Tatcha The Silk Cream",
+        "distance": 0.9338
+      },
+      {
+        "product_id": 33,
+        "name": "COSRX Hyaluronic Acid Intensive Cream",
+        "distance": 0.956
+      },
+      {
+        "product_id": 54,
+        "name": "Belif The True Cream Aqua Bomb",
+        "distance": 0.96
+      },
+      {
+        "product_id": 74,
+        "name": "Dr. Dennis Gross Hyaluronic Marine Oil-Free Moisture Cushion",
+        "distance": 0.9608
+      },
+      {
+        "product_id": 30,
+        "name": "Tatcha Ageless Enriching Renewal Cream",
+        "distance": 0.9645
+      },
+      {
+        "product_id": 19,
+        "name": "Aestura Atobarrier365 Cream",
+        "distance": 0.9742
+      },
+      {
+        "product_id": 64,
+        "name": "RoC Retinol Correxion Deep Wrinkle Night Cream",
+        "distance": 0.9768
+      },
+      {
+        "product_id": 47,
+        "name": "Kiehl's Ultra Facial Oil-Free Gel Cream",
+        "distance": 0.9807
+      },
+      {
+        "product_id": 53,
+        "name": "Summer Fridays Cloud Dew Oil-Free Gel Cream",
+        "distance": 0.986
+      },
+      {
+        "product_id": 10,
+        "name": "e.l.f. Holy Hydration! Face Cream",
+        "distance": 0.9959
+      },
+      {
+        "product_id": 7,
+        "name": "CeraVe Moisturizing Cream",
+        "distance": 0.9962
+      },
+      {
+        "product_id": 21,
+        "name": "Isntree Hyaluronic Acid Aqua Gel Cream",
+        "distance": 1.0108
+      },
+      {
+        "product_id": 27,
+        "name": "Tatcha The Dewy Skin Cream",
+        "distance": 1.0112
+      },
+      {
+        "product_id": 4,
+        "name": "La Roche-Posay Toleriane Repair Matte Face Moisturizer",
+        "distance": 1.0191
+      },
+      {
+        "product_id": 24,
+        "name": "Tower 28 SOS Recovery Cream",
+        "distance": 1.0193
+      },
+      {
+        "product_id": 12,
+        "name": "CeraVe Oil Control Moisturizing Gel-Cream",
+        "distance": 1.0316
+      },
+      {
+        "product_id": 38,
+        "name": "Missha Time Revolution Night Repair Borabit Ampoule Cream",
+        "distance": 1.0399
+      }
+    ],
+    "ai_response_paragraphs": [
+      "Hello there! I'm happy to help you find a cream featuring shea butter, aloe vera, and beeswax.",
+      "After reviewing our product selection, I found that while we have excellent options containing either shea butter or aloe vera, no single product includes all three of your specified ingredients. Specifically, I couldn't find any products in our current list that feature beeswax. However, I can recommend two highly-rated creams that contain one of your desired ingredients:",
+      "Here are our top recommendations for creams that best match your needs:",
+      "*   **First Aid Beauty Ultra Repair Cream - $36**\n    This rich cream directly matches your query by featuring **Shea Butter** as a key ingredient. It's highly praised by users for its ability to soothe dry, dehydrated, and compromised skin barriers, with many calling it a \"holy grail\" product for deep, non-irritating hydration. It's particularly favored for its calming properties, making it an excellent choice if you're looking for the emollient benefits of shea butter. This cream does not contain aloe vera or beeswax.",
+      "*   **Versed Dew Point Moisturizing Gel-Cream - $18**\n    This gel-cream includes **Aloe Vera** in its key ingredients, offering the soothing and hydrating benefits you're seeking. Users with oily skin appreciate its lightweight, non-greasy formula for providing essential barrier support. While it delivers on the aloe vera, please note that it does not contain shea butter or beeswax.",
+      "I hope these recommendations help you discover a fantastic cream for your skincare routine! Feel free to explore these options further to see which best suits your skin's needs."
+    ]
   }
 ]

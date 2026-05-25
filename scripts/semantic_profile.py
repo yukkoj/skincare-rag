@@ -14,6 +14,7 @@ def build_semantic_dict(product: dict, llm_summary: str) -> dict:
         "Fragrance_Free": product.get("Fragrance_Free"),
         "Non_Comedogenic": product.get("Non_Comedogenic"),
         "SPF": product.get("SPF"),
+        "rating": product.get("rating"),
         "Customer_Consensus": llm_summary if llm_summary else "No summary available"
     }
 
@@ -43,8 +44,6 @@ def compile_profiles(
         pid = prod.get("Product_ID")
         summary_filename = f"product{pid}_summary.json"
         summary_file = summaries_dir / summary_filename
-        
-        # --- FIX: Reset summary_text every loop ---
         summary_text = "" 
         
         # 3. Load the individual LLM summary
@@ -57,7 +56,7 @@ def compile_profiles(
                     phrases = [p['phrase'] for p in summary_data.get('top_phrases', [])]
                     
                     if llm_text or phrases:
-                        summary_text = f"Overall Sentiment: {llm_text} "
+                        summary_text = {llm_text}
                         if phrases:
                             summary_text += f"Key themes: {', '.join(phrases)}."
             except Exception as e:

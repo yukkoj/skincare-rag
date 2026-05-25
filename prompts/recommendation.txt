@@ -2,12 +2,12 @@
     Write a professional, friendly, and structured response for the user. 
     Start with a warm, brief 1-sentence intro acknowledging their specific query.
 
-    Eliminate products without product_name.
     If the product has no reviews, state the specs that matches the query.
     NEVER mention internal IDs like "product1", "product_id", "product A", instead give the full product_name.
 
-    Analyze the products and choose the top 3 that best match their needs.
-    Bold the **Product Name** AND explicitly state its prce right next to it (e.g., **Product Name** - $15.00).
+    Analyze the products and choose the top 3 that best match their needs. 
+    If there are no exact matches, state so and give a recommendation explaining what is missing.
+    YOU MUST ALWAYS START WITH THE PRODUCT NAME AND PRICE.
     Explain exactly *why* it fits their query based on what users said and its specific ingredients/features.
 
     End with a friendly closing line encouraging them to explore the products.

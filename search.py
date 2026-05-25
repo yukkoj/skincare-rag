@@ -53,27 +53,49 @@ def generate_ai_recommendation(query, top_products, full_db):
         return response.text
     except Exception as e:
         return f" ⚠ Could not generate AI summary: {e}"
-    
-def save_search_history(query, response, top_products):
-    """Saves the search session to a local JSON file."""
+
+def save_search_history(query, response, top_products, full_db):
+    """
+    Saves the search session to a local JSON file with product names 
+    and a cleaned AI response.
+    """
+    # 1. Map IDs to Names for a readable history log
+    readable_results = []
+    for pid, dist in top_products:
+        # Fetch the full profile from your master DB
+        profile = full_db.get(str(pid))
+        readable_results.append({
+            "product_id": pid,
+            "name": profile.get("Product_Name", "Unknown") if profile else "Not Found",
+            "distance": round(dist, 4)
+        })
+
+    # 2. Format the AI response (stripping excessive whitespace)
+    # This keeps your JSON file clean and prevents huge blocks of empty space
+    formatted_response = response.strip()
+
     history_entry = {
-        "timestamp": datetime.datetime.now().isoformat(),
+        "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "query": query,
-        "results": top_products,
-        "ai_response": response
+        "results_summary": readable_results,
+        # Split the response by double-newlines to create a list of paragraphs
+        "ai_response_paragraphs": [p.strip() for p in response.split('\n\n') if p.strip()]
     }
-    # Append to a master log file
+    
+    # 3. Append to history file
     log_path = config.GENERATED_DIR / "search_history.json"
     history = []
     if log_path.exists():
         with open(log_path, 'r', encoding='utf-8') as f:
-            try: history = json.load(f)
-            except: history = []
+            try: 
+                history = json.load(f)
+            except json.JSONDecodeError: 
+                history = []
             
     history.append(history_entry)
     
     with open(log_path, 'w', encoding='utf-8') as f:
-        json.dump(history, f, indent=2)
+        json.dump(history, f, indent=2, ensure_ascii=False)
 
 def main():
     # Load the entire properties dictionary once at startup
@@ -100,7 +122,7 @@ def main():
         ai_response = generate_ai_recommendation(query, top_products, full_db)
         
         print("\n" + ai_response)
-        save_search_history(query, ai_response, top_products)
+        save_search_history(query, ai_response, top_products, full_db)
 
 if __name__ == "__main__":
     main()
