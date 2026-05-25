@@ -44,6 +44,10 @@ Once the indices are built, you can run the interactive search script:
 python search.py
 ```
 
+## Customize
+
+Append in or replace products.json to broaden choices. You must delete reviews, summaries, and embeddings files if you replace the products.json.
+
 ## Project Structure
 
 * `main.py`: Pipeline entry point (data ingestion, embedding, and indexing).
