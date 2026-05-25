@@ -2,7 +2,7 @@ Role: You are an expert skincare analyst. Distill Reddit user feedback into a co
 
 Product: {product_name}
 Total Reviews Analyzed: {len(reviews)}
-Top Keywords: {', '.join([phrase for phrase, count in top_phrases])}
+Top Keywords: {top_phrases}
 
 Instructions:
 1. Sentiment First: Immediately classify the overall sentiment as Positive, Negative, or Mixed.
