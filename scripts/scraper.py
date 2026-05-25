@@ -2,7 +2,14 @@ import json
 import time
 import requests
 from datetime import datetime
-import config  # Importing your config.py
+import config
+
+def calculate_sentiment(text):
+    """Simple net sentiment calculation."""
+    # Use your defined words from config.py
+    pos_score = sum(text.count(word) for word in config.POSITIVE_WORDS)
+    neg_score = sum(text.count(word) for word in config.NEGATIVE_WORDS)
+    return pos_score - neg_score
 
 def scrape_reddit_without_api(product_name, target_subreddits, max_retries=3):
     """
@@ -43,17 +50,21 @@ def scrape_reddit_without_api(product_name, target_subreddits, max_retries=3):
                 post_data = post['data']
                 title = post_data.get('title', '').lower()
                 body = post_data.get('selftext', '').lower()
-                
-                if product_name.lower() in title or product_name.lower() in body:
-                    reviews.append({
-                        'review_id': f"reddit_json_{post_data['id']}",
-                        'title': post_data.get('title', ''),
-                        'text': post_data.get('selftext', ''),
-                        'score': post_data.get('score', 0),
-                        'url': f"https://reddit.com{post_data.get('permalink', '')}",
-                        'scraped_at': datetime.utcnow().isoformat() + 'Z'
+                combined_text = f"{title} {body}"
+        
+                if product_name.lower() in combined_text:
+                # Calculate sentiment on the fly
+                    sentiment = calculate_sentiment(combined_text)
+            
+                reviews.append({
+                    'review_id': f"reddit_json_{post_data['id']}",
+                    'title': post_data.get('title', ''),
+                    'text': post_data.get('selftext', ''),
+                    'sentiment_score': sentiment, # Now saved in your JSON
+                    'score': post_data.get('score', 0),
+                    'url': f"https://reddit.com{post_data.get('permalink', '')}",
+                    'scraped_at': datetime.utcnow().isoformat() + 'Z'
                     })
-
             return reviews
 
         except requests.exceptions.RequestException as e:
