@@ -100,6 +100,9 @@ def save_search_history(query, response, top_products, full_db):
 def main():
     # Load the entire properties dictionary once at startup
     full_db = load_semantic_profiles()
+
+    # Load into ram once
+    chunks, bm25_index, faiss_index = embeddings.load_all_indices()
     
     print("\n" + "="*60)
     print("✨ AI SKINCARE PRODUCT SEARCH ✨")
@@ -113,7 +116,12 @@ def main():
         print(f"🔍 Searching...")
         
         # 1. Retrieve raw chunks from embeddings
-        raw_results = embeddings.search_products(query, k=20)
+        raw_results = embeddings.search_products(
+            query, 
+            chunks=chunks, 
+            bm25=bm25_index, 
+            index=faiss_index, 
+            k=20)
         
         # 2. Aggregate chunks to unique IDs
         top_products = embeddings.aggregate_chunk_hits(raw_results)

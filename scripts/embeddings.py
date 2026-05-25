@@ -21,6 +21,19 @@ BM25_PATH = config.EMBED_DIR / "bm25.pkl"
 bm25 = None
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
+def load_all_indices():
+    """Helper to load everything into memory once."""
+    if not CHUNKS_PATH.exists() or not INDEX_PATH.exists():
+        print("⚠ Indices not found. Building them now...")
+        ensure_chunk_embeddings()
+        build_faiss_index()
+
+    with open(CHUNKS_PATH, 'rb') as f:
+        data = pickle.load(f)
+    bm25 = load_bm25_index()
+    index = faiss.read_index(str(INDEX_PATH))
+    return data["chunks"], bm25, index
+
 def save_bm25_index(bm25_model):
     with open(BM25_PATH, 'wb') as f:
         pickle.dump(bm25_model, f)
@@ -131,16 +144,7 @@ def build_faiss_index():
 # SEARCH FUNCTIONS
 # ==========================================
 
-def search_products(query: str, k: int = 20):
-    global bm25
-    
-    # 1. Lazy load indices
-    if bm25 is None:
-        bm25 = load_bm25_index() # Load pre-saved BM25
-        
-    with open(CHUNKS_PATH, 'rb') as f:
-        data = pickle.load(f)
-    chunks = data["chunks"]
+def search_products(query, chunks, bm25, index, k=20):
     
     # 2. Parallel-style lookup
     query_vector = get_sentence_embeddings(query).astype('float32')
