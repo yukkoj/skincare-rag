@@ -1,7 +1,7 @@
 
 # Skincare Semantic Search Engine
 
-An intelligent, AI-powered search engine designed for skincare enthusiasts. This tool moves beyond standard keyword-based searching by using **Semantic Search** and **Hybrid Ranking** to match user queries with product ingredients, consensus, and specifications.
+An intelligent, AI-powered search engine for moisturizers. This tool moves beyond standard keyword-based searching by using **Semantic Search** and **Hybrid Ranking** to match user queries with product ingredients, consensus, and specifications.
 
 ## Key Features
 
@@ -14,7 +14,7 @@ An intelligent, AI-powered search engine designed for skincare enthusiasts. This
 
 ## System Architecture
 
-The pipeline follows a sophisticated data-flow process to ensure accuracy and relevance:
+The pipeline follows a data-flow process to ensure accuracy and relevance:
 
 ## Setup & Installation
 
