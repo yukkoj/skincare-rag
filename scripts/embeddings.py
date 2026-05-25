@@ -6,6 +6,7 @@ skipping ones that are already done, and builds a FAISS search index.
 import json
 import pickle
 import numpy as np
+from rank_bm25 import BM25Okapi # Add this import
 import faiss
 from sentence_transformers import SentenceTransformer
 import config
@@ -15,8 +16,25 @@ config.EMBED_DIR.mkdir(parents=True, exist_ok=True)
 PROFILES_PATH = config.GENERATED_DIR / "semantic_profiles.json"
 INDEX_PATH = config.EMBED_DIR / "faiss.index"
 CHUNKS_PATH = config.EMBED_DIR / "chunks.pkl"
+BM25_PATH = config.EMBED_DIR / "bm25.pkl"
 
+bm25 = None
 model = SentenceTransformer('all-MiniLM-L6-v2')
+
+def save_bm25_index(bm25_model):
+    with open(BM25_PATH, 'wb') as f:
+        pickle.dump(bm25_model, f)
+
+def load_bm25_index():
+    if BM25_PATH.exists():
+        with open(BM25_PATH, 'rb') as f:
+            return pickle.load(f)
+    return None
+
+def build_keyword_index(chunks):
+    """Tokenize and build a BM25 index from your chunks."""
+    tokenized_corpus = [c['text'].lower().split() for c in chunks]
+    return BM25Okapi(tokenized_corpus)
 
 def get_embeddings_batch(texts, batch_size=32):
     return model.encode(texts, batch_size=batch_size, show_progress_bar=True, convert_to_numpy=True)
@@ -107,52 +125,57 @@ def build_faiss_index():
 # SEARCH FUNCTIONS
 # ==========================================
 
-def search_products(query: str, k: int = 5):
-    """
-    Takes a user's text query, embeds it, searches the FAISS index, 
-    and returns the top K matching product profiles.
-    """
-    # 1. Ensure the index exists
-    if not INDEX_PATH.exists():
-        print("⚠ FAISS index not found. Run build_faiss_index() first.")
-        return []
-
-    # 2. Embed the user's search query
-    query_vector = get_sentence_embeddings(query)
+def search_products(query: str, k: int = 20):
+    global bm25
     
-    # 3. Search the FAISS index
-    index = faiss.read_index(str(INDEX_PATH))
-    query_vector = query_vector.astype('float32')
-    distances, indices = index.search(query_vector, k)
-    
-    # 4. Map the mathematical results back to the text profiles
+    # 1. Lazy load indices
+    if bm25 is None:
+        bm25 = load_bm25_index() # Load pre-saved BM25
+        
     with open(CHUNKS_PATH, 'rb') as f:
         data = pickle.load(f)
     chunks = data["chunks"]
     
-    results = []
-    # indices[0] contains the top k matches
-    for i, idx in enumerate(indices[0]):
-        if idx < len(chunks):
-            result = chunks[idx].copy()
-            # Distance: Lower is better (closer match)
-            result['distance'] = float(distances[0][i]) 
-            results.append(result)
-            
-    return results
+    # 2. Parallel-style lookup
+    query_vector = get_sentence_embeddings(query).astype('float32')
+    index = faiss.read_index(str(INDEX_PATH))
+    
+    # 3. Vector Search
+    v_distances, v_indices = index.search(query_vector, k)
+    
+    # 4. Keyword Search
+    tokenized_query = query.lower().split()
+    k_scores = bm25.get_scores(tokenized_query)
+    
+    # 5. Hybrid Fusion (RRF)
+    combined_scores = {}
+    
+    # Vector: lower distance is better, but we need to normalize to rank
+    # FAISS returns distances, we convert to rank
+    for i, idx in enumerate(v_indices[0]):
+        combined_scores[idx] = combined_scores.get(idx, 0) + (1 / (i + 1))
+        
+    # Keyword: Higher BM25 score is better
+    k_indices = np.argsort(k_scores)[::-1][:k]
+    for i, idx in enumerate(k_indices):
+        combined_scores[idx] = combined_scores.get(idx, 0) + (1 / (i + 1))
+        
+    sorted_indices = sorted(combined_scores.items(), key=lambda x: x[1], reverse=True)
+    
+    return [ {**chunks[idx], 'distance': score} for idx, score in sorted_indices[:k] ]
 
 def aggregate_chunk_hits(results):
     """Aggregates raw FAISS results into unique product IDs."""
     aggregated = {}
     for res in results:
         pid = res['product_id']
-        dist = res['distance']
-        # If we see this product again, keep the one with the smallest distance (best match)
-        if pid not in aggregated or dist < aggregated[pid]:
-            aggregated[pid] = dist
+        score = res['distance'] # Note: this is a score
+        # Keep the LARGEST score (higher is better in RRF)
+        if pid not in aggregated or score > aggregated[pid]:
+            aggregated[pid] = score
             
-    # Return as list of (product_id, distance) sorted by best match
-    return sorted(aggregated.items(), key=lambda x: x[1])
+    # Sort by score descending (highest first)
+    return sorted(aggregated.items(), key=lambda x: x[1], reverse=True)
 
 # ==========================================
 # TEST EXECUTION

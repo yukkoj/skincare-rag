@@ -22,6 +22,7 @@ EMBED_DIR = DATA_DIR / "embeddings"
 
 INDEX_PATH = EMBED_DIR / "faiss.index"
 CHUNKS_PATH = EMBED_DIR / "chunks.pkl"
+BM25_PATH = EMBED_DIR / "bm25.pkl"
 
 PROMPTS_DIR = BASE_DIR / "prompts"
 
