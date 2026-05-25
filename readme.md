@@ -7,6 +7,7 @@ An intelligent, AI-powered search engine designed for skincare enthusiasts. This
 
 * **Hybrid Search Engine:** Combines Vector Search (FAISS) for intent-based matching with BM25 Keyword Search for technical ingredient precision.
 * **Intelligent Aggregation:** Deduplicates retrieved data chunks to provide a clean list of unique product recommendations.
+* **Sentiment-Aware Summarization:** Uses positive and negative keyword analysis to categorize feedback ensuring balanced and honest product insights.
 * **LLM Synthesis:** Integrates Gemini API to generate personalized recommendations based on the retrieved product profiles.
 * **Persistent Logging:** Automatically saves user queries and AI responses in a structured, readable history log.
 * **Incremental Processing:** Efficiently processes new products without re-indexing the entire database.
@@ -45,7 +46,13 @@ python search.py
 
 ## Project Structure
 
-* main.py: Generates the hybrid embeddings as a pre-processing step.
-* search.py: The core search logic, hybrid fusion, and history logging.
-* config.py: Centralized configuration for file paths and project constants.
-* generated/: Stores the semantic_profiles.json, search_history.json
+* `main.py`: Pipeline entry point (data ingestion, embedding, and indexing).
+* `embeddings.py`: Handles vectorization, FAISS indexing, and BM25 keyword setup.
+* `semantic_profile.py`: Defines the logic for creating unique "semantic profiles" for each product.
+* `search.py`: Core search logic, hybrid fusion, and history logging.
+* `scraper.py`: Extracts Reddit reviews and performs on-the-fly sentiment scoring.
+* `summarizer.py`: Orchestrates the sentiment-categorized feedback and generates LLM summaries.
+* `config.py`: Centralized configuration (paths, subreddits, positive/negative word lists).
+* `data/raw/`: Source data files.
+* `data/generated/`: Computed outputs (indices, profiles, and sentiment-tagged reviews).
+* `data/prompts/`: LLM prompt templates
