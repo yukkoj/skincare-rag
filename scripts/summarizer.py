@@ -26,11 +26,29 @@ def extract_key_phrases(reviews, top_n=10):
     return Counter(words).most_common(top_n)
 
 def generate_llm_summary(product_name, reviews, top_phrases):
-    top_reviews = sorted(reviews, key=lambda x: x.get('score', 0), reverse=True)[:10]
-    review_texts = "\n".join([f"- {r.get('title', '')}: {r.get('text', '')}" for r in top_reviews])
+    # 1. Categorize reviews by sentiment score
+    positives = sorted([r for r in reviews if r.get('sentiment_score', 0) > 0], 
+                       key=lambda x: x.get('sentiment_score', 0), reverse=True)[:5]
+    criticals = sorted([r for r in reviews if r.get('sentiment_score', 0) < 0], 
+                       key=lambda x: x.get('sentiment_score', 0))[:5]
+    
+    # 2. Format feedback for the LLM
+    pos_texts = "\n".join([f"- {r.get('text', '')[:200]}..." for r in positives])
+    crit_texts = "\n".join([f"- {r.get('text', '')[:200]}..." for r in criticals])
+    review_texts = f"POSITIVE FEEDBACK:\n{pos_texts if pos_texts else 'None'}\n\nCRITICAL FEEDBACK:\n{crit_texts if crit_texts else 'None'}"
+
+    # 3. Load template
     prompt_template = Path(config.PROMPTS_DIR / "summarize.txt").read_text(encoding='utf-8')
-    full_prompt = (f"Product: {product_name}\nCommon Keywords: {', '.join([p[0] for p in top_phrases])}\n\n"
-                   f"{prompt_template}\n\nReviews:\n{review_texts}")
+    
+    # 4. Populate template variables
+    # We use .format() to safely inject variables into the template text
+    full_prompt = prompt_template.format(
+        product_name=product_name,
+        len_reviews=len(reviews),
+        top_phrases=', '.join([p[0] for p in top_phrases]),
+        review_texts=review_texts
+    )
+ 
     try:
         response = model.generate_content(full_prompt)
         return response.text.strip()
