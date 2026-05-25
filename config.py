@@ -6,6 +6,7 @@ load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 BASE_DIR = Path(__file__).resolve().parent
+
 DATA_DIR = BASE_DIR / "data"
 RAW_DIR = DATA_DIR / "raw"
 PRODUCTS_DIR = RAW_DIR / "products"
@@ -22,6 +23,8 @@ EMBED_DIR = DATA_DIR / "embeddings"
 
 INDEX_PATH = EMBED_DIR / "faiss.index"
 CHUNKS_PATH = EMBED_DIR / "chunks.pkl"
+
+PROMPTS_DIR = BASE_DIR / "prompts"
 
 CACHE_DIR = DATA_DIR / "cache"
 OUTPUTS_DIR = BASE_DIR / "outputs"
