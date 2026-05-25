@@ -1,7 +1,3 @@
-"""
-Review summarizer
-Reads reviews and creates summaries with rate-limit handling
-"""
 import json
 import time
 from pathlib import Path
@@ -9,14 +5,19 @@ from collections import Counter
 import google.generativeai as genai
 import config
 
+# Configure Model once globally
 genai.configure(api_key=config.GOOGLE_API_KEY)
 model = genai.GenerativeModel("gemini-3.1-flash-lite")
 
 def load_product_reviews(filepath):
-    if not filepath.exists(): return None
-    with open(filepath, 'r', encoding='utf-8') as f:
-        return json.load(f)
-
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            # Ensure we return a list even if file is weird
+            return data if isinstance(data, list) else []
+    except (json.JSONDecodeError, IOError):
+        return []
+    
 def extract_key_phrases(reviews, top_n=10):
     words = []
     for review in reviews:
@@ -26,93 +27,85 @@ def extract_key_phrases(reviews, top_n=10):
     return Counter(words).most_common(top_n)
 
 def generate_llm_summary(product_name, reviews, top_phrases):
-    # 1. Categorize reviews by sentiment score
+    if not reviews: return None
+    
+    # Pre-filter for efficiency
     positives = sorted([r for r in reviews if r.get('sentiment_score', 0) > 0], 
                        key=lambda x: x.get('sentiment_score', 0), reverse=True)[:5]
     criticals = sorted([r for r in reviews if r.get('sentiment_score', 0) < 0], 
                        key=lambda x: x.get('sentiment_score', 0))[:5]
     
-    # 2. Format feedback for the LLM
-    pos_texts = "\n".join([f"- {r.get('text', '')[:200]}..." for r in positives])
-    crit_texts = "\n".join([f"- {r.get('text', '')[:200]}..." for r in criticals])
-    review_texts = f"POSITIVE FEEDBACK:\n{pos_texts if pos_texts else 'None'}\n\nCRITICAL FEEDBACK:\n{crit_texts if crit_texts else 'None'}"
-
-    # 3. Load template
-    prompt_template = Path(config.PROMPTS_DIR / "summarize.txt").read_text(encoding='utf-8')
+    # Format texts - Using a generator expression inside join is faster
+    pos_texts = "\n".join(f"- {r.get('text', '')[:200]}..." for r in positives)
+    crit_texts = "\n".join(f"- {r.get('text', '')[:200]}..." for r in criticals)
     
-    # 4. Populate template variables
-    # We use .format() to safely inject variables into the template text
-    full_prompt = prompt_template.format(
-        product_name=product_name,
-        len_reviews=len(reviews),
-        top_phrases=', '.join([p[0] for p in top_phrases]),
-        review_texts=review_texts
-    )
- 
+    review_texts = f"POSITIVE FEEDBACK:\n{pos_texts or 'None'}\n\nCRITICAL FEEDBACK:\n{crit_texts or 'None'}"
+
     try:
+        
+        review_count = len(reviews) if isinstance(reviews, list) else 0
+        prompt_template = Path(config.PROMPTS_DIR / "summarize.txt").read_text(encoding='utf-8')
+        
+        # --- INSERT DEBUG CODE HERE ---
+        import re
+        found_keys = re.findall(r'\{([^{}]+)\}', prompt_template)
+        print(f"DEBUG: Python found these variables in your prompt: {found_keys}")
+        
+    
+        full_prompt = prompt_template.format(
+            product_name=product_name,
+            len_reviews=review_count,
+            top_phrases=', '.join([p[0] for p in top_phrases]),
+            review_texts=review_texts
+        )
         response = model.generate_content(full_prompt)
         return response.text.strip()
+    
     except Exception as e:
         print(f"  ⚠ LLM generation failed: {e}")
+        # Print a debug line to identify if this is a template key mismatch
+        print(f"  DEBUG: prompt template keys: {prompt_template[:50]}...")
         return None
 
-def summarize_product_reviews(filepath, product_name):
-    reviews = load_product_reviews(filepath)
-    if not reviews: return None
-    product_id = filepath.stem
-    avg_score = sum(r.get('score', 0) for r in reviews) / len(reviews)
-    top_phrases = extract_key_phrases(reviews)[:5]
-    llm_summary = generate_llm_summary(product_name, reviews, top_phrases)
-    return {
-        'product_id': product_id,
-        'total_reviews': len(reviews),
-        'avg_reddit_score': round(avg_score, 1),
-        'top_phrases': [{'phrase': phrase, 'count': count} for phrase, count in top_phrases],
-        'llm_summary': llm_summary,
-        'generated_at': reviews[0].get('scraped_at', '') if reviews else ''
-    }
-
-def save_summary(product_id, summary):
-    config.SUMMARIES_DIR.mkdir(parents=True, exist_ok=True)
-    summary_file = config.SUMMARIES_DIR / f"{product_id}_summary.json"
-    with open(summary_file, 'w', encoding='utf-8') as f:
-        json.dump(summary, f, indent=2, ensure_ascii=False)
-    return summary_file
-
 def process_summaries(skip_existing=True):
-    """Processes product reviews and skips items with no review data."""
     with open(config.PRODUCTS_FILE, 'r', encoding='utf-16') as f:
         products = json.load(f)
     
-    product_map = {f"product{i+1}": p.get('Product_Name') for i, p in enumerate(products)}
+    product_map = {f"product{i+1}": p.get('Product_Name', "Unknown") for i, p in enumerate(products)}
     review_files = list(config.REVIEWS_DIR.glob("product*.json"))
-    total_files = len(review_files)
-
+    
     for idx, review_file in enumerate(review_files):
         product_id = review_file.stem
-        product_name = product_map.get(product_id, "Unknown Product")
+        summary_file = config.SUMMARIES_DIR / f"{product_id}_summary.json"
         
-        # Check for existing summary
-        if skip_existing and (config.SUMMARIES_DIR / f"{product_id}_summary.json").exists():
-            continue
-        
-        # Load and check for reviews
+        # 1. Smarter Skip Logic
+        if skip_existing and summary_file.exists():
+            if review_file.stat().st_mtime <= summary_file.stat().st_mtime:
+                continue
+
+        # 2. Robust Loading
         reviews = load_product_reviews(review_file)
         if not reviews:
-            print(f"  ⚠ No reviews found for {product_name} ({product_id}). Skipping.")
+            print(f"  ⚠ Skipping {product_id}: No valid review list found.")
             continue
             
-        print(f"[{idx + 1}/{total_files}] 📝 Summarizing {product_name}...")
-        summary = summarize_product_reviews(review_file, product_name)
+        print(f"[{idx + 1}/{len(review_files)}] 📝 Summarizing {product_map.get(product_id)}...")
         
-        if summary and summary.get('llm_summary'):
-            save_summary(product_id, summary)
-            print(f"  ✓ Saved summary for {product_id}")
+        # 3. Inline Summary Logic (Avoids double-loading)
+        top_phrases = [p[0] for p in extract_key_phrases(reviews)]
+        summary_text = generate_llm_summary(product_map.get(product_id), reviews, top_phrases)
         
-        if idx < total_files - 1:
-            time.sleep(4)
-    
-    print(f"\n✅ All available reviews processed.")
+        if summary_text:
+            output = {
+                'product_id': product_id,
+                'total_reviews': len(reviews),
+                'llm_summary': summary_text,
+                'generated_at': time.strftime("%Y-%m-%d %H:%M:%S")
+            }
+            config.SUMMARIES_DIR.mkdir(parents=True, exist_ok=True)
+            summary_file = config.SUMMARIES_DIR / f"{product_id}_summary.json"
 
-if __name__ == "__main__":
-    process_summaries()
+            with open(summary_file, 'w', encoding='utf-8') as f:
+                json.dump(output, f, indent=2, ensure_ascii=False)
+            
+            time.sleep(4) # Rate limit

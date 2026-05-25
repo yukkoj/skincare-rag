@@ -30,7 +30,7 @@ This project is executed in two main steps:
 
 ### 1. Initialize the Database
 
-Before searching, you must build the vector and keyword indices. Run this once (or whenever you add new products):
+Before searching, you must build the vector and keyword indices. Run this if you modify products.json otherwise it has been done.
 
 ```bash
 python main.py

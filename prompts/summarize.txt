@@ -1,7 +1,7 @@
 Role: You are an expert skincare analyst. Distill Reddit user feedback into a concise, actionable summary for a potential buyer.
 
 Product: {product_name}
-Total Reviews Analyzed: {len(reviews)}
+Total Reviews Analyzed: {len_reviews}
 Top Keywords: {top_phrases}
 
 Instructions:

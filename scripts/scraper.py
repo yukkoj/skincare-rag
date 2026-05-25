@@ -55,6 +55,8 @@ def scrape_reddit_without_api(product_name, target_subreddits, max_retries=3):
                 if product_name.lower() in combined_text:
                 # Calculate sentiment on the fly
                     sentiment = calculate_sentiment(combined_text)
+                else:
+                    sentiment = 0
             
                 reviews.append({
                     'review_id': f"reddit_json_{post_data['id']}",
@@ -106,8 +108,16 @@ def scrape_all_products(max_products=None, skip_existing=True, max_retries=3):
             filepath = config.REVIEWS_DIR / f"product{i}.json"
 
             if skip_existing and filepath.exists():
-                stats['skipped'] += 1
-                continue
+                # Get the time the file was last modified
+                file_age_seconds = time.time() - filepath.stat().st_mtime
+                file_age_days = file_age_seconds / (60 * 60 * 24)
+    
+                # Check against the config threshold
+                if file_age_days < config.SCRAPE_FRESHNESS_THRESHOLD_DAYS:
+                    stats['skipped'] += 1
+                    continue
+                else:
+                    print(f"File for {current_product_name} is stale ({int(file_age_days)} days old). Re-scraping...")
 
             print(f"Scraping: {current_product_name}...")
 
