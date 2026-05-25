@@ -82,7 +82,7 @@ def ensure_chunk_embeddings():
                      f"Specs: {json.dumps(semantic_data)}. "
                      f"Consensus: {semantic_data.get('Customer_Consensus', '')}")
         
-        new_chunks.append({"product_id": pid, "type": "semantic_profile", "text": full_text})
+        new_chunks.append({"product_id": pid, "type": "semantic_profile", "text": full_text, "name": semantic_data.get('Product_Name'), "price": semantic_data.get('Price')})
 
     # 3. Process new data only
     if not new_chunks:
