@@ -41,7 +41,7 @@ def main():
     print("="*60 + "\n")
     
     try:
-        summarizer.summarize_all_products(skip_existing=True)
+        summarizer.process_summaries(skip_existing=True)
         print("✓ Summaries generated!\n")
         
     except Exception as e:

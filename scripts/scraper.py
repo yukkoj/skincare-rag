@@ -95,7 +95,6 @@ def scrape_all_products(max_products=None, skip_existing=True, max_retries=3):
             filepath = config.REVIEWS_DIR / f"product{i}.json"
 
             if skip_existing and filepath.exists():
-                print(f"⏭️ Skipping: {current_product_name} ({filepath.name} exists)")
                 stats['skipped'] += 1
                 continue
 

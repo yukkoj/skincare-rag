@@ -1,0 +1,106 @@
+"""
+search.py
+Interactive terminal script to search your skincare database.
+Loads all product attributes dynamically and feeds them to Gemini for context-rich answers.
+"""
+import json
+import datetime
+import config
+import google.generativeai as genai
+from scripts import embeddings
+
+# Set up Gemini
+genai.configure(api_key=config.GOOGLE_API_KEY)
+model = genai.GenerativeModel("gemini-2.5-flash")
+
+def load_semantic_profiles():
+    """Loads the compiled semantic_profiles.json master file."""
+    try:
+        profiles_path = config.GENERATED_DIR / "semantic_profiles.json"
+        with open(profiles_path, 'r', encoding='utf-8') as f:
+            profiles = json.load(f)
+            # Create a lookup map: { "1": {...profile_data...}, "2": {...} }
+            return {str(p["Product_ID"]): p["Semantic_Profile"] for p in profiles}
+    except Exception as e:
+        print(f"  ⚠ Error loading semantic profiles: {e}")
+        return {}
+
+def generate_ai_recommendation(query, top_products, full_db):
+    """Feeds structured product profiles to Gemini for a high-accuracy response."""
+    
+    # 1. Load the prompt template
+    try:
+        prompt_template = (config.PROMPTS_DIR / "recommendation.txt").read_text(encoding='utf-8')
+    except:
+        prompt_template = "Act as a skincare expert. Provide a concise recommendation based on the data below."
+
+    # 2. Build context from structured profiles
+    context = f"User Query: '{query}'\n\nTop Product Matches:\n\n"
+    
+    for product_id, distance in top_products:
+        profile = full_db.get(str(product_id))
+        if profile:
+            # Flattening the dictionary into a clean, human-readable format for the LLM
+            context += f"--- Product: {profile.get('Product_Name')} ---\n"
+            for key, value in profile.items():
+                context += f"{key.replace('_', ' ')}: {value}\n"
+            context += "\n"
+
+    full_prompt = f"{prompt_template}\n\n{context}"
+
+    try:
+        response = model.generate_content(full_prompt)
+        return response.text
+    except Exception as e:
+        return f" ⚠ Could not generate AI summary: {e}"
+    
+def save_search_history(query, response, top_products):
+    """Saves the search session to a local JSON file."""
+    history_entry = {
+        "timestamp": datetime.datetime.now().isoformat(),
+        "query": query,
+        "results": top_products,
+        "ai_response": response
+    }
+    # Append to a master log file
+    log_path = config.GENERATED_DIR / "search_history.json"
+    history = []
+    if log_path.exists():
+        with open(log_path, 'r', encoding='utf-8') as f:
+            try: history = json.load(f)
+            except: history = []
+            
+    history.append(history_entry)
+    
+    with open(log_path, 'w', encoding='utf-8') as f:
+        json.dump(history, f, indent=2)
+
+def main():
+    # Load the entire properties dictionary once at startup
+    full_db = load_semantic_profiles()
+    
+    print("\n" + "="*60)
+    print("✨ AI SKINCARE PRODUCT SEARCH ✨")
+    print("="*60)
+
+    while True:
+        query = input("\nSearch (or 'q' to quit): ")
+        if query.lower() in ['quit', 'q', 'exit']: break
+        if not query.strip(): continue
+            
+        print(f"🔍 Searching...")
+        
+        # 1. Retrieve raw chunks from embeddings
+        raw_results = embeddings.search_products(query, k=20)
+        
+        # 2. Aggregate chunks to unique IDs
+        top_products = embeddings.aggregate_chunk_hits(raw_results)
+        
+        # 3. Generate recommendation using structured profiles
+        ai_response = generate_ai_recommendation(query, top_products, full_db)
+        
+        print("\n" + ai_response)
+        save_search_history(query, ai_response, top_products)
+
+if __name__ == "__main__":
+    main()

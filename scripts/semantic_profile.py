@@ -47,8 +47,6 @@ def compile_profiles(
         # --- FIX: Reset summary_text every loop ---
         summary_text = "" 
         
-        print(f"DEBUG: Checking for file: {summary_file.name}")
-        
         # 3. Load the individual LLM summary
         if summary_file.exists():
             try:
