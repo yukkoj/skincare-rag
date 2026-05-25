@@ -25,24 +25,27 @@ pip install sentence-transformers faiss-cpu rank-bm25 numpy
 
 ## Usage
 
-To perform a search and generate an expert-level recommendation:
+This project is executed in two main steps:
 
-from search import search_products, generate_ai_recommendation
+### 1. Initialize the Database
 
-1. Query the hybrid engine
-top_products = search_products("I need a cheap, fragrance-free lotion for sensitive skin.")
+Before searching, you must build the vector and keyword indices. Run this once (or whenever you add new products):
 
-2. Generate expert advice
+```bash
+python main.py
+```
 
-response = generate_ai_recommendation(query, top_products, full_db)
-print(response)
+### 2. Run the Search Engine
+
+Once the indices are built, you can run the interactive search script:
+
+```bash
+python search.py
+```
 
 ## Project Structure
 
-main.py: Generates the hybrid embeddings as a pre-processing step.
-
-search.py: The core search logic, hybrid fusion, and history logging.
-
-config.py: Centralized configuration for file paths and project constants.
-
-generated/: Stores the semantic_profiles.json, search_history.json, and embedding indices.
+* main.py: Generates the hybrid embeddings as a pre-processing step.
+* search.py: The core search logic, hybrid fusion, and history logging.
+* config.py: Centralized configuration for file paths and project constants.
+* generated/: Stores the semantic_profiles.json, search_history.json
