@@ -27,8 +27,6 @@ BM25_PATH = EMBED_DIR / "bm25.pkl"
 PROMPTS_DIR = BASE_DIR / "prompts"
 
 CACHE_DIR = DATA_DIR / "cache"
-OUTPUTS_DIR = BASE_DIR / "outputs"
-RESULTS_FILE = OUTPUTS_DIR / "search_results.json"
 
 SUBREDDITS = ["SkincareAddiction", "30PlusSkinCare", "AsianBeauty"]
 MAX_REVIEWS_PER_PRODUCT = 5
