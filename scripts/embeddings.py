@@ -100,6 +100,12 @@ def ensure_chunk_embeddings():
         pickle.dump({"chunks": final_chunks, "embeddings": final_embeddings}, f)
     print(f"  ✓ Saved {len(final_chunks)} total profiles to {CHUNKS_PATH.name}")
 
+    print("Building BM25 index...")
+    bm25_model = build_keyword_index(final_chunks)
+    save_bm25_index(bm25_model)
+    
+    print(f"  ✓ Saved {len(final_chunks)} total profiles and BM25 index.")
+
 def build_faiss_index():
     """Takes the embedded profiles and builds a searchable FAISS database."""
     if not CHUNKS_PATH.exists():
@@ -183,8 +189,8 @@ def aggregate_chunk_hits(results):
 
 if __name__ == "__main__":
     # To build the database for the first time, uncomment these lines:
-    # ensure_chunk_embeddings()
-    # build_faiss_index()
+    ensure_chunk_embeddings()
+    build_faiss_index()
     
     # Testing search functionality:
     print("\n--- Testing Search ---")
