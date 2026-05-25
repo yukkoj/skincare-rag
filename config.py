@@ -13,12 +13,9 @@ PRODUCTS_DIR = RAW_DIR / "products"
 PRODUCTS_FILE = PRODUCTS_DIR / "products.json"
 REVIEWS_DIR = RAW_DIR / "reviews"
 
-PROCESSED_DIR = DATA_DIR / "processed"
-
 GENERATED_DIR = DATA_DIR / "generated"
 SUMMARIES_DIR = GENERATED_DIR / "summaries"
-
-EMBED_DIR = DATA_DIR / "embeddings"
+EMBED_DIR = GENERATED_DIR / "embeddings"
 
 INDEX_PATH = EMBED_DIR / "faiss.index"
 CHUNKS_PATH = EMBED_DIR / "chunks.pkl"
