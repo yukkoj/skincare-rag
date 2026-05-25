@@ -7,10 +7,16 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
-PRODUCTS_DIR = DATA_DIR / "products"
+RAW_DIR = DATA_DIR / "raw"
+PRODUCTS_DIR = RAW_DIR / "products"
 PRODUCTS_FILE = PRODUCTS_DIR / "products.json"
-REVIEWS_DIR = DATA_DIR / "reviews"
-SUMMARIES_DIR = REVIEWS_DIR / "summaries"
+REVIEWS_DIR = RAW_DIR / "reviews"
+
+PROCESSED_DIR = DATA_DIR / "processed"
+
+GENERATED_DIR = DATA_DIR / "generated"
+SUMMARIES_DIR = GENERATED_DIR / "summaries"
+SEMANTIC_PROFILE_DIR = GENERATED_DIR / "semantic_profiles"
 
 EMBED_DIR = DATA_DIR / "embeddings"
 
