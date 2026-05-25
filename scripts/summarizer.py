@@ -46,12 +46,6 @@ def generate_llm_summary(product_name, reviews, top_phrases):
         review_count = len(reviews) if isinstance(reviews, list) else 0
         prompt_template = Path(config.PROMPTS_DIR / "summarize.txt").read_text(encoding='utf-8')
         
-        # --- INSERT DEBUG CODE HERE ---
-        import re
-        found_keys = re.findall(r'\{([^{}]+)\}', prompt_template)
-        print(f"DEBUG: Python found these variables in your prompt: {found_keys}")
-        
-    
         full_prompt = prompt_template.format(
             product_name=product_name,
             len_reviews=review_count,
@@ -63,8 +57,6 @@ def generate_llm_summary(product_name, reviews, top_phrases):
     
     except Exception as e:
         print(f"  ⚠ LLM generation failed: {e}")
-        # Print a debug line to identify if this is a template key mismatch
-        print(f"  DEBUG: prompt template keys: {prompt_template[:50]}...")
         return None
 
 def process_summaries(skip_existing=True):
