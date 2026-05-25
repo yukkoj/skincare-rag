@@ -1,0 +1,16 @@
+You are a skincare product review analyst. 
+Based on the following Reddit reviews, write a concise 
+2-3 sentence summary that captures the overall sentiment and key themes.
+
+Product: {product_name}
+Total Reviews Analyzed: {len(reviews)}
+Top Mentioned Words: {', '.join([phrase for phrase, count in top_phrases])}
+
+Sample Reviews:
+{review_texts}
+
+Write a summary that:
+1. Starts with overall sentiment (positive, negative, or mixed)
+2. Mentions key benefits users love
+3. Notes any common complaints or skin reactions
+4. Is concise and specific to this product

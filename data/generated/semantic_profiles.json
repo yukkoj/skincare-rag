@@ -1,0 +1,1763 @@
+[
+  {
+    "Product_ID": 1,
+    "Semantic_Profile": {
+      "Product_Name": "CeraVe Daily Moisturizing Lotion",
+      "Brand": "CeraVe",
+      "Category": "Moisturizer",
+      "Price_USD": 15,
+      "Texture": "Lightweight lotion",
+      "Skin_Types": [
+        "All",
+        "Dry",
+        "Sensitive"
+      ],
+      "Key_Ingredients": [
+        "Ceramides (3 types)",
+        "Hyaluronic Acid",
+        "Glycerin",
+        "MVE Technology"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: The overall sentiment toward CeraVe Daily Moisturizing Lotion is mixed, as users are deeply divided between viewing it as a hydrating staple and finding it comedogenic. While many appreciate its effectiveness in restoring the moisture barrier and providing essential hydration, several users report that it triggers acne breakouts and clogged pores. Additionally, some customers have noted practical frustrations, such as difficulty using the product's pump mechanism. Key themes: cerave, moisturizing, lotion, daily, skin."
+    }
+  },
+  {
+    "Product_ID": 2,
+    "Semantic_Profile": {
+      "Product_Name": "Vanicream Daily Facial Moisturizer",
+      "Brand": "Vanicream",
+      "Category": "Moisturizer",
+      "Price_USD": 18,
+      "Texture": "Lightweight cream",
+      "Skin_Types": [
+        "Sensitive",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Glycerin",
+        "Ceramides (5 types)",
+        "Squalane"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Vanicream Daily Facial Moisturizer is largely positive, with many users praising its cosmetically elegant finish, inclusion of ceramides, and non-irritating formula for sensitive skin. However, reactions are mixed, as some users with acne-prone or combination skin report that the product can cause clogged pores or excessive oiliness. Ultimately, it is highly valued by those seeking a reliable, fragrance-free option, though it may not be suitable for every specific skin profile. Key themes: moisturizer, skin, facial, vanicream, daily."
+    }
+  },
+  {
+    "Product_ID": 3,
+    "Semantic_Profile": {
+      "Product_Name": "La Roche-Posay Toleriane Double Repair Face Moisturizer",
+      "Brand": "La Roche-Posay",
+      "Category": "Moisturizer",
+      "Price_USD": 21,
+      "Texture": "Lightweight cream",
+      "Skin_Types": [
+        "Sensitive",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Ceramides",
+        "Niacinamide",
+        "Glycerin",
+        "Prebiotic Thermal Water"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the La Roche-Posay Toleriane Double Repair Face Moisturizer is mixed to negative due to significant quality control and consistency issues. While some users appreciate its fragrance-free formula and moisturizing capabilities, many report problematic experiences including a gritty or grainy texture, the presence of plastic-like particles, and frequent acne breakouts. Consequently, the product is often viewed as unreliable for those with sensitive or acne-prone skin. Key themes: skin, face, moisturizer, *pros:*, *cons:*."
+    }
+  },
+  {
+    "Product_ID": 4,
+    "Semantic_Profile": {
+      "Product_Name": "La Roche-Posay Toleriane Repair Matte Face Moisturizer",
+      "Brand": "La Roche-Posay",
+      "Category": "Moisturizer",
+      "Price_USD": 22,
+      "Texture": "Matte gel-cream",
+      "Skin_Types": [
+        "Oily",
+        "Combination",
+        "Sensitive"
+      ],
+      "Key_Ingredients": [
+        "Ceramides",
+        "Hyaluronic Acid",
+        "Niacinamide"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 5,
+    "Semantic_Profile": {
+      "Product_Name": "Neutrogena Hydro Boost Water Gel",
+      "Brand": "Neutrogena",
+      "Category": "Moisturizer",
+      "Price_USD": 19,
+      "Texture": "Gel",
+      "Skin_Types": [
+        "All",
+        "Oily",
+        "Combination"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Glycerin",
+        "Olive Extract"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Neutrogena Hydro Boost Water Gel is positive, with users frequently praising its lightweight, non-greasy texture that leaves skin feeling plump, hydrated, and refreshed. While it is widely considered a \"holy grail\" for oily and combination skin, some users report dissatisfaction regarding its inclusion of fragrance, its lack of cruelty-free status, and the rapid rate at which the product is consumed. Key themes: water, hydro, boost, neutrogena, skin."
+    }
+  },
+  {
+    "Product_ID": 6,
+    "Semantic_Profile": {
+      "Product_Name": "CeraVe PM Facial Moisturizing Lotion",
+      "Brand": "CeraVe",
+      "Category": "Night Moisturizer",
+      "Price_USD": 16,
+      "Texture": "Lightweight lotion",
+      "Skin_Types": [
+        "All",
+        "Sensitive"
+      ],
+      "Key_Ingredients": [
+        "Niacinamide",
+        "Ceramides",
+        "Hyaluronic Acid"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward CeraVe PM Facial Moisturizing Lotion is mixed, as many users praise its lightweight, hydrating formula and effectiveness as a staple in their daily routines. However, a notable subset of users reports significant skin reactions, specifically cystic acne and clogged pores, suggesting that the product may be comedogenic for certain skin types. Key themes: cerave, moisturizing, facial, lotion, skin."
+    }
+  },
+  {
+    "Product_ID": 7,
+    "Semantic_Profile": {
+      "Product_Name": "CeraVe Moisturizing Cream",
+      "Brand": "CeraVe",
+      "Category": "Moisturizer",
+      "Price_USD": 19,
+      "Texture": "Rich cream",
+      "Skin_Types": [
+        "Dry",
+        "Very Dry"
+      ],
+      "Key_Ingredients": [
+        "Ceramides",
+        "Hyaluronic Acid",
+        "Petrolatum"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward CeraVe Moisturizing Cream is mixed, as users frequently cite it as a reliable, essential staple for repairing the skin barrier and soothing dryness. While many praise its effectiveness in calming skin alongside treatments like Tretinoin, some users report negative experiences with recent formula changes or find the product unsuitable for their specific skin texture. Key themes: cerave, moisturizing, cream, skin, using."
+    }
+  },
+  {
+    "Product_ID": 8,
+    "Semantic_Profile": {
+      "Product_Name": "Cetaphil Daily Facial Moisturizer SPF 15",
+      "Brand": "Cetaphil",
+      "Category": "Moisturizer with SPF",
+      "Price_USD": 17,
+      "Texture": "Lightweight lotion",
+      "Skin_Types": [
+        "All",
+        "Sensitive"
+      ],
+      "Key_Ingredients": [
+        "Avobenzone",
+        "Glycerin",
+        "Vitamin E"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": 15,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Cetaphil Daily Facial Moisturizer SPF 15 is mixed, as users value the convenience of a combined moisturizer and sunscreen for daily routines. However, the product receives significant criticism for its thick consistency, uneven application, and low SPF level. Additionally, some users expressed frustration with the product's performance on oily skin and are actively seeking alternatives with better texture and higher sun protection. Key themes: moisturizer, skin, sunscreen, cetaphil, facial."
+    }
+  },
+  {
+    "Product_ID": 9,
+    "Semantic_Profile": {
+      "Product_Name": "Aveeno Daily Moisturizing Lotion",
+      "Brand": "Aveeno",
+      "Category": "Moisturizer",
+      "Price_USD": 12,
+      "Texture": "Lotion",
+      "Skin_Types": [
+        "Dry",
+        "Sensitive"
+      ],
+      "Key_Ingredients": [
+        "Colloidal Oatmeal",
+        "Glycerin",
+        "Dimethicone"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": false,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the reformulated Aveeno Daily Moisturizing Lotion is largely negative, as long-term users express frustration over unwanted changes in texture, smell, and skin compatibility. While historically considered a \"holy grail\" for its soothing, moisturizing properties, recent feedback highlights significant dissatisfaction with the new formula, frequently citing greasy residue and adverse reactions like breakouts or burning. Consequently, many loyal customers are actively seeking alternative brands due to these quality concerns. Key themes: skin, daily, moisturizing, aveeno, lotion."
+    }
+  },
+  {
+    "Product_ID": 10,
+    "Semantic_Profile": {
+      "Product_Name": "e.l.f. Holy Hydration! Face Cream",
+      "Brand": "e.l.f.",
+      "Category": "Moisturizer",
+      "Price_USD": 14,
+      "Texture": "Gel-cream",
+      "Skin_Types": [
+        "All",
+        "Dry"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Niacinamide",
+        "Peptides",
+        "Squalane"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Product: e.l.f. Holy Hydration! Face Cream\nTotal Reviews Analyzed: 5\nTop Mentioned Words: face, skin, routine, ordinary, some\n\nThe overall sentiment toward the e.l.f. Holy Hydration! Face Cream is mixed, as it is a popular staple in many budget-friendly skincare routines but does not work for every user. While many reviewers appreciate its accessibility and inclusion in routines alongside products from The Ordinary, some users report that it lacks sufficient moisture or find the fragrance irritating. Consequently, those with specific skin concerns like dryness or sensitivities may find the product's performance inconsistent. Key themes: face, skin, routine, ordinary, some."
+    }
+  },
+  {
+    "Product_ID": 11,
+    "Semantic_Profile": {
+      "Product_Name": "La Roche-Posay Cicaplast Baume B5",
+      "Brand": "La Roche-Posay",
+      "Category": "Barrier Repair Cream",
+      "Price_USD": 19,
+      "Texture": "Balm",
+      "Skin_Types": [
+        "Sensitive",
+        "Irritated",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Panthenol (Vitamin B5)",
+        "Madecassoside",
+        "Copper-Zinc-Manganese Complex"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: **Product:** La Roche-Posay Cicaplast Baume B5+\n**Total Reviews Analyzed:** 5\n**Top Mentioned Words:** skin, barrier, soothing, healing, acne, clogged, pores, cream\n\n**Summary:**\nThe overall sentiment for La Roche-Posay Cicaplast Baume B5+ is positive, with users frequently praising its exceptional ability to soothe, heal, and repair damaged skin barriers. While it is highly recommended for dry or irritated skin, some users with acne-prone or milia-prone skin report that the thick formula can cause clogged pores or pilling. It is best used as a targeted treatment or a final occlusive step in a routine rather than a general-purpose moisturizer. Key themes: skin, *pros:*, *cons:*, cream, *bottom."
+    }
+  },
+  {
+    "Product_ID": 12,
+    "Semantic_Profile": {
+      "Product_Name": "CeraVe Oil Control Moisturizing Gel-Cream",
+      "Brand": "CeraVe",
+      "Category": "Moisturizer",
+      "Price_USD": 15,
+      "Texture": "Gel-cream",
+      "Skin_Types": [
+        "Oily",
+        "Combination"
+      ],
+      "Key_Ingredients": [
+        "Niacinamide",
+        "Hylauronic Acid",
+        "Ceramides",
+        "Pore-Absorbing Technology"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment regarding the CeraVe Oil Control Moisturizing Gel-Cream is mixed, as users are initially drawn to its well-regarded formulation of ceramides, niacinamide, and hyaluronic acid. While many appreciate its lightweight, ingredient-conscious profile for oily and acne-prone skin, several users report significant irritation and a burning sensation upon application. These negative reactions often occur when the product is used on compromised skin barriers or in climates where the user's skin is unexpectedly dry. Key themes: skin, cerave, moisturizing, control, which."
+    }
+  },
+  {
+    "Product_ID": 13,
+    "Semantic_Profile": {
+      "Product_Name": "Olay Regenerist Micro-Sculpting Cream",
+      "Brand": "Olay",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 24,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "Mature",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Niacinamide",
+        "Peptides",
+        "Hyaluronic Acid",
+        "Amino-Peptide Complex"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Olay Regenerist Micro-Sculpting Cream is mixed, with many users praising its rich, deeply moisturizing texture and effectiveness in improving skin tone and hydration. While it is frequently recommended as a staple for anti-aging routines, some users have reported sensitivity or reactive itching, and others express uncertainty regarding its efficacy compared to their other active skincare treatments. Key themes: skin, regenerist, olay, cream, micro-sculpting."
+    }
+  },
+  {
+    "Product_ID": 14,
+    "Semantic_Profile": {
+      "Product_Name": "CeraVe AM Facial Moisturizing Lotion SPF 30",
+      "Brand": "CeraVe",
+      "Category": "Moisturizer with SPF",
+      "Price_USD": 17,
+      "Texture": "Lotion",
+      "Skin_Types": [
+        "All",
+        "Sensitive"
+      ],
+      "Key_Ingredients": [
+        "Zinc Oxide",
+        "Niacinamide",
+        "Ceramides",
+        "Hyaluronic Acid"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": 30,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment regarding CeraVe AM Facial Moisturizing Lotion is largely negative, as users frequently report issues with pilling, greasy textures, and inconsistent product quality. While some customers initially integrated it into their routines for its convenience as a combined moisturizer and sunscreen, common complaints include texture issues like \"gritty\" particles, skin breakouts, and concerns over brand-wide shrinkflation. Key themes: cerave, lotion, moisturizing, skin, sunscreen."
+    }
+  },
+  {
+    "Product_ID": 15,
+    "Semantic_Profile": {
+      "Product_Name": "Bioderma Sebium Hydra",
+      "Brand": "Bioderma",
+      "Category": "Moisturizer",
+      "Price_USD": 22,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "Oily",
+        "Sensitive",
+        "Acne-Prone"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Glycerin",
+        "Enoxolone",
+        "Ceramides"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward Bioderma Sebium Hydra is positive, as users highly value its ability to soothe and intensely hydrate skin compromised by harsh acne treatments like Epiduo. While it is frequently praised for being non-irritating and gentle on sensitive skin, some users find the limited 40ml packaging inconvenient or report that it may still feel too heavy for those seeking a lighter, non-clogging formula. Key themes: skin, bioderma, sebium, routine, acne."
+    }
+  },
+  {
+    "Product_ID": 16,
+    "Semantic_Profile": {
+      "Product_Name": "Clinique Dramatically Different Hydrating Jelly",
+      "Brand": "Clinique",
+      "Category": "Moisturizer",
+      "Price_USD": 33,
+      "Texture": "Jelly-gel",
+      "Skin_Types": [
+        "Oily",
+        "Combination",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Glycerin",
+        "Cucumber Extract",
+        "Barley Extract"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Clinique Dramatically Different Hydrating Jelly is mixed, as users frequently praise its ideal lightweight, non-sticky texture and compatibility with sensitive or acne-prone skin. However, many report that the formula lacks sufficient long-term hydration, leading some to seek more effective alternatives or to layer it with other products to combat chronic dehydration. Additionally, some users express concerns regarding the product's long ingredient list and its potential to cause redness or irritation. Key themes: skin, clinique, hydrating, different, dramatically."
+    }
+  },
+  {
+    "Product_ID": 17,
+    "Semantic_Profile": {
+      "Product_Name": "Prequel Half & Half Peptides + Ceramides",
+      "Brand": "Prequel",
+      "Category": "Moisturizer",
+      "Price_USD": 26,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "Dry",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Peptides",
+        "Ceramides",
+        "Niacinamide",
+        "Squalane"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 18,
+    "Semantic_Profile": {
+      "Product_Name": "Avne Tolerance Control Soothing Skin Recovery Cream",
+      "Brand": "Avene",
+      "Category": "Moisturizer",
+      "Price_USD": 30,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "Sensitive",
+        "Reactive",
+        "Intolerant"
+      ],
+      "Key_Ingredients": [
+        "Thermal Spring Water",
+        "Glycerin",
+        "Squalane"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 19,
+    "Semantic_Profile": {
+      "Product_Name": "Aestura Atobarrier365 Cream",
+      "Brand": "Aestura",
+      "Category": "Moisturizer",
+      "Price_USD": 32,
+      "Texture": "Rich cream",
+      "Skin_Types": [
+        "Dry",
+        "Sensitive",
+        "Barrier-Compromised"
+      ],
+      "Key_Ingredients": [
+        "Ceramides",
+        "Cholesterol",
+        "Fatty Acids",
+        "Centella Asiatica"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: The Aestura Atobarrier365 Cream is generally highly regarded as a positive, \"holy grail\" staple for repairing damaged skin barriers and providing deep hydration for dry, sensitive skin types. While users praise its effective, ceramide-rich formula for soothing irritation and preventing dryness, some report mixed experiences regarding recent formula changes involving niacinamide. Additionally, a few users have noted that the texture can occasionally feel slightly greasy, despite its lightweight appearance. Key themes: skin, cream, aestura, been, atobarrier365."
+    }
+  },
+  {
+    "Product_ID": 20,
+    "Semantic_Profile": {
+      "Product_Name": "CeraVe Healing Ointment",
+      "Brand": "CeraVe",
+      "Category": "Ointment",
+      "Price_USD": 19,
+      "Texture": "Ointment",
+      "Skin_Types": [
+        "Very Dry",
+        "Damaged",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Petrolatum",
+        "Ceramides",
+        "Hyaluronic Acid"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Overall, sentiment toward the CeraVe Healing Ointment is highly positive, with users frequently praising it as an elite, cost-effective solution for \"slugging\" and locking in deep hydration. Fans specifically highlight its superior formula containing ceramides and hyaluronic acid, which provides long-lasting protection without causing irritation, even around sensitive eye areas. While most experiences are excellent, some users report limited efficacy when attempting to treat persistent conditions like cracked mouth corners, noting that even this occlusive product may not be a universal cure-all. Key themes: cerave, healing, ointment, skin, [product."
+    }
+  },
+  {
+    "Product_ID": 21,
+    "Semantic_Profile": {
+      "Product_Name": "Isntree Hyaluronic Acid Aqua Gel Cream",
+      "Brand": "Isntree",
+      "Category": "Moisturizer",
+      "Price_USD": 18,
+      "Texture": "Gel-cream",
+      "Skin_Types": [
+        "Oily",
+        "Dehydrated",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid (5 types)",
+        "Centella Asiatica",
+        "Beta-Glucan"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: \n\nReviews for the various products in the \"product21\" category are mixed, with users frequently debating the efficacy of popular gel-cream textures versus thicker barrier-repair creams. While many appreciate the lightweight, soothing hydration provided by hyaluronic acid and centella-based formulas, others report issues with pilling, tackiness, or breakouts caused by specific ingredients like niacinamide or occlusives. Ultimately, users find the most success by matching specific cream textures to their skin\u2019s seasonal needs and sensitivity, often noting that \"holy grail\" status is highly individual and depends heavily on their specific skin type. Key themes: cream, skin, acid, hyaluronic, when."
+    }
+  },
+  {
+    "Product_ID": 22,
+    "Semantic_Profile": {
+      "Product_Name": "TULA 24-7 Moisture Hydrating Day & Night Cream",
+      "Brand": "TULA",
+      "Category": "Moisturizer",
+      "Price_USD": 26,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Probiotics",
+        "Superfoods",
+        "Hyaluronic Acid",
+        "Watermelon Extract"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 23,
+    "Semantic_Profile": {
+      "Product_Name": "Cocokind Resurrection Polypeptide Cream",
+      "Brand": "Cocokind",
+      "Category": "Moisturizer",
+      "Price_USD": 20,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Polypeptides",
+        "Ceramides",
+        "Sea Kelp Bioferment"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Cocokind Resurrection Polypeptide Cream is mixed, with users frequently praising its hydrating, dewy finish and effective peptide-rich formula as an affordable alternative to high-end moisturizers. However, while some appreciate its texture, others report it lacks sufficient longevity for very dry skin or can cause breakouts and irritation for those with sensitive, acne-prone complexions. Key themes: cream, skin, polypeptide, resurrection, cocokind."
+    }
+  },
+  {
+    "Product_ID": 24,
+    "Semantic_Profile": {
+      "Product_Name": "Tower 28 SOS Recovery Cream",
+      "Brand": "Tower 28",
+      "Category": "Moisturizer",
+      "Price_USD": 28,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Sensitive"
+      ],
+      "Key_Ingredients": [
+        "Ceramides",
+        "Hyaluronic Acid",
+        "Niacinamide"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: The overall sentiment toward the Tower 28 SOS Recovery Cream is highly positive, with users frequently citing it as a \"holy grail\" product for soothing irritation and reducing redness. While many rely on it for its calming properties and suitability for sensitive or acne-prone skin, a small minority of users reported that the cream caused clogged pores or breakouts. Ultimately, it remains a popular, affordable staple for those seeking a non-irritating moisturizer that effectively supports the skin barrier. Key themes: skin, list, inkey, cream, tower."
+    }
+  },
+  {
+    "Product_ID": 25,
+    "Semantic_Profile": {
+      "Product_Name": "Youth To The People Adaptogen Deep Moisture Cream",
+      "Brand": "Youth To The People",
+      "Category": "Moisturizer",
+      "Price_USD": 58,
+      "Texture": "Rich cream",
+      "Skin_Types": [
+        "Dry",
+        "Stressed",
+        "Sensitive"
+      ],
+      "Key_Ingredients": [
+        "Ashwagandha",
+        "Reishi Mushroom",
+        "Peptides",
+        "Squalane"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment regarding the Youth to the People Adaptogen Deep Moisture Cream is highly positive, with users praising its lightweight, non-greasy texture and its ability to provide deep hydration to a variety of skin types. While most reviewers find it effectively soothing and non-clogging, some users noted that the high price point makes it an expensive investment. A few individuals with specific skin needs mentioned that it can feel slightly too heavy or insufficient depending on their unique moisture requirements. Key themes: skin, cream, people, moisture, also."
+    }
+  },
+  {
+    "Product_ID": 26,
+    "Semantic_Profile": {
+      "Product_Name": "Drunk Elephant Protini Polypeptide Cream",
+      "Brand": "Drunk Elephant",
+      "Category": "Moisturizer",
+      "Price_USD": 72,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Signal Peptides",
+        "Pygmy Waterlily",
+        "Amino Acids"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: The overall sentiment toward the Drunk Elephant Protini Polypeptide Cream is mixed, with users frequently praising its lightweight, smooth texture while expressing concern over its high price point. Many appreciate its performance as a non-irritating moisturizer, particularly for those with sensitive or damaged skin barriers, though some users report it may be ineffective or potentially pore-clogging depending on individual skin sensitivities. Consequently, the product is often viewed as a high-quality but expensive staple, leading many consumers to actively seek more affordable alternatives that offer a similar finish. Key themes: skin, cream, drunk, elephant, moisturizer."
+    }
+  },
+  {
+    "Product_ID": 27,
+    "Semantic_Profile": {
+      "Product_Name": "Tatcha The Dewy Skin Cream",
+      "Brand": "Tatcha",
+      "Category": "Moisturizer",
+      "Price_USD": 93,
+      "Texture": "Rich cream",
+      "Skin_Types": [
+        "All",
+        "Dry",
+        "Dull"
+      ],
+      "Key_Ingredients": [
+        "Hadasei-3 Complex",
+        "Japanese Purple Rice",
+        "Okinawa Algae",
+        "Hyaluronic Acid"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward Tatcha\u2019s The Dewy Skin Cream is overwhelmingly positive, with users frequently praising its ability to provide deep hydration and a coveted \"glass skin\" glow. While it is highly favored for repairing skin barriers and improving radiance, some users note its high price point as a potential drawback. It is widely considered a staple, particularly for those struggling with dryness or dullness, and is consistently highlighted as a top-performing moisturizer across various skincare routines. Key themes: skin, cream, tatcha, serum, dewy."
+    }
+  },
+  {
+    "Product_ID": 28,
+    "Semantic_Profile": {
+      "Product_Name": "Tatcha The Water Cream",
+      "Brand": "Tatcha",
+      "Category": "Moisturizer",
+      "Price_USD": 93,
+      "Texture": "Water-gel",
+      "Skin_Types": [
+        "Oily",
+        "Combination"
+      ],
+      "Key_Ingredients": [
+        "Hadasei-3 Complex",
+        "Japanese Wild Rose",
+        "Leopard Lily"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: User sentiment toward the Tatcha Water Cream is mixed, as many praise its lightweight, non-tacky finish that provides effective, comfortable hydration. However, some users find the formula insufficiently moisturizing for drier skin types, while others report concerns regarding its comedogenic potential or price-point, leading them to seek more affordable alternatives. Key themes: skin, cream, cleanser, water, moisturizer."
+    }
+  },
+  {
+    "Product_ID": 29,
+    "Semantic_Profile": {
+      "Product_Name": "Tatcha The Silk Cream",
+      "Brand": "Tatcha",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 125,
+      "Texture": "Silky cream",
+      "Skin_Types": [
+        "Dry",
+        "Mature",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Silk Extract",
+        "Hadasei-3 Complex",
+        "Double Hyaluronic Acid"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: Sentiment toward Tatcha\u2019s The Silk Cream is mixed, as users value its exceptional ability to provide deep, long-lasting hydration for dry skin. However, some users experience irritation or a burning sensation upon application, leading many to seek more affordable alternatives. Others find that while it remains a staple in their rotation, it can be difficult to justify the high price point compared to other options. Key themes: skin, tatcha, cream, acid, different."
+    }
+  },
+  {
+    "Product_ID": 30,
+    "Semantic_Profile": {
+      "Product_Name": "Tatcha Ageless Enriching Renewal Cream",
+      "Brand": "Tatcha",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 120,
+      "Texture": "Rich cream",
+      "Skin_Types": [
+        "Mature",
+        "Dry"
+      ],
+      "Key_Ingredients": [
+        "Okinawa Red Algae",
+        "Uji Green Tea",
+        "Botanical Oils"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward Sacheu Thick Skin is positive, as the user experienced rapid repair and smoothing of a compromised skin barrier. While the product has a notably thick, silicone-heavy texture that might deter some buyers at first glance, its effectiveness in soothing irritated skin makes it a highly valued addition to a recovery routine. Key themes: thick, skin, it's, bought, very."
+    }
+  },
+  {
+    "Product_ID": 31,
+    "Semantic_Profile": {
+      "Product_Name": "Laneige Water Sleeping Mask",
+      "Brand": "Laneige",
+      "Category": "Overnight Mask",
+      "Price_USD": 32,
+      "Texture": "Gel-cream mask",
+      "Skin_Types": [
+        "All",
+        "Dry",
+        "Dehydrated"
+      ],
+      "Key_Ingredients": [
+        "Hydro Ionized Mineral Water",
+        "Sleep-Tox\u0393\u00e4\u00f3",
+        "Apricot Extract"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The sentiment surrounding the Laneige Water Sleeping Mask is mixed, with many users highly valuing its affordability, especially when purchased in promotional travel-sized kits. While the product is a popular staple for many, some users report a negative experience, noting that it can leave their skin feeling parched or dry rather than hydrated. Key themes: sleeping, laneige, water, mask, about."
+    }
+  },
+  {
+    "Product_ID": 32,
+    "Semantic_Profile": {
+      "Product_Name": "Laneige Water Bank Blue Hyaluronic Cream",
+      "Brand": "Laneige",
+      "Category": "Moisturizer",
+      "Price_USD": 38,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Dry"
+      ],
+      "Key_Ingredients": [
+        "Blue Hyaluronic Acid",
+        "Squalane",
+        "Green Mineral Water"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Laneige Water Bank Blue Hyaluronic Cream is positive, with users frequently praising its lightweight, hydrating texture and ability to provide a non-greasy glow. While many enjoy its performance under makeup and aesthetic packaging, some users find the product expensive and suggest it is functionally similar to more affordable alternatives like Neutrogena Hydro Boost. Key themes: skin, water, cream, moisturizer, laneige."
+    }
+  },
+  {
+    "Product_ID": 33,
+    "Semantic_Profile": {
+      "Product_Name": "COSRX Hyaluronic Acid Intensive Cream",
+      "Brand": "COSRX",
+      "Category": "Moisturizer",
+      "Price_USD": 24,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Dry"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Vitamin B5",
+        "Ceramides"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: Users express a highly positive sentiment toward the COSRX Hyaluronic Acid Intensive Cream, frequently praising its deep hydration and soothing properties. While it is particularly celebrated by those with dry, dehydrated, or eczema-prone skin, some users note it may be too rich or occlusive for those preferring a matte finish. Overall, it is widely regarded as an effective, reliable moisturizer for restoring a healthy moisture barrier. Key themes: cream, skin, cosrx, hyaluronic, acid."
+    }
+  },
+  {
+    "Product_ID": 34,
+    "Semantic_Profile": {
+      "Product_Name": "COSRX Oil-Free Ultra-Moisturizing Lotion with Birch Sap",
+      "Brand": "COSRX",
+      "Category": "Moisturizer",
+      "Price_USD": 19,
+      "Texture": "Lotion",
+      "Skin_Types": [
+        "Oily",
+        "Combination"
+      ],
+      "Key_Ingredients": [
+        "Birch Sap",
+        "Hyaluronic Acid",
+        "Betaine"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Cosrx Oil-Free Ultra-Moisturizing Lotion with Birch Sap is highly positive, as users with sensitive, acne-prone, and combination skin frequently rely on it as a staple for its lightweight, non-irritating hydration. While many praise its gentle formula, some users find it insufficient for drier conditions or when paired with harsh actives, noting that it may not provide enough moisture for those seeking a thicker, more intensive barrier cream. Key themes: skin, cosrx, birch, lotion, cream."
+    }
+  },
+  {
+    "Product_ID": 35,
+    "Semantic_Profile": {
+      "Product_Name": "Beauty of Joseon Dynasty Cream",
+      "Brand": "Beauty of Joseon",
+      "Category": "Moisturizer",
+      "Price_USD": 18,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Dry"
+      ],
+      "Key_Ingredients": [
+        "Rice Bran Water",
+        "Ginseng Root Water",
+        "Squalane",
+        "Niacinamide"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: The overall sentiment toward the Beauty of Joseon Dynasty Cream is overwhelmingly positive, with many users identifying it as a \"holy grail\" product for their routines. Fans consistently praise its ability to deeply moisturize and soothe sensitive skin, making it a reliable staple alongside active treatments like tretinoin. Users report virtually no adverse reactions, noting that its gentle, hydrating formula effectively supports skin barrier recovery without causing irritation. Key themes: dynasty, beauty, joseon, cream, skin."
+    }
+  },
+  {
+    "Product_ID": 36,
+    "Semantic_Profile": {
+      "Product_Name": "Innisfree Green Tea Seed Cream",
+      "Brand": "Innisfree",
+      "Category": "Moisturizer",
+      "Price_USD": 22,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Dry"
+      ],
+      "Key_Ingredients": [
+        "Green Tea Extract",
+        "Green Tea Seed Oil",
+        "Hyaluronic Acid"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: Product36\u2014specifically the Innisfree Green Tea Seed Cream\u2014receives overwhelmingly positive sentiment as a long-standing \"holy grail\" moisturizer. Users praise its ideal texture, effective hydration for dry-combination skin, and its ability to provide a soothing, refreshing experience. The primary complaints are minimal, focusing on the product's lack of a noticeable green tea scent and occasional stock availability issues. Key themes: innisfree, it's, skin, cream, green."
+    }
+  },
+  {
+    "Product_ID": 37,
+    "Semantic_Profile": {
+      "Product_Name": "Sulwhasoo Concentrated Ginseng Renewing Cream",
+      "Brand": "Sulwhasoo",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 225,
+      "Texture": "Rich cream",
+      "Skin_Types": [
+        "Mature",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Ginseng Saponin",
+        "Ginsenomics\u0393\u00e4\u00f3",
+        "Korean Herbal Complex"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: The overall sentiment toward the Sulwhasoo Concentrated Ginseng Renewing line is overwhelmingly positive, with users frequently praising its ability to make skin feel soft, plump, and hydrated. While the products are highly coveted for their effectiveness, the primary drawback is the luxury price point, which leads many enthusiasts to seek more affordable alternatives. The range is particularly well-regarded by those with sensitive skin, as it provides deep nourishment without causing irritation or stinging. Key themes: sulwhasoo, ginseng, renewing, concentrated, skin."
+    }
+  },
+  {
+    "Product_ID": 38,
+    "Semantic_Profile": {
+      "Product_Name": "Missha Time Revolution Night Repair Borabit Ampoule Cream",
+      "Brand": "Missha",
+      "Category": "Night Moisturizer",
+      "Price_USD": 35,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Bifida Ferment",
+        "Niacinamide",
+        "Adenosine",
+        "Ceramides"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 39,
+    "Semantic_Profile": {
+      "Product_Name": "SK-II R.N.A. Power Radical New Age Cream",
+      "Brand": "SK-II",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 195,
+      "Texture": "Luxe cream",
+      "Skin_Types": [
+        "All",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Pitera\u0393\u00e4\u00f3",
+        "InfinitPower Technology",
+        "Niacinamide"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward these luxury moisturizers is overwhelmingly positive, with users consistently praising their transformative effects on skin texture, hydration, and anti-aging. Reviewers highlight visible improvements in firmness, radiance, and fine lines, viewing these products as effective, albeit indulgent, investments in skin health. No specific complaints or adverse skin reactions were noted in the analyzed reviews. Key themes: skin, anti-aging, transformative, other, texture."
+    }
+  },
+  {
+    "Product_ID": 40,
+    "Semantic_Profile": {
+      "Product_Name": "La Mer Creme de la Mer",
+      "Brand": "La Mer",
+      "Category": "Luxury Moisturizer",
+      "Price_USD": 385,
+      "Texture": "Rich cream",
+      "Skin_Types": [
+        "All",
+        "Dry",
+        "Sensitive"
+      ],
+      "Key_Ingredients": [
+        "Miracle Broth\u0393\u00e4\u00f3",
+        "Sea Kelp",
+        "Lime Tea",
+        "Vitamins C, E, B12"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward these products is mixed, as users highly value the luxurious hydration, soothing effects, and effective plumping benefits provided by premium brands like La Mer and Sisley. However, many reviewers express frustration regarding high price points, inconsistent results for specific skin concerns, and significant skin reactions, including breakouts, rashes, and the development of dermatitis. Consequently, while some products achieve \"holy grail\" status for their immediate transformative effects, many users remain hesitant to repurchase due to these potential sensitivities and concerns over cost-efficiency. Key themes: &amp;nbsp;, will, skin, repurchasing, this.."
+    }
+  },
+  {
+    "Product_ID": 41,
+    "Semantic_Profile": {
+      "Product_Name": "La Mer The Moisturizing Soft Cream",
+      "Brand": "La Mer",
+      "Category": "Luxury Moisturizer",
+      "Price_USD": 385,
+      "Texture": "Soft cream",
+      "Skin_Types": [
+        "All",
+        "Normal to Oily"
+      ],
+      "Key_Ingredients": [
+        "Miracle Broth\u0393\u00e4\u00f3",
+        "Antioxidants",
+        "Marine Actives"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: The reviewer expresses a mixed sentiment toward the analyzed products, noting that while several items earned \"Holy Grail\" status for their hydrating and plumping effects, many others failed to deliver promised results. Users particularly value products that soothe inflammation and improve skin texture, though they frequently criticize items that are difficult to spread, cause pilling, or leave an unwanted film on the skin. Ultimately, the decision to repurchase is often deterred by steep price points, ineffective formulations, or concerns regarding long-term skin reactions. Key themes: &amp;nbsp;, will, skin, repurchasing, this.."
+    }
+  },
+  {
+    "Product_ID": 42,
+    "Semantic_Profile": {
+      "Product_Name": "Estee Lauder Advanced Night Repair Intensive Recovery Ampoules",
+      "Brand": "Estee Lauder",
+      "Category": "Night Treatment",
+      "Price_USD": 95,
+      "Texture": "Serum-cream hybrid",
+      "Skin_Types": [
+        "All",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "ChronoluxCB\u0393\u00e4\u00f3",
+        "Bifidus Extract"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 43,
+    "Semantic_Profile": {
+      "Product_Name": "Estee Lauder Revitalizing Supreme+ Youth Power Creme",
+      "Brand": "Estee Lauder",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 98,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Moringa Extract",
+        "Hyaluronic Acid",
+        "Hibiscus Extract"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: Users express a highly positive sentiment toward the Estee Lauder Revitalizing Supreme+ Youth Power Creme, praising its perfect texture that provides deep hydration without feeling greasy or heavy. While the product effectively minimizes the appearance of fine lines, the primary complaint is its high price point, driving users to actively seek more affordable dupes. Key themes: feel, dupe, estee, lauder, revitalizing."
+    }
+  },
+  {
+    "Product_ID": 44,
+    "Semantic_Profile": {
+      "Product_Name": "Drunk Elephant Lala Retro Whipped Cream",
+      "Brand": "Drunk Elephant",
+      "Category": "Moisturizer",
+      "Price_USD": 62,
+      "Texture": "Whipped cream",
+      "Skin_Types": [
+        "Dry",
+        "Normal"
+      ],
+      "Key_Ingredients": [
+        "Ceramides",
+        "Plant Oils",
+        "Fermented Green Tea"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: Reviews for product44 are generally mixed, as users value the \"free-from\" approach\u2014specifically the absence of fragrance, alcohol, and essential oils\u2014which makes many items suitable for sensitive or acne-prone skin. While users appreciate the lightweight, hydrating properties of several toners and creams, common complaints center on ineffective results for specific concerns like cystic acne or hyperpigmentation and frequent dissatisfaction with high price points. Additionally, some users reported issues with product textures, such as greasiness or sticky residue, noting that certain formulations were too heavy or failed to absorb properly for combination skin types. Key themes: free., essential, skin, it's, fragrance,."
+    }
+  },
+  {
+    "Product_ID": 45,
+    "Semantic_Profile": {
+      "Product_Name": "First Aid Beauty Ultra Repair Cream",
+      "Brand": "First Aid Beauty",
+      "Category": "Moisturizer",
+      "Price_USD": 36,
+      "Texture": "Rich cream",
+      "Skin_Types": [
+        "Dry",
+        "Sensitive",
+        "Eczema-Prone"
+      ],
+      "Key_Ingredients": [
+        "Colloidal Oatmeal",
+        "Shea Butter",
+        "Ceramides",
+        "Allantoin"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": false,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the First Aid Beauty Ultra Repair Cream is highly positive, with users frequently praising its effectiveness as a reliable, go-to moisturizer for soothing dry, dehydrated, and compromised skin barriers. It is widely considered a \"holy grail\" product for those using active treatments like tretinoin, though some users note they occasionally pair it with thicker balms or oils during extreme winter conditions. No significant negative reactions were reported, as the cream is consistently favored for its calming properties and ability to provide deep, non-irritating hydration. Key themes: first, repair, cream, ultra, skin."
+    }
+  },
+  {
+    "Product_ID": 46,
+    "Semantic_Profile": {
+      "Product_Name": "Kiehl's Ultra Facial Cream",
+      "Brand": "Kiehl's",
+      "Category": "Moisturizer",
+      "Price_USD": 33,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Squalane",
+        "Glacial Glycoprotein",
+        "Desert Plant Extract"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward Kiehl's Ultra Facial Cream is mixed, as users frequently praise its lightweight, non-greasy texture and highly effective hydrating properties for sensitive skin. However, many customers express frustration over the product's high price point and report significant issues with pilling, while others are actively seeking alternatives due to brand ethical concerns. Key themes: ultra, facial, kiehl's, cream, moisturizer."
+    }
+  },
+  {
+    "Product_ID": 47,
+    "Semantic_Profile": {
+      "Product_Name": "Kiehl's Ultra Facial Oil-Free Gel Cream",
+      "Brand": "Kiehl's",
+      "Category": "Moisturizer",
+      "Price_USD": 35,
+      "Texture": "Gel-cream",
+      "Skin_Types": [
+        "Oily",
+        "Combination"
+      ],
+      "Key_Ingredients": [
+        "Imperata Cylindrica Root Extract",
+        "Antarcticine",
+        "Glacial Glycoprotein"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: User sentiment regarding Kiehl's Ultra Facial Oil-Free Gel Cream is mixed, with many valuing its lightweight, non-greasy texture that avoids causing breakouts. While it is frequently praised as an effective, shine-free moisturizer for those with oily or acne-prone skin, some users report that it lacks sufficient hydration for deeper moisture needs. Overall, it is often utilized as a reliable daily staple, though it may not be robust enough for individuals managing drier skin or stronger treatment-based routines. Key themes: skin, &amp;#x200b;, kiehl's, been, i've."
+    }
+  },
+  {
+    "Product_ID": 48,
+    "Semantic_Profile": {
+      "Product_Name": "The Ordinary Natural Moisturizing Factors + HA",
+      "Brand": "The Ordinary",
+      "Category": "Moisturizer",
+      "Price_USD": 8,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Amino Acids",
+        "Fatty Acids",
+        "Triglycerides",
+        "Hyaluronic Acid"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: The overall sentiment toward *The Ordinary Natural Moisturizing Factors + HA* is highly positive, with users frequently identifying it as an essential, budget-friendly \"holy grail\" moisturizer. Fans love its simple, effective formula that provides reliable hydration without the use of irritating fragrances or essential oils. While it is widely praised as a staple, some users with specific skin concerns or severe barrier damage note that it is a basic product and may not be sufficient on its own to resolve complex skin issues. Key themes: skin, free., it's, essential, fragrance,."
+    }
+  },
+  {
+    "Product_ID": 49,
+    "Semantic_Profile": {
+      "Product_Name": "The Inkey List Peptide Moisturizer",
+      "Brand": "The Inkey List",
+      "Category": "Moisturizer",
+      "Price_USD": 15,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Matrixyl",
+        "Hyaluronic Acid",
+        "Vitamin B5"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The Inkey List Peptide Moisturizer receives a mixed reception, with users appreciating its affordable, simple formula that leaves skin feeling soft and bouncy. However, several reviewers report that the product can be heavy or pore-clogging, noting that it occasionally triggers breakouts or fails to resolve issues for those with highly sensitive, acne-prone skin. Key themes: skin, moisturizer, inkey, list, peptide."
+    }
+  },
+  {
+    "Product_ID": 50,
+    "Semantic_Profile": {
+      "Product_Name": "Paula's Choice RESIST Anti-Aging Clear Skin Hydrator",
+      "Brand": "Paula's Choice",
+      "Category": "Moisturizer",
+      "Price_USD": 37,
+      "Texture": "Lightweight lotion",
+      "Skin_Types": [
+        "Oily",
+        "Acne-Prone",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Niacinamide",
+        "Ceramides",
+        "Antioxidants",
+        "Salicylic Acid"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: Users express a generally positive sentiment toward Paula's Choice products, frequently praising their effectiveness in managing acne, pore appearance, and anti-aging concerns. While customers appreciate the brand's targeted, high-performance solutions, some note that complex regimens or improper usage can lead to over-exfoliation, dryness, and skin sensitivity. Key themes: skin, choice, \\-paula's, resist, paula's."
+    }
+  },
+  {
+    "Product_ID": 51,
+    "Semantic_Profile": {
+      "Product_Name": "Versed Dew Point Moisturizing Gel-Cream",
+      "Brand": "Versed",
+      "Category": "Moisturizer",
+      "Price_USD": 18,
+      "Texture": "Gel-cream",
+      "Skin_Types": [
+        "All",
+        "Oily"
+      ],
+      "Key_Ingredients": [
+        "Aloe Vera",
+        "Hyaluronic Acid",
+        "Vitamin B5"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment regarding the Versed Dew Point Moisturizing Gel-Cream is mixed, as users with oily skin frequently turn to it as a lightweight staple for their routines. While many appreciate its gentle, non-greasy formula for barrier support, others report that it fails to control oil and can actually leave the skin looking and feeling excessively shiny. Key themes: skin, mask, i've, point, moisturizing."
+    }
+  },
+  {
+    "Product_ID": 52,
+    "Semantic_Profile": {
+      "Product_Name": "Glow Recipe Plum Plump Hyaluronic Cream",
+      "Brand": "Glow Recipe",
+      "Category": "Moisturizer",
+      "Price_USD": 42,
+      "Texture": "Gel-cream",
+      "Skin_Types": [
+        "All",
+        "Dehydrated"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Plum",
+        "Vegan Collagen",
+        "Peptides"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: User sentiment toward the Glow Recipe Plum Plump Hyaluronic Cream is generally positive, with many users seeking it out specifically to achieve a dewy, healthy-looking glow. While it is frequently praised for its hydrating properties, some users with sensitive or acne-prone skin are carefully balancing its use alongside other potent actives to avoid potential irritation or dryness. Key themes: glow, skin, cream, recipe, *or*."
+    }
+  },
+  {
+    "Product_ID": 53,
+    "Semantic_Profile": {
+      "Product_Name": "Summer Fridays Cloud Dew Oil-Free Gel Cream",
+      "Brand": "Summer Fridays",
+      "Category": "Moisturizer",
+      "Price_USD": 44,
+      "Texture": "Gel-cream",
+      "Skin_Types": [
+        "Oily",
+        "Combination"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Glycerin",
+        "Blue Tansy"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment from users is mixed, as they view skincare routines as essential for addressing concerns like acne, wrinkles, and texture but feel overwhelmed by the vast array of available products. Users actively seek guidance on product layering and finding effective, non-irritating solutions for sensitive or combination skin. Common frustrations include negative reactions to specific formulations, such as products feeling too heavy or causing skin sensitivity, leading to a trial-and-error approach to product selection. Key themes: skin, routine, really, i've, products."
+    }
+  },
+  {
+    "Product_ID": 54,
+    "Semantic_Profile": {
+      "Product_Name": "Belif The True Cream Aqua Bomb",
+      "Brand": "Belif",
+      "Category": "Moisturizer",
+      "Price_USD": 38,
+      "Texture": "Gel-cream",
+      "Skin_Types": [
+        "Oily",
+        "Combination",
+        "Normal"
+      ],
+      "Key_Ingredients": [
+        "Lady's Mantle",
+        "Hyaluronic Acid",
+        "Napiers Aqua Formula"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: User sentiment regarding Belif The True Cream Aqua Bomb is generally positive, with many praising its lightweight, gel-like texture that provides effective hydration without a sticky residue. While users appreciate its ability to leave skin feeling bouncy and refreshed, some note that it may not be moisturizing enough for very dry skin types. Common complaints focus on the product's premium price point and the inconvenient, non-hygienic tub packaging. Key themes: skin, cream, face, aqua, using."
+    }
+  },
+  {
+    "Product_ID": 55,
+    "Semantic_Profile": {
+      "Product_Name": "Belif The True Cream Moisturizing Bomb",
+      "Brand": "Belif",
+      "Category": "Moisturizer",
+      "Price_USD": 38,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "Dry",
+        "Normal"
+      ],
+      "Key_Ingredients": [
+        "Comfrey Leaf",
+        "Ceramides",
+        "Napiers Original Formula"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward Belif The True Cream Moisturizing Bomb is highly positive, with users frequently praising its ability to leave skin feeling soft, supple, and deeply hydrated. While reviewers appreciate its quick absorption and gentle, soothing formula, some note that it may not be moisturizing enough for severely dry skin during winter months. Additionally, users with oily or combination skin generally find it effective, though a few point out that the price point is relatively high. Key themes: skin, cream, moisturizing, belif, bomb."
+    }
+  },
+  {
+    "Product_ID": 56,
+    "Semantic_Profile": {
+      "Product_Name": "IT Cosmetics Confidence in a Cream",
+      "Brand": "IT Cosmetics",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 49,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Collagen",
+        "Hyaluronic Acid",
+        "Ceramides",
+        "Peptides"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: User sentiment toward IT Cosmetics Confidence in a Cream is mixed, as many long-time fans appreciate the product\u2019s rich, effective moisturizing properties when used as a staple in their routines. However, recent feedback highlights significant frustration regarding a formula change that has left many users feeling parched and seeking suitable alternatives or dupes. Key themes: skin, cream, moisturizer, confidence, cosmetics."
+    }
+  },
+  {
+    "Product_ID": 57,
+    "Semantic_Profile": {
+      "Product_Name": "Embryolisse Lait-Cr\u251c\u00bfme Concentr\u251c\u2310",
+      "Brand": "Embryolisse",
+      "Category": "Moisturizer",
+      "Price_USD": 28,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Dry"
+      ],
+      "Key_Ingredients": [
+        "Shea Butter",
+        "Aloe Vera",
+        "Soy Proteins",
+        "Beeswax"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 58,
+    "Semantic_Profile": {
+      "Product_Name": "Dieux Instant Angel Moisturizer",
+      "Brand": "Dieux",
+      "Category": "Moisturizer",
+      "Price_USD": 45,
+      "Texture": "Gel-cream",
+      "Skin_Types": [
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Rice Bran Water",
+        "Ginseng Root Water",
+        "Squalane"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward Dieux Instant Angel moisturizer is positive, with users frequently incorporating it as a reliable staple in complex, multi-step skincare routines. Fans appreciate its ability to provide lasting hydration and a healthy glow, though some users with specific concerns like acne or environmental dryness note that it is best used in combination with other active treatments to address deeper skin issues. Key themes: skin, instant, dieux, angel, moisturizer."
+    }
+  },
+  {
+    "Product_ID": 59,
+    "Semantic_Profile": {
+      "Product_Name": "Naturium Multi-Peptide Moisturizer",
+      "Brand": "Naturium",
+      "Category": "Moisturizer",
+      "Price_USD": 20,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Peptides (6 types)",
+        "Ceramides",
+        "Vitamin E",
+        "Niacinamide"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The sentiment toward the Naturium Multi-Peptide Moisturizer is mixed, with users divided between its lightweight, fast-absorbing texture and its potential to cause adverse reactions. While some appreciate its appealing ingredient list and hydrating properties, others report that it triggered breakouts or caused stinging sensations on sensitive skin. Consequently, individual experiences vary significantly, making it a polarizing choice for those with reactive or acne-prone skin. Key themes: skin, moisturizer, naturium, also, multi-peptide."
+    }
+  },
+  {
+    "Product_ID": 60,
+    "Semantic_Profile": {
+      "Product_Name": "Eucerin Q10 Anti-Wrinkle Face Cream",
+      "Brand": "Eucerin",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 17,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "Dry",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Coenzyme Q10",
+        "Vitamin E",
+        "Beta-Carotene"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: Sentiment toward Eucerin Q10 Anti-Wrinkle Face Cream is generally mixed, with users frequently incorporating it into their routines as a reliable staple for hydration and anti-wrinkle maintenance. While many appreciate its accessibility and performance, some users express confusion regarding its classification as an occlusive and seek clarity on where it best fits within their layering order. There are no significant reports of negative skin reactions, though some consumers struggle with determining if it provides enough moisture to replace or supplement other products in their regimens. Key themes: face, cream, used, eucerin, skin."
+    }
+  },
+  {
+    "Product_ID": 61,
+    "Semantic_Profile": {
+      "Product_Name": "Derma E Hydrating Day Cream",
+      "Brand": "Derma E",
+      "Category": "Moisturizer",
+      "Price_USD": 23,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Dry"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Vitamin E",
+        "Green Tea"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment regarding Product 61 (Derma E Hydrating Day Cream) is mixed, with users specifically noting its inclusion of hyaluronic acid as a key benefit for hydration. However, some users report a negative experience, noting that the cream can leave skin feeling dry or ineffective for their specific skin type. Key themes: good, acid, hyaluronic, looking, cream."
+    }
+  },
+  {
+    "Product_ID": 62,
+    "Semantic_Profile": {
+      "Product_Name": "Mad Hippie Face Cream",
+      "Brand": "Mad Hippie",
+      "Category": "Moisturizer",
+      "Price_USD": 34,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Peptides",
+        "Chamomile",
+        "Grapeseed Oil",
+        "Vitamin E"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward Mad Hippie Face Cream is mixed, as users frequently praise its hydrating properties and effective performance for creating a glowing complexion. While many appreciate its role in anti-aging and moisturizing routines, others report negative experiences, including concerns about product cost and instances of skin reactions like fungal acne. Key themes: face, skin, hippie, products, using."
+    }
+  },
+  {
+    "Product_ID": 63,
+    "Semantic_Profile": {
+      "Product_Name": "Acure Seriously Soothing Cloud Cream",
+      "Brand": "Acure",
+      "Category": "Moisturizer",
+      "Price_USD": 20,
+      "Texture": "Cloud cream",
+      "Skin_Types": [
+        "Sensitive",
+        "Stressed"
+      ],
+      "Key_Ingredients": [
+        "Ashwagandha",
+        "Reishi Mushroom",
+        "Pumpkin Seed",
+        "Sunflower Oil"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment regarding the use of Erythromycin topical gel is negative due to significant formulation compatibility issues. While users appreciate its safety for pregnancy, they commonly report that the product consistently pills and forms a \"goopy, stringy\" residue when layered with various moisturizers. Key themes: erythromycin, topical, seem, when, cream,."
+    }
+  },
+  {
+    "Product_ID": 64,
+    "Semantic_Profile": {
+      "Product_Name": "RoC Retinol Correxion Deep Wrinkle Night Cream",
+      "Brand": "RoC",
+      "Category": "Anti-Aging Night Cream",
+      "Price_USD": 24,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "Aging",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Retinol",
+        "Hyaluronic Acid",
+        "Glycerin"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: The sentiment toward the RoC Retinol Correxion Deep Wrinkle Night Cream is mixed, as users frequently integrate it into their routines for its promising anti-aging benefits and efficacy in treating fine lines. While many value it as a accessible staple for wrinkle prevention, some users report significant irritation, including burning sensations and dryness, particularly when applied to the sensitive skin around the eyes. Consequently, reviewers emphasize the importance of cautious, gradual application to avoid damaging the skin barrier. Key themes: retinol, cream, skin, night, deep."
+    }
+  },
+  {
+    "Product_ID": 65,
+    "Semantic_Profile": {
+      "Product_Name": "Garnier SkinActive Moisture Rescue Refreshing Gel-Cream",
+      "Brand": "Garnier",
+      "Category": "Moisturizer",
+      "Price_USD": 10,
+      "Texture": "Gel-cream",
+      "Skin_Types": [
+        "All",
+        "Oily"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Antioxidant Fruit Water"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Garnier SkinActive Moisture Rescue Refreshing Gel-Cream is mixed, as it has served as a long-term staple for many users who appreciate its lightweight, non-oily hydration. However, some users have reported negative experiences, citing concerns over potential breakouts and sensitivities to its dimethicone content. While it remains a preferred moisturizer for its texture, its consistency in suitability across different skin types remains a point of contention. Key themes: skin, skinactive, garnier, been, moisture."
+    }
+  },
+  {
+    "Product_ID": 66,
+    "Semantic_Profile": {
+      "Product_Name": "L'Oreal Paris Revitalift Triple Power Anti-Aging Moisturizer",
+      "Brand": "L'Oreal Paris",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 22,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "Aging",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Pro-Retinol",
+        "Hyaluronic Acid",
+        "Vitamin C"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 67,
+    "Semantic_Profile": {
+      "Product_Name": "Perricone MD Cold Plasma Plus+ Face",
+      "Brand": "Perricone MD",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 145,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Copper Tripeptide",
+        "Phospholipids",
+        "Omegas",
+        "Vitamin C Ester"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 68,
+    "Semantic_Profile": {
+      "Product_Name": "Shiseido Essential Energy Moisturizing Cream",
+      "Brand": "Shiseido",
+      "Category": "Moisturizer",
+      "Price_USD": 58,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All"
+      ],
+      "Key_Ingredients": [
+        "ReNeura Technology+\u0393\u00e4\u00f3",
+        "Active Response Powder",
+        "Caffeine"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Super Greens Nourishing Cleanser is negative, as the user reported that it failed to improve their skin. The primary complaint is that the product caused recurring pimple breakouts after two months of consistent use. Key themes: skin, cleanser, over, month., used."
+    }
+  },
+  {
+    "Product_ID": 69,
+    "Semantic_Profile": {
+      "Product_Name": "Shiseido Benefiance Wrinkle Smoothing Cream",
+      "Brand": "Shiseido",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 98,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "Aging",
+        "All"
+      ],
+      "Key_Ingredients": [
+        "ReNeura Technology+\u0393\u00e4\u00f3",
+        "KOMBU-Bounce Complex",
+        "Mukurossi Extract"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Shiseido Benefiance Wrinkle Smoothing Cream is mixed, with users frequently praising its rich, luxurious texture and potential for long-term anti-aging benefits. However, some consumers report concerns regarding its strong fragrance and potential to cause skin irritation or itching, particularly for those with sensitive skin. Key themes: cream, shiseido, (just, wrinkle, smoothing."
+    }
+  },
+  {
+    "Product_ID": 70,
+    "Semantic_Profile": {
+      "Product_Name": "Clarins Double Serum Eye",
+      "Brand": "Clarins",
+      "Category": "Eye Cream",
+      "Price_USD": 79,
+      "Texture": "Serum-cream",
+      "Skin_Types": [
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Turmeric",
+        "Oat Sugars",
+        "Plant Extracts (20+ types)"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment regarding the Clarins Double Serum Eye is currently neutral, as users are primarily seeking advice and evaluating its value rather than sharing personal results. The product is frequently mentioned as part of established skincare routines, though there are no specific reports of benefits or skin reactions at this time. Key themes: i\u2019ve, serum, skin, products, clarins."
+    }
+  },
+  {
+    "Product_ID": 71,
+    "Semantic_Profile": {
+      "Product_Name": "Fresh Black Tea Age-Delay Cream",
+      "Brand": "Fresh",
+      "Category": "Anti-Aging Moisturizer",
+      "Price_USD": 92,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All",
+        "Aging"
+      ],
+      "Key_Ingredients": [
+        "Black Tea Extract",
+        "Blackberry Leaf Extract",
+        "Kombucha"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 72,
+    "Semantic_Profile": {
+      "Product_Name": "Origins GinZing Oil-Free Energy Boosting Gel Moisturizer",
+      "Brand": "Origins",
+      "Category": "Moisturizer",
+      "Price_USD": 35,
+      "Texture": "Gel",
+      "Skin_Types": [
+        "Oily",
+        "Combination",
+        "Normal"
+      ],
+      "Key_Ingredients": [
+        "Coffee",
+        "Ginseng",
+        "Vitamin C"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment regarding the Origins moisturizer is negative due to a recent formula change. While the user previously relied on the product for their routine, the new formulation is now cited as the direct cause of breakouts and whiteheads on their cheeks. Key themes: origins, moisturizer, retinol, routine, would."
+    }
+  },
+  {
+    "Product_ID": 73,
+    "Semantic_Profile": {
+      "Product_Name": "Murad Nutrient-Charged Water Gel",
+      "Brand": "Murad",
+      "Category": "Moisturizer",
+      "Price_USD": 58,
+      "Texture": "Water-gel",
+      "Skin_Types": [
+        "Oily",
+        "Combination"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Watermelon Extract",
+        "Apple Extract"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment toward the Murad Nutrient-Charged Water Gel is highly positive, with users frequently praising its lightweight, non-greasy texture and effectiveness for oily or acne-prone skin. While it is widely celebrated for layering well under makeup without clogging pores, the primary consumer complaint is its high price point. Consequently, many reviewers actively seek out more affordable drugstore alternatives that offer similar hydration without the premium cost. Key themes: water, murad, skin, acid, cream."
+    }
+  },
+  {
+    "Product_ID": 74,
+    "Semantic_Profile": {
+      "Product_Name": "Dr. Dennis Gross Hyaluronic Marine Oil-Free Moisture Cushion",
+      "Brand": "Dr. Dennis Gross",
+      "Category": "Moisturizer",
+      "Price_USD": 70,
+      "Texture": "Gel-cushion",
+      "Skin_Types": [
+        "Oily",
+        "Combination"
+      ],
+      "Key_Ingredients": [
+        "Hyaluronic Acid",
+        "Marine Algae",
+        "Niacinamide"
+      ],
+      "Fragrance_Free": true,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "No summary available"
+    }
+  },
+  {
+    "Product_ID": 75,
+    "Semantic_Profile": {
+      "Product_Name": "Philosophy Renewed Hope in a Jar",
+      "Brand": "Philosophy",
+      "Category": "Moisturizer",
+      "Price_USD": 45,
+      "Texture": "Cream",
+      "Skin_Types": [
+        "All"
+      ],
+      "Key_Ingredients": [
+        "Alpha Hydroxy Acids",
+        "Hyaluronic Acid",
+        "Squalane"
+      ],
+      "Fragrance_Free": false,
+      "Non_Comedogenic": true,
+      "SPF": false,
+      "Customer_Consensus": "Overall Sentiment: Summary: The overall sentiment regarding the Philosophy brand is mixed, as users frequently incorporate their cleansers and moisturizers into established routines while remaining skeptical of the efficacy of certain products like the \"Renewed Hope in a Jar\" line for anti-aging. While customers appreciate the brand's accessibility and gentle cleansing options, many report that their targeted treatments often lack the potency required to see noticeable improvements in fine lines or skin texture. Consequently, experienced skincare enthusiasts often view these products as basic staples rather than high-performance solutions for significant skin concerns. Key themes: cream, philosophy, skin, hope, cleanser."
+    }
+  }
+]

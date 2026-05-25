@@ -1,28 +1,26 @@
-import os
 import json
-import requests
 import time
+import requests
 from datetime import datetime
-import re
-import config
+import config  # Importing your config.py
 
-def scrape_reddit_without_api(product_name, target_subreddits="SUBREDDITS", max_retries=3):
+def scrape_reddit_without_api(product_name, target_subreddits, max_retries=3):
     """
     Searches Reddit using the public .json endpoint.
     """
     reviews = []
+    # Use the '+' joined string from your config
     url = f"https://www.reddit.com/r/{target_subreddits}/search.json"
     
-    # Use a descriptive User-Agent as per Reddit's API rules
     headers = {
-        "User-Agent": "python:my_product_scraper:v1.0 (by /u/YourRedditUsername)"
+        "User-Agent": "python:skincare_search_pipeline:v1.0 (by /u/YourRedditUsername)"
     }
     
     params = {
         "q": f'"{product_name}"',
-        "restrict_sr": "1" if target_subreddits != "all" else "0",
+        "restrict_sr": "1",
         "sort": "relevance",
-        "limit": 25  # Increased limit 
+        "limit": 25 
     }
 
     for attempt in range(max_retries):
@@ -32,7 +30,7 @@ def scrape_reddit_without_api(product_name, target_subreddits="SUBREDDITS", max_
             if response.status_code == 429:
                 print(f"  ⚠ Rate limited (Attempt {attempt + 1}/{max_retries}). Sleeping...")
                 time.sleep(10)
-                continue  # Try the request again
+                continue
                 
             if response.status_code != 200:
                 print(f"  ⚠ HTTP Error: {response.status_code}")
@@ -46,7 +44,6 @@ def scrape_reddit_without_api(product_name, target_subreddits="SUBREDDITS", max_
                 title = post_data.get('title', '').lower()
                 body = post_data.get('selftext', '').lower()
                 
-                # Check BOTH title and body
                 if product_name.lower() in title or product_name.lower() in body:
                     reviews.append({
                         'review_id': f"reddit_json_{post_data['id']}",
@@ -57,78 +54,70 @@ def scrape_reddit_without_api(product_name, target_subreddits="SUBREDDITS", max_
                         'scraped_at': datetime.utcnow().isoformat() + 'Z'
                     })
 
-            return reviews # Success, return the data
+            return reviews
 
         except requests.exceptions.RequestException as e:
             print(f"  ❌ Request failed: {e}")
-            time.sleep(5) # Brief pause before retry on network error
+            time.sleep(5)
 
     print("  ❌ Max retries reached.")
     return []
 
 
-def scrape_all_products(max_products=None, skip_existing=True, target_subreddits="SUBREDDITS", max_retries=3):
+def scrape_all_products(max_products=None, skip_existing=True, max_retries=3):
     stats = {"scraped": 0, "skipped": 0, "errors": 0}
     
+    # Use your config variable for subreddits
     target_subs_string = "+".join(config.SUBREDDITS)
     
-    save_dir = os.path.join("data", "reviews")
-    os.makedirs(save_dir, exist_ok=True)
+    # Ensure directory exists using config.REVIEWS_DIR
+    config.REVIEWS_DIR.mkdir(parents=True, exist_ok=True)
     
-    try:
-        with open(os.path.join("data", "products", "products.json"), 'r', encoding='utf-16') as f:
-            products = json.load(f)
-    except FileNotFoundError:
-        print("❌ Error: data/products/products.json not found.")
+    # Load products using config.PRODUCTS_FILE
+    if not config.PRODUCTS_FILE.exists():
+        print(f"❌ Error: {config.PRODUCTS_FILE} not found.")
         return stats
+        
+    with open(config.PRODUCTS_FILE, 'r', encoding='utf-16') as f:
+        products = json.load(f)
         
     if max_products:
         products = products[:max_products]
         
     for i, product in enumerate(products, start=1):
         try:
-            if isinstance(product, str):
-                current_product_name = product
-            elif isinstance(product, dict):
-                current_product_name = product.get('Product_Name') or product.get('name') or product.get('product_name')
-            else:
-                continue
-                
+            # Handle list of strings or list of dicts
+            current_product_name = product if isinstance(product, str) else product.get('Product_Name')
             if not current_product_name:
                 continue
 
-            # --- NEW: Set the filename using the loop counter ---
-            filepath = os.path.join(save_dir, f"product{i}.json")
+            # Set the filename path using config.REVIEWS_DIR
+            filepath = config.REVIEWS_DIR / f"product{i}.json"
 
-            if skip_existing and os.path.exists(filepath):
-                print(f"⏭️ Skipping: {current_product_name} (product{i}.json already exists)")
+            if skip_existing and filepath.exists():
+                print(f"⏭️ Skipping: {current_product_name} ({filepath.name} exists)")
                 stats['skipped'] += 1
                 continue
 
-            print(f"Scraping: {current_product_name} (Saving as product{i}.json)...")
+            print(f"Scraping: {current_product_name}...")
 
             reviews = scrape_reddit_without_api(
-                product_name=current_product_name,  
+                product_name=current_product_name, 
                 target_subreddits=target_subs_string,
                 max_retries=max_retries
             )
             
-            if reviews:
-                with open(filepath, 'w', encoding='utf-8') as f:
-                    json.dump(reviews, f, indent=4)
-                print(f"  ✓ Saved {len(reviews)} reviews to {filepath}")
-            else:
-                with open(filepath, 'w', encoding='utf-8') as f:
-                    json.dump([], f)
-                print(f"  ⚠ No reviews found, saved empty file to prevent re-scraping.")
-
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(reviews if reviews else [], f, indent=4)
+            
+            print(f"  ✓ Saved {len(reviews)} reviews.")
             stats['scraped'] += 1
             
             print(f"  Sleeping for {config.SLEEP_BETWEEN_PRODUCTS} seconds...")
             time.sleep(config.SLEEP_BETWEEN_PRODUCTS)
             
         except Exception as e:
-            print(f"  ❌ Error processing {product}: {e}")
+            print(f"  ❌ Error processing product {i}: {e}")
             stats['errors'] += 1
 
     return stats

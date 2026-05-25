@@ -35,55 +35,40 @@ def extract_key_phrases(reviews, top_n=10):
 def generate_llm_summary(product_name, reviews, top_phrases):
     """Use Gemini to generate natural language summary from raw reviews"""
     
-    # Grab the top 5 most upvoted reviews to feed to the LLM
-    top_reviews = sorted(reviews, key=lambda x: x.get('score', 0), reverse=True)[:5]
+    # Grab the top 7 most upvoted reviews to feed to the LLM
+    top_reviews = sorted(reviews, key=lambda x: x.get('score', 0), reverse=True)[:7]
     review_texts = "\n".join([f"- {r.get('title', '')}: {r.get('text', '')}" for r in top_reviews])
 
-    prompt = f"""You are a skincare product review analyst. 
-Based on the following Reddit reviews, write a concise 
-2-3 sentence summary that captures the overall sentiment and key themes.
+    prompt_template = Path(config.PROMPTS_DIR / "summarize.txt").read_text(encoding='utf-8')
 
-Product: {product_name}
-Total Reviews Analyzed: {len(reviews)}
-Top Mentioned Words: {', '.join([phrase for phrase, count in top_phrases])}
-
-Sample Reviews:
-{review_texts}
-
-Write a summary that:
-1. Starts with overall sentiment (positive, negative, or mixed)
-2. Mentions key benefits users love
-3. Notes any common complaints or skin reactions
-4. Is concise and specific to this product
-
-Summary:"""
+    full_prompt = (
+        f"Product: {product_name}\n"
+        f"Common Keywords: {', '.join([p[0] for p in top_phrases])}\n\n"
+        f"{prompt_template}\n\n"
+        f"Reviews:\n{review_texts}"
+    )
 
     try:
-        response = model.generate_content(prompt)
+        response = model.generate_content(full_prompt)
         return response.text.strip()
     except Exception as e:
         print(f"  ⚠ LLM generation failed: {e}")
         return None
 
-def summarize_product_reviews(filepath):
-    """Create summary with analytics and LLM-generated text"""
+def summarize_product_reviews(filepath, product_name):
+    """Create summary object"""
     reviews = load_product_reviews(filepath)
-    
-    if not reviews: # If it's an empty list or file doesn't exist
+    if not reviews:
         return None
         
-    # Get product name from the filename (e.g. "product1")
     product_id = filepath.stem
-    
-    # Calculate basic stats from our scraper output
     avg_score = sum(r.get('score', 0) for r in reviews) / len(reviews)
     top_phrases = extract_key_phrases(reviews)[:5]
     
     # Generate LLM summary
-    llm_summary = generate_llm_summary(product_id, reviews, top_phrases)
+    llm_summary = generate_llm_summary(product_name, reviews, top_phrases)
     
-    # Create the final summary object
-    full_summary = {
+    return {
         'product_id': product_id,
         'total_reviews': len(reviews),
         'avg_reddit_score': round(avg_score, 1),
@@ -91,54 +76,47 @@ def summarize_product_reviews(filepath):
         'llm_summary': llm_summary,
         'generated_at': reviews[0].get('scraped_at', '') if reviews else ''
     }
-    
-    return full_summary
 
 def save_summary(product_id, summary):
-    """Save summary to file"""
-    # Ensure config.REVIEWS_DIR is a Path object
-    reviews_dir = Path(config.REVIEWS_DIR)
-    summaries_dir = reviews_dir / "summaries"
-    summaries_dir.mkdir(exist_ok=True)
+    """Save summary to file using config-defined directories."""
     
-    summary_file = summaries_dir / f"{product_id}_summary.json"
+    # Ensure the directory exists (config.SUMMARIES_DIR is already a Path object)
+    config.SUMMARIES_DIR.mkdir(parents=True, exist_ok=True)
     
+    # Define the file path
+    summary_file = config.SUMMARIES_DIR / f"{product_id}_summary.json"
+    
+    # Write the JSON file
     with open(summary_file, 'w', encoding='utf-8') as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
-    
     return summary_file
 
 def summarize_all_products(skip_existing=True):
-    """Generate summaries for all products with reviews"""
-    reviews_dir = Path(config.REVIEWS_DIR)
-    summaries_dir = reviews_dir / "summaries"
+    with open(config.PRODUCTS_FILE, 'r', encoding='utf-16') as f:
+        products = json.load(f)
     
-    # Look for files matching the scraper's format (product1.json, etc.)
-    review_files = list(reviews_dir.glob("product*.json"))
-    total_files = len(review_files)
-    
-    if total_files == 0:
-        print("No review files found to summarize!")
-        return
-        
-    print(f"\nGenerating LLM summaries for {total_files} products...\n")
-    
+    product_map = {f"product{i+1}": p.get('Product_Name') for i, p in enumerate(products)}
+    review_files = list(config.REVIEWS_DIR.glob("product*.json"))
+    total_files = len(review_files) # Define this!
+
     for idx, review_file in enumerate(review_files):
-        # Determine what the summary filename would be
         product_id = review_file.stem
-        expected_summary_file = summaries_dir / f"{product_id}_summary.json"
+        product_name = product_map.get(product_id, "Unknown Product")
+        expected_summary_file = config.SUMMARIES_DIR / f"{product_id}_summary.json"
         
-        # --- NEW: Skip existing check ---
+        # Check existing
         if skip_existing and expected_summary_file.exists():
-            print(f"[{idx + 1}/{total_files}] ⏭️ Skipping {review_file.name} (Summary already exists)")
+            print(f"[{idx + 1}/{total_files}] ⏭️ Skipping {review_file.name}")
             continue
             
-        print(f"[{idx + 1}/{total_files}] Processing {review_file.name}...")
+        print(f"[{idx + 1}/{total_files}] Processing {product_name}...")
         
-        summary = summarize_product_reviews(review_file)
+        # Call the function ONCE
+        summary = summarize_product_reviews(review_file, product_name)
         
         if summary and summary.get('llm_summary'):
             save_summary(product_id, summary)
+
             print(f"✓ Summarized: {summary['product_id']}")
             print(f"  📝 {summary['llm_summary']}\n")
         else:

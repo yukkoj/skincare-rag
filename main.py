@@ -1,18 +1,16 @@
 """
 Main entry point for skincare search pipeline
-Runs: scraper → summarizer → embeddings
+Runs: scraper → summarizer → semantic_profiler → embeddings
 """
-from scripts import scraper, summarizer, embeddings
-
+from scripts import scraper, summarizer, semantic_profile, embeddings
 
 def main():
-    """Run the full pipeline: scrape → summarize → embed"""
+    """Run the full pipeline: scrape → summarize → profile → embed"""
     
     print("\n" + "="*60)
     print("SKINCARE SEARCH PIPELINE")
     print("="*60 + "\n")
     
- 
     # ==================== STEP 1: SCRAPE REVIEWS ====================
     print("="*60)
     print("STEP 1: Scraping Reddit Reviews")
@@ -48,31 +46,31 @@ def main():
         
     except Exception as e:
         print(f"\n❌ Summarization error: {e}")
-        print("Continuing to embeddings...\n")
+        print("Continuing to semantic profiling...\n")
 
-    # ==================== STEP 3: CREATE EMBEDDINGS ====================
+    # ==================== STEP 3: COMPILE SEMANTIC PROFILES ====================
     print("="*60)
-    print("STEP 3: Creating Embeddings & Search Index")
+    print("STEP 3: Compiling Semantic Profiles")
     print("="*60 + "\n")
     
     try:
-        import json
-        import config
-        from pathlib import Path
+        semantic_profile.compile_profiles()
+        print("✓ Semantic profiles compiled successfully!\n")
+        
+    except Exception as e:
+        print(f"\n❌ Profiling error: {e}")
+        print("Cannot proceed to embeddings without profiles. Exiting.\n")
+        return
 
-        # 1. Load the products list that core_embeddings needs
-        with open(config.PRODUCTS_FILE, 'r', encoding='utf-16') as f:
-            products_data = json.load(f)
-
-        # 2. Define the paths and model name your function expects
-        model_name = 'all-MiniLM-L6-v2'
-        embeddings_file = str(config.EMBED_DIR / "embeddings.npy")
-        metadata_file = str(config.EMBED_DIR / "chunks.pkl")
-
-        print("Processing text chunks into embeddings...")
+    # ==================== STEP 4: CREATE EMBEDDINGS ====================
+    print("="*60)
+    print("STEP 4: Creating Embeddings & Search Index")
+    print("="*60 + "\n")
+    
+    try:
+        print("Processing semantic profiles into vector chunks...")
         embeddings.ensure_chunk_embeddings()
         
-        # 3. Build the FAISS database so the embeddings are searchable
         print("Building FAISS search index...")
         embeddings.build_faiss_index()
         
@@ -85,8 +83,6 @@ def main():
     print("="*60)
     print("✓ PIPELINE COMPLETE!")
     print("="*60)
-
-
 
 if __name__ == "__main__":
     main()

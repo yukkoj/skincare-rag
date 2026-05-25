@@ -17,7 +17,6 @@ PROCESSED_DIR = DATA_DIR / "processed"
 
 GENERATED_DIR = DATA_DIR / "generated"
 SUMMARIES_DIR = GENERATED_DIR / "summaries"
-SEMANTIC_PROFILE_DIR = GENERATED_DIR / "semantic_profiles"
 
 EMBED_DIR = DATA_DIR / "embeddings"
 
