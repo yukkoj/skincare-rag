@@ -133,8 +133,8 @@ def main():
             k=20)
         
         # 2. Aggregate chunks to unique IDs
-        top_products = embeddings.aggregate_chunk_hits(raw_results)
-        
+        arregated_products = embeddings.aggregate_chunk_hits(raw_results)
+        top_products = arregated_products[:10]  # Limit to top 10 for AI context
         # 3. Generate recommendation using structured profiles
         ai_response = generate_ai_recommendation(query, top_products, full_db)
         save_search_history(query, ai_response, top_products, full_db)
