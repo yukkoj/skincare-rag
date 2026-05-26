@@ -9,7 +9,6 @@ An intelligent, AI-powered search engine for moisturizers. This tool moves beyon
 * **Intelligent Aggregation:** Deduplicates retrieved data chunks to provide a clean list of unique product recommendations.
 * **Sentiment-Aware Summarization:** Uses positive and negative keyword analysis to categorize feedback ensuring balanced and honest product insights.
 * **LLM Synthesis:** Integrates Gemini API to generate personalized recommendations based on the retrieved product profiles.
-* **Persistent Logging:** Automatically saves user queries and AI responses in a structured, readable history log.
 * **Incremental Processing:** Efficiently processes new products without re-indexing the entire database.
 
 ## System Architecture
