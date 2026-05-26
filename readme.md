@@ -13,6 +13,7 @@ An intelligent, AI-powered search engine for moisturizers. This tool replaces st
 ## System Architecture
 
 The pipeline follows a highly efficient Retrieval-Augmented Generation (RAG) data flow:
+
 1. **Ingestion:** Scrapes and summarizes Reddit reviews to build rich "Semantic Profiles" for each product.
 2. **Embedding:** Uses Google's `gemini-embedding-2` model to convert product profiles into high-dimensional vectors.
 3. **Storage:** Saves vectors locally in a lightweight ChromaDB instance.
