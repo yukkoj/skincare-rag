@@ -1,26 +1,26 @@
 
 # Skincare Semantic Search Engine
 
-An intelligent, AI-powered search engine for moisturizers. This tool moves beyond standard keyword-based searching by using **Semantic Search** and **Hybrid Ranking** to match user queries with product ingredients, consensus, and specifications.
+An intelligent, AI-powered search engine for moisturizers.This tool replaces standard keyword searching with Pure Vector Search, utilizing Gemini cloud embeddings to intuitively match the intent of user queries directly to product ingredients, consensus, and specifications.
 
-## Key Features
+# Key Features
 
-* **Hybrid Search Engine:** Combines Vector Search (FAISS) for intent-based matching with BM25 Keyword Search for technical ingredient precision.
-* **Intelligent Aggregation:** Deduplicates retrieved data chunks to provide a clean list of unique product recommendations.
-* **Sentiment-Aware Summarization:** Uses positive and negative keyword analysis to categorize feedback ensuring balanced and honest product insights.
-* **LLM Synthesis:** Integrates Gemini API to generate personalized recommendations based on the retrieved product profiles.
-* **Incremental Processing:** Efficiently processes new products without re-indexing the entire database.
+* AI-Driven Vector Search: Powered by ChromaDB and Gemini Embeddings to understand the complex meaning and intent behind skincare queries.
+* Fast Execution: Fully offloads heavy ML processing to the cloud, allowing the app to run instantly on any hardware without local lag.
+* Smart Database Syncing: Automatically detects and indexes only new products added to the master file without rebuilding the existing database.
+* Grounded AI Recommendations: Uses Retrieval-Augmented Generation (RAG) to feed exact product specs to Gemini, generating personalized, factual advice based on the data.
+* Sentiment & Consensus Analysis: Automatically categorizes positive and negative product feedback to provide unbiased recommendations.
 
 ## System Architecture
 
-The pipeline follows a data-flow process to ensure accuracy and relevance:
+The pipeline follows a data-flow process to ensure accuracy and relevance.
 
 ## Setup & Installation
 
 Install the required dependencies:
 
 ```bash
-pip install sentence-transformers faiss-cpu rank-bm25 numpy
+pip install chromadb google-genai google-generativeai
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ This project is executed in two main steps:
 
 ### 1. Initialize the Database
 
-Before searching, you must build the vector and keyword indices. Run this if you modify products.json otherwise it has been done.
+Before searching, you must build ChromaDB. Run this if you modify products.json otherwise it has been done.
 
 ```bash
 python main.py
@@ -37,7 +37,7 @@ python main.py
 
 ### 2. Run the Search Engine
 
-Once the indices are built, you can run the interactive search script:
+Once the database is built, you can run the interactive search script:
 
 ```bash
 python search.py
@@ -45,7 +45,7 @@ python search.py
 
 ## Customize
 
-Append in or replace products.json to broaden choices. You must delete reviews, summaries, and embeddings files if you replace the products.json.
+Append in or replace products.json to broaden choices. You must delete reviews and summaries files if you replace the products.json.
 
 ## Project Structure
 
@@ -57,5 +57,5 @@ Append in or replace products.json to broaden choices. You must delete reviews, 
 * `summarizer.py`: Orchestrates the sentiment-categorized feedback and generates LLM summaries.
 * `config.py`: Centralized configuration (paths, subreddits, positive/negative word lists).
 * `data/raw/`: Source data files.
-* `data/generated/`: Computed outputs (indices, profiles, and sentiment-tagged reviews).
+* `data/generated/`: Computed outputs (summaries, profiles, and database).
 * `data/prompts/`: LLM prompt templates

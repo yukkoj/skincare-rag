@@ -68,13 +68,12 @@ def main():
     print("="*60 + "\n")
     
     try:
-        print("Processing semantic profiles into vector chunks...")
-        embeddings.ensure_chunk_embeddings()
+        print("Processing semantic profiles and building ChromaDB via Gemini API...")
         
-        print("Building FAISS search index...")
-        embeddings.build_faiss_index()
+        # This one function now handles reading, batching, and saving the database
+        embeddings.build_chroma_database()
         
-        print("\n✓ Embeddings and search index created successfully!\n")
+        print("\n✓ Cloud embeddings and Chroma search index created successfully!\n")
         
     except Exception as e:
         print(f"\n❌ Embedding error: {e}\n")

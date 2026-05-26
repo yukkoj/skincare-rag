@@ -1,222 +1,105 @@
 """
-Embeddings Logic (Semantic Profiles)
-Converts unified product semantic profiles into vector embeddings incrementally, 
-skipping ones that are already done, and builds a FAISS search index.
+embeddings.py (Cloud API Version)
+Uses the Gemini API for fast, zero-RAM vector generation.
+Includes a one-time setup function to build the Chroma database.
 """
 import json
-import pickle
-import numpy as np
-import os
-from rank_bm25 import BM25Okapi # Add this import
+import time
+import chromadb
+from google import genai
 import config
 
-# 1. THE SPEED FIX: Force the library to skip the internet and use local cache
-os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-os.environ["HF_HUB_OFFLINE"] = "1"
-os.environ["TRANSFORMERS_OFFLINE"] = "1" # Adding this one as an extra safety net
-
-import faiss
-
-# Setup
-config.EMBED_DIR.mkdir(parents=True, exist_ok=True)
-PROFILES_PATH = config.GENERATED_DIR / "semantic_profiles.json"
-INDEX_PATH = config.EMBED_DIR / "faiss.index"
-CHUNKS_PATH = config.EMBED_DIR / "chunks.pkl"
-BM25_PATH = config.EMBED_DIR / "bm25.pkl"
-
-bm25 = None
-model = None
-
-def ensure_model_loaded():
-    """Wakes up the PyTorch model only when needed."""
-    global model
-    if model is None:
-        print("\n⏳ Loading PyTorch & waking up local model (this will take a few seconds)...")
-        from sentence_transformers import SentenceTransformer
-        model = SentenceTransformer("all-MiniLM-L6-v2")
-
-def load_all_indices():
-    """Helper to load everything into memory once."""
-    if not CHUNKS_PATH.exists() or not INDEX_PATH.exists():
-        print("⚠ Indices not found. Building them now...")
-        ensure_chunk_embeddings()
-        build_faiss_index()
-
-    with open(CHUNKS_PATH, 'rb') as f:
-        data = pickle.load(f)
-    bm25 = load_bm25_index()
-    index = faiss.read_index(str(INDEX_PATH))
-    return data["chunks"], bm25, index
-
-def save_bm25_index(bm25_model):
-    with open(BM25_PATH, 'wb') as f:
-        pickle.dump(bm25_model, f)
-
-def load_bm25_index():
-    if BM25_PATH.exists():
-        with open(BM25_PATH, 'rb') as f:
-            return pickle.load(f)
-    return None
-
-def build_keyword_index(chunks):
-    """Tokenize and build a BM25 index from your chunks."""
-    tokenized_corpus = [c['text'].lower().split() for c in chunks]
-    return BM25Okapi(tokenized_corpus)
-
-def get_embeddings_batch(texts, batch_size=32):
-    return model.encode(texts, batch_size=batch_size, show_progress_bar=True, convert_to_numpy=True)
+# Initialize the new Gemini GenAI Client
+client = genai.Client(api_key=config.GOOGLE_API_KEY)
 
 def get_sentence_embeddings(query: str):
-    """Convert a single string into an embedding vector."""
-    ensure_model_loaded()
-    return model.encode([query], convert_to_numpy=True)
+    """Fetches a single vector for the user's search query."""
+    response = client.models.embed_content(
+        model="gemini-embedding-2", 
+        contents=query
+    )
+    # ChromaDB expects a standard Python list of floats, which this returns
+    return response.embeddings[0].values
 
-def ensure_chunk_embeddings():
-    """Reads semantic profiles, creates embeddings (skipping existing), and saves."""
-    existing_chunks = []
-    existing_embeddings = None
-    processed_ids = set()
+def build_chroma_database():
+    """Reads semantic_profiles.json and builds the Chroma database incrementally."""
+    print("📦 Checking ChromaDB status...")
+    
+    # 1. Setup ChromaDB Local Storage
+    config.GENERATED_DIR.mkdir(parents=True, exist_ok=True)
+    chroma_client = chromadb.PersistentClient(path=str(config.GENERATED_DIR / "chroma_db"))
+    
+    collection = chroma_client.get_or_create_collection(
+        name="skincare_products",
+        embedding_function=None 
+    )
 
-    # 1. Load existing data
-    if CHUNKS_PATH.exists():
-        try:
-            with open(CHUNKS_PATH, 'rb') as f:
-                data = pickle.load(f)
-                existing_chunks = data.get("chunks", [])
-                existing_embeddings = data.get("embeddings")
-                processed_ids = {c['product_id'] for c in existing_chunks}
-            print(f"  ⏭️ Found {len(processed_ids)} already embedded products.")
-        except Exception as e:
-            print(f"  ⚠ Could not read existing chunks: {e}")
-
-    # 2. Load master profiles
-    if not PROFILES_PATH.exists():
-        print(f"  ⚠ Master profiles file not found at {PROFILES_PATH}.")
+    # 2. Load Master Profiles
+    profiles_path = config.GENERATED_DIR / "semantic_profiles.json"
+    if not profiles_path.exists():
+        print("⚠ No semantic_profiles.json found!")
         return
 
-    with open(PROFILES_PATH, 'r', encoding='utf-8') as f:
+    with open(profiles_path, 'r', encoding='utf-8') as f:
         profiles = json.load(f)
 
-    new_chunks = []
-    for profile in profiles:
-        pid = profile.get("Product_ID")
-        if pid in processed_ids:
-            continue
+    # 3. The "Smart Delta" Check
+    # Ask Chroma for existing IDs (without downloading the heavy vectors)
+    existing_data = collection.get(include=[]) 
+    existing_ids = set(existing_data['ids'])
+
+    # Filter the master list to ONLY include products not yet in ChromaDB
+    new_profiles = [p for p in profiles if str(p.get("Product_ID")) not in existing_ids]
+
+    if not new_profiles:
+        print(f"✓ Database is fully up to date ({len(existing_ids)} products total).")
+        return
+
+    print(f"Found {len(new_profiles)} brand new products to embed (Skipping {len(existing_ids)} existing ones)...")
+    
+    # 4. Batch processing on NEW profiles only
+    batch_size = 100 
+    
+    for i in range(0, len(new_profiles), batch_size):
+        batch = new_profiles[i : i + batch_size]
+        
+        ids = []
+        texts = []
+        metadatas = []
+        
+        for p in batch:
+            pid = str(p.get("Product_ID"))
+            semantic_data = p.get("Semantic_Profile", {})
             
-        semantic_data = profile.get("Semantic_Profile", {})
-        # Create a rich text representation for the embedding
-        full_text = (f"Product: {semantic_data.get('Product_Name', 'Unknown')}. "
-                     f"Specs: {json.dumps(semantic_data)}. "
-                     f"Consensus: {semantic_data.get('Customer_Consensus', '')}")
+            full_text = (f"Product: {semantic_data.get('Product_Name', 'Unknown')}. "
+                         f"Specs: {json.dumps(semantic_data)}. "
+                         f"Consensus: {semantic_data.get('Customer_Consensus', '')}")
+            
+            ids.append(pid)
+            texts.append(full_text)
+            metadatas.append({"name": semantic_data.get('Product_Name', 'Unknown')})
+            
+        print(f"  -> Fetching embeddings from Gemini for items {i+1} to {min(i+batch_size, len(new_profiles))}...")
         
-        new_chunks.append({"product_id": pid, "type": "semantic_profile", "text": full_text, "name": semantic_data.get('Product_Name'), "price": semantic_data.get('Price')})
-
-    # 3. Process new data only
-    if not new_chunks:
-        print("  ✓ No new data to process.")
-        return
-
-    print(f"  Vectorizing {len(new_chunks)} new products...")
-    new_vectors = get_embeddings_batch([c['text'] for c in new_chunks])
-    
-    # 4. Merge and Save
-    final_chunks = existing_chunks + new_chunks
-    final_embeddings = np.vstack((existing_embeddings, new_vectors)) if existing_embeddings is not None else new_vectors
-    
-    with open(CHUNKS_PATH, 'wb') as f:
-        pickle.dump({"chunks": final_chunks, "embeddings": final_embeddings}, f)
-    print(f"  ✓ Saved {len(final_chunks)} total profiles to {CHUNKS_PATH.name}")
-
-    print("Building BM25 index...")
-    bm25_model = build_keyword_index(final_chunks)
-    save_bm25_index(bm25_model)
-    
-    print(f"  ✓ Saved {len(final_chunks)} total profiles and BM25 index.")
-
-def build_faiss_index():
-    """Takes the embedded profiles and builds a searchable FAISS database."""
-    if not CHUNKS_PATH.exists():
-        print("  ⚠ Chunks file not found. Run ensure_chunk_embeddings first.")
-        return
+        # Get vectors from Gemini
+        response = client.models.embed_content(
+            model="gemini-embedding-2", 
+            contents=texts
+        )
+        embeddings_list = [emb.values for emb in response.embeddings]
         
-    with open(CHUNKS_PATH, 'rb') as f:
-        data = pickle.load(f)
+        # Save directly to ChromaDB
+        collection.add(
+            ids=ids,
+            documents=texts,
+            embeddings=embeddings_list,
+            metadatas=metadatas
+        )
         
-    embeddings = np.array(data["embeddings"]).astype('float32')
-    
-    if len(embeddings) == 0:
-        print("  ⚠ No embeddings to index.")
-        return
-
-    dim = embeddings.shape[1]
-    index = faiss.IndexFlatL2(dim)
-    index.add(embeddings)
-    
-    faiss.write_index(index, str(INDEX_PATH))
-    print(f"  ✓ Built FAISS index with {index.ntotal} vectors at {INDEX_PATH.name}")
-# ==========================================
-# SEARCH FUNCTIONS
-# ==========================================
-
-def search_products(query, chunks, bm25, index, k=20):
-    
-    # 2. Parallel-style lookup
-    query_vector = get_sentence_embeddings(query).astype('float32')
-    
-    # 3. Vector Search
-    v_distances, v_indices = index.search(query_vector, k)
-    
-    # 4. Keyword Search
-    tokenized_query = query.lower().split()
-    k_scores = bm25.get_scores(tokenized_query)
-    
-    # 5. Hybrid Fusion (RRF)
-    combined_scores = {}
-    
-    # Vector: lower distance is better, but we need to normalize to rank
-    # FAISS returns distances, we convert to rank
-    for i, idx in enumerate(v_indices[0]):
-        combined_scores[idx] = combined_scores.get(idx, 0) + (1 / (i + 1))
+        time.sleep(2) 
         
-    # Keyword: Higher BM25 score is better
-    k_indices = np.argsort(k_scores)[::-1][:k]
-    for i, idx in enumerate(k_indices):
-        combined_scores[idx] = combined_scores.get(idx, 0) + (1 / (i + 1))
-        
-    sorted_indices = sorted(combined_scores.items(), key=lambda x: x[1], reverse=True)
-    
-    return [ {**chunks[idx], 'distance': score} for idx, score in sorted_indices[:k] ]
-
-def aggregate_chunk_hits(results):
-    """Aggregates raw FAISS results into unique product IDs."""
-    aggregated = {}
-    for res in results:
-        pid = res['product_id']
-        distance = res['distance'] 
-        # Keep the SMALLEST score (lower is better in RRF)
-        if pid not in aggregated or distance < aggregated[pid]:
-            aggregated[pid] = distance
-    # Sort by ascending (lowest first)
-    return sorted(aggregated.items(), key=lambda x: x[1], reverse=False)
-
-# ==========================================
-# TEST EXECUTION
-# ==========================================
+    print("✅ ChromaDB incremental build complete!")
 
 if __name__ == "__main__":
-    print("\n--- Initializing Data ---")
-    # Fix 5: Load the variables properly before passing them to the test
-    test_chunks, test_bm25, test_index = load_all_indices()
-    
-    print("\n--- Testing Search ---")
-    results = search_products(
-        "I need a cheap, fragrance-free lotion that won't clog my pores.",
-        chunks=test_chunks,
-        bm25=test_bm25,
-        index=test_index
-    )
-    
-    # Run the aggregator so we test the full pipeline
-    final_products = aggregate_chunk_hits(results)
-    for rank, (pid, score) in enumerate(final_products[:5], 1):
-        print(f"#{rank}: {pid} (RRF Score: {score:.4f})")
+    # When you run this file directly, it builds the database.
+    build_chroma_database()
