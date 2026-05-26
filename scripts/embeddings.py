@@ -179,13 +179,12 @@ def aggregate_chunk_hits(results):
     aggregated = {}
     for res in results:
         pid = res['product_id']
-        score = res['distance'] # Note: this is a score
-        # Keep the LARGEST score (higher is better in RRF)
-        if pid not in aggregated or score > aggregated[pid]:
-            aggregated[pid] = score
-            
-    # Sort by score descending (highest first)
-    return sorted(aggregated.items(), key=lambda x: x[1], reverse=True)
+        distance = res['distance'] 
+        # Keep the SMALLEST score (lower is better in RRF)
+        if pid not in aggregated or distance < aggregated[pid]:
+            aggregated[pid] = distance
+    # Sort by ascending (lowest first)
+    return sorted(aggregated.items(), key=lambda x: x[1], reverse=False)
 
 # ==========================================
 # TEST EXECUTION
