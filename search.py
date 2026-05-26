@@ -5,6 +5,8 @@ Loads all product attributes dynamically and feeds them to Gemini for context-ri
 """
 import json
 import datetime
+import profile
+from urllib import response
 import config
 import google.generativeai as genai
 from scripts import embeddings
@@ -12,6 +14,9 @@ from scripts import embeddings
 # Set up Gemini
 genai.configure(api_key=config.GOOGLE_API_KEY)
 model = genai.GenerativeModel("gemini-2.5-flash")
+# Lazy-loading of the full database and indices to avoid repeated disk reads
+full_db = None
+chunks, bm25_index, faiss_index = None, None, None
 
 def load_semantic_profiles():
     """Loads the compiled semantic_profiles.json master file."""
@@ -35,22 +40,29 @@ def generate_ai_recommendation(query, top_products, full_db):
         prompt_template = "Act as a skincare expert. Provide a concise recommendation based on the data below."
 
     # 2. Build context from structured profiles
-    context = f"User Query: '{query}'\n\nTop Product Matches:\n\n"
+    context_lines = []
+    context_lines.append(f"User Query: '{query}'\n\nTop Product Matches:\n")
     
-    for product_id, distance in top_products:
+    for product_id, distance in top_products[:5]:
         profile = full_db.get(str(product_id))
         if profile:
-            # Flattening the dictionary into a clean, human-readable format for the LLM
-            context += f"--- Product: {profile.get('Product_Name')} ---\n"
+            context_lines.append(f"--- Product: {profile.get('Product_Name')} ---")
             for key, value in profile.items():
-                context += f"{key.replace('_', ' ')}: {value}\n"
-            context += "\n"
+                context_lines.append(f"{key.replace('_', ' ')}: {value}")
+            context_lines.append("") # Empty line separator
 
-    full_prompt = f"{prompt_template}\n\n{context}"
+    full_prompt = f"{prompt_template}\n\n" + "\n".join(context_lines)
 
     try:
-        response = model.generate_content(full_prompt)
-        return response.text
+        response = model.generate_content(full_prompt, stream=True)
+        full_text_response = ""
+        for chunk in response:
+            # Check if chunk has valid text to avoid potential errors
+            if chunk.text:
+                print(chunk.text, end="", flush=True)
+                full_text_response += chunk.text # Collect text for the history logger
+        print("\n") # Print a final newline after streaming completes
+        return full_text_response # Return the full compiled string
     except Exception as e:
         return f" ⚠ Could not generate AI summary: {e}"
 
@@ -81,28 +93,19 @@ def save_search_history(query, response, top_products, full_db):
         # Split the response by double-newlines to create a list of paragraphs
         "ai_response_paragraphs": [p.strip() for p in response.split('\n\n') if p.strip()]
     }
-    
-    # 3. Append to history file
-    log_path = config.GENERATED_DIR / "search_history.json"
-    history = []
-    if log_path.exists():
-        with open(log_path, 'r', encoding='utf-8') as f:
-            try: 
-                history = json.load(f)
-            except json.JSONDecodeError: 
-                history = []
-            
-    history.append(history_entry)
-    
-    with open(log_path, 'w', encoding='utf-8') as f:
-        json.dump(history, f, indent=2, ensure_ascii=False)
+
+    # 3. Append to history file (Creates it automatically if it doesn't exist)
+    log_path = config.GENERATED_DIR / "search_history.jsonl"  # Changed extension to .jsonl to match format
+
+    # Ensure the parent directory exists first, just in case
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Opening with 'a' creates the file automatically if it's missing
+    with open(log_path, 'a', encoding='utf-8') as f:
+        f.write(json.dumps(history_entry, ensure_ascii=False) + "\n")
 
 def main():
-    # Load the entire properties dictionary once at startup
-    full_db = load_semantic_profiles()
-
-    # Load into ram once
-    chunks, bm25_index, faiss_index = embeddings.load_all_indices()
+    global full_db, chunks, bm25_index, faiss_index
     
     print("\n" + "="*60)
     print("✨ AI SKINCARE PRODUCT SEARCH ✨")
@@ -112,6 +115,12 @@ def main():
         query = input("\nSearch (or 'q' to quit): ")
         if query.lower() in ['quit', 'q', 'exit']: break
         if not query.strip(): continue
+
+        # LOADS DATA ONLY ON THE FIRST SEARCH RUN
+        if full_db is None:
+            print("📦 Initializing database and indices (First time setup)...")
+            full_db = load_semantic_profiles()
+            chunks, bm25_index, faiss_index = embeddings.load_all_indices()
             
         print(f"🔍 Searching...")
         
@@ -128,8 +137,6 @@ def main():
         
         # 3. Generate recommendation using structured profiles
         ai_response = generate_ai_recommendation(query, top_products, full_db)
-        
-        print("\n" + ai_response)
         save_search_history(query, ai_response, top_products, full_db)
 
 if __name__ == "__main__":
