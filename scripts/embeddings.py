@@ -6,10 +6,16 @@ skipping ones that are already done, and builds a FAISS search index.
 import json
 import pickle
 import numpy as np
+import os
 from rank_bm25 import BM25Okapi # Add this import
-import faiss
-from sentence_transformers import SentenceTransformer
 import config
+
+# 1. THE SPEED FIX: Force the library to skip the internet and use local cache
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1" # Adding this one as an extra safety net
+
+import faiss
 
 # Setup
 config.EMBED_DIR.mkdir(parents=True, exist_ok=True)
@@ -19,7 +25,15 @@ CHUNKS_PATH = config.EMBED_DIR / "chunks.pkl"
 BM25_PATH = config.EMBED_DIR / "bm25.pkl"
 
 bm25 = None
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = None
+
+def ensure_model_loaded():
+    """Wakes up the PyTorch model only when needed."""
+    global model
+    if model is None:
+        print("\n⏳ Loading PyTorch & waking up local model (this will take a few seconds)...")
+        from sentence_transformers import SentenceTransformer
+        model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def load_all_indices():
     """Helper to load everything into memory once."""
@@ -54,7 +68,7 @@ def get_embeddings_batch(texts, batch_size=32):
 
 def get_sentence_embeddings(query: str):
     """Convert a single string into an embedding vector."""
-    # We pass [query] as a list because model.encode expects a list/iterable
+    ensure_model_loaded()
     return model.encode([query], convert_to_numpy=True)
 
 def ensure_chunk_embeddings():
@@ -148,7 +162,6 @@ def search_products(query, chunks, bm25, index, k=20):
     
     # 2. Parallel-style lookup
     query_vector = get_sentence_embeddings(query).astype('float32')
-    index = faiss.read_index(str(INDEX_PATH))
     
     # 3. Vector Search
     v_distances, v_indices = index.search(query_vector, k)
@@ -191,12 +204,19 @@ def aggregate_chunk_hits(results):
 # ==========================================
 
 if __name__ == "__main__":
-    # To build the database for the first time, uncomment these lines:
-    ensure_chunk_embeddings()
-    build_faiss_index()
+    print("\n--- Initializing Data ---")
+    # Fix 5: Load the variables properly before passing them to the test
+    test_chunks, test_bm25, test_index = load_all_indices()
     
-    # Testing search functionality:
     print("\n--- Testing Search ---")
-    results = search_products("I need a cheap, fragrance-free lotion that won't clog my pores.")
-    for rank, prod in enumerate(results, 1):
-        print(f"#{rank}: {prod['product_id']} (Distance: {prod['distance']:.2f})")
+    results = search_products(
+        "I need a cheap, fragrance-free lotion that won't clog my pores.",
+        chunks=test_chunks,
+        bm25=test_bm25,
+        index=test_index
+    )
+    
+    # Run the aggregator so we test the full pipeline
+    final_products = aggregate_chunk_hits(results)
+    for rank, (pid, score) in enumerate(final_products[:5], 1):
+        print(f"#{rank}: {pid} (RRF Score: {score:.4f})")

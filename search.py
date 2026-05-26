@@ -112,7 +112,7 @@ def main():
     print("="*60)
 
     while True:
-        query = input("\nSearch (or 'q' to quit): ")
+        query = input("Search (or 'q' to quit): ")
         if query.lower() in ['quit', 'q', 'exit']: break
         if not query.strip(): continue
 
