@@ -1,5 +1,5 @@
 # Ignore generated data folders
-data/generated/search_history.json
+data/generated/search_history.jsonl
 
 # Ignore log files
 *.log
